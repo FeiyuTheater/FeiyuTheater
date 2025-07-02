@@ -1,0 +1,15 @@
+@use "vendors/bootstrap-min";
+
+.banner {
+    height: 100vh;
+    background-color: grey;
+    background-repeat: no-repeat;
+    background-position: 75% 0%;
+    background-size: cover;
+    box-shadow: 0px 1px 10px rgba(10, 10, 10, 0.95);
+    
+    // Boostrap Styles
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+}

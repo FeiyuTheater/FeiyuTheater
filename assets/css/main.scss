@@ -1,0 +1,16 @@
+---
+---
+// Warning: the above front matter tells Jekyll to process this file, do not delete even if it's empty.
+
+// Tips:
+// Only include other scss files in this file
+// Try to avoid adding any styles directly here
+// We should only add styles in the `_sass` directory, and then import them here
+// For example, @import "base/variables" to import `_sass/base/variables.scss`
+
+// Base
+@use "base/base";
+
+// Components
+@use "components/banner";
+@use "components/footer";

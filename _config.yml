@@ -30,9 +30,17 @@ twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: minima
+# theme: minima
 plugins:
   - jekyll-feed
+
+collections:
+  news:
+    source: collections/_news
+  projects:
+    output: true
+    source: collections/_projects
+    permalink: /projects/:name
 
 # Exclude from processing.
 # The following items will not be processed, by default.

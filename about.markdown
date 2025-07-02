@@ -1,5 +1,6 @@
 ---
-layout: page
+layout: about
+js: about.js
 title: About
 permalink: /about/
 ---
