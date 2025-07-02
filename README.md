@@ -3,7 +3,38 @@
 
 # 维护教程
 ## 🧑🏻‍💻 环境配置
-参考：https://www.notion.so/bodong/Skeleton-Bringup-21637fe020f38047a325dcd759ae7829?source=copy_link
+可以参考[Notion文档](https://www.notion.so/bodong/Skeleton-Bringup-21637fe020f38047a325dcd759ae7829?source=copy_link)。
+
+### 在MacOS下配置Ruby环境
+MacOS系统自带Ruby环境，但版本较低。推荐通过以下步骤安装`ruby-3.1`：
+1. 下载并安装`rvm`：在Bash shell里运行
+   ```bash
+   \curl -sSL https://get.rvm.io | bash
+   ```
+   安装完成后将`rvm`加入`$PATH`：
+   ```bash
+   export PATH="${PATH}:/Users/YOUR_USER_NAME/.rvm/bin"
+   ```
+2. 安装`ruby-3.1`：
+   ```bash
+   rvm install ruby-3.1
+   rvm --default ruby-3.1
+
+   # after install, check if the local install is used
+   # it should show ~/.rvm/rubies/<version>/
+   which ruby
+   command which gem
+   ```
+3. 安装`bundler`和`jekyll`：
+   ```bash
+   gem install bundler jekyll
+   bundle update
+   ```
+4. 确认安装完成：在本代码库中运行
+   ```bash
+   bundle exec jekyll serve --livereload
+   ```
+   将会启动本地服务器`http://127.0.0.1:4000/`。在浏览器中打开这个地址即可看到当前网页部署。
 
 ## 📚 基础知识
 ### 关于Jekyll
@@ -72,7 +103,7 @@ your-jekyll-site/
 - 不要在特定的元素上直接堆叠Bootstrap的类，而是利用SCSS的`@extend`来把Bootstrap类加到特定的类上。下面的例子对比了两种代码风格：
 ```html
 
-<!-- ❌ Bad Example 
+<!-- ❌ Bad Example
 Assume we have a SCSS class:
 .banner {
     background-color: #f8f9fa;
