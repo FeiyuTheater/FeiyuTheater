@@ -92,12 +92,13 @@ your-jekyll-site/
 - 网站的布局是通过`_layouts`文件夹下的文件来实现的。相比于`_includes`文件夹，`_layouts`下的布局文件更宏观。一般对应到网页的具体页面。
 
 ### 内容更新
-- 所有网站实时更新的内容（比如往期活动、最新动态等）都在`contents`文件夹下。
-- `contents`文件夹下的子文件夹对应是网站的板块, 比如`projects`对应“往期作品”，`news`对应主页的banner和最新动态等。
-- `contents`子文件夹里的内容一般是Markdown文件，这个文件往往包含了metadata（比如标题、作者、日期等）和正文（比如正文内容、图片等）。
+- 所有网站实时更新的内容（比如往期活动、最新动态等）都在`collections`文件夹下。
+- `collections`文件夹下的子文件夹对应是网站的板块, 比如`_projects`对应“往期作品”，`_news`对应主页的banner和最新动态等。
+- `collections`子文件夹里的内容一般是Markdown文件，这个文件往往包含了metadata（比如标题、作者、日期等）和正文（比如正文内容、图片等）。
 
 ### 网站素材
-- 不同于contents，这里主要放素材，比如图片、CSS、JS等。
+- 网站素材放在`assets`文件夹下。
+- 不同于`collections`，这里主要放素材，比如图片、CSS、JS等。
 
 ## 🎨 代码风格
 ## 基本风格
