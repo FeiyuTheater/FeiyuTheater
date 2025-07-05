@@ -52,7 +52,7 @@ MacOS系统自带Ruby环境，但版本较低。推荐通过以下步骤安装`r
 - Boostrap
   - 务必了解一下Layout Grid
 - SCSS
-- Jekyll
+- Jekyll ([step-by-step guide](https://jekyllrb.com/docs/step-by-step/01-setup/))
   - Includes
   - Collections
 
