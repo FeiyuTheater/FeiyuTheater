@@ -18,6 +18,11 @@ MacOS系统自带Ruby环境，但版本较低。推荐通过以下步骤安装`r
 2. 安装`ruby-3.1`：
    ```bash
    rvm install ruby-3.1
+
+   # The following command has to be run in a login shell.
+   # Use `/bin/bash --login` to start a login shell.
+   # Add `source ~/.rvm/scripts/rvm` to your .bashrc to ensure that
+   # the updated ruby is used upon shell startup.
    rvm --default ruby-3.1
 
    # after install, check if the local install is used
