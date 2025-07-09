@@ -1,6 +1,6 @@
 ---
-title: "大大新闻"
-date: 1998-02-27
+title: "巨大新闻"
+date: 1991-01-08
 image: /assets/imgs/placeholder-news.jpg
 ---
 

@@ -1,4 +1,107 @@
 @use "base/variables" as *;
-body { 
-    background-color: $primary-color;
+
+body {
+    background-color: $background-color;
+    color: $text-color;
+    font-family: 'Georgia', serif;
+    font-size: $font-size;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    padding-top: var(--navbar-height, 150px); // Use navbar height variable with fallback
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-content {
+    width: 100%;
+    min-height: calc(100vh - var(--navbar-height, 150px) - 100px); // Full height minus navbar and footer
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 95% !important; // Use percentage for more adaptiveness
+    width: 1400px !important; // Wider default width
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    box-sizing: border-box; // Include padding in width calculation
+}
+
+// Center Bootstrap rows and columns
+.row {
+    width: 100%;
+    justify-content: center;
+}
+
+.col-12 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+// Selective content alignment - only center text in specific pages
+.news-page h1,
+.news-page h2,
+.news-page p,
+.projects-page h1,
+.projects-page h2,
+.projects-page p {
+    text-align: center;
+}
+
+// About & Contact page styling
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    margin: 40px 0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    &:hover {
+        color: $secondary-color;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ddd; // Fallback color if image not found
+    min-height: 200px; // Ensure space is reserved even if image fails to load
+}
+
+// Banner section styling
+#banner {
+    text-align: center;
+    margin-bottom: 40px;
 }

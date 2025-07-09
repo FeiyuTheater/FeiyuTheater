@@ -8,18 +8,17 @@ js: home.js
 
 <!-- Page Banner Section -->
 <section id="banner" class="banner">
-    <h1 class="title mb-4">Banner Placeholder</h1>
+    <h1 class="title mb-4">非鱼剧社</h1>
+    <p class="lead">副标题</p>
 </section>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2 class="m-4">Subheading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="col-md-6">
-            <h2 class="m-4">Subheading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+<div class="row">
+    <div class="col-md-6">
+        <h2 class="m-4">我们的使命</h2>
+        <p>blablabla</p>
+    </div>
+    <div class="col-md-6">
+        <h2 class="m-4">加入我们</h2>
+        <p>blablabla</p>
     </div>
 </div>

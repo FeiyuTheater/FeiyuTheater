@@ -10,14 +10,17 @@
         </button>
         <div id="navbar_main" class="collapse navbar-collapse">
             <ul class="navbar-nav">
-                <li class="navbar-item mr-5">
-                <a href="#" class="nav-link">非鱼主页</a>
+                <li class="navbar-item mr-5 {% if page.url == '/' %}active{% endif %}">
+                <a href="/" class="nav-link">主页</a>
                 </li>
-                <li class="navbar-item mr-5">
-                <a href="#" class="nav-link">往期作品</a>
+                <li class="navbar-item mr-5 {% if page.url contains '/projects/' %}active{% endif %}">
+                <a href="/projects/" class="nav-link">非鱼制作</a>
                 </li>
-                <li class="navbar-item mr-5">
-                <a href="#" class="nav-link">关于非鱼</a>
+                <li class="navbar-item mr-5 {% if page.url contains '/news/' %}active{% endif %}">
+                <a href="/news/" class="nav-link">最新动态</a>
+                </li>
+                <li class="navbar-item mr-5 {% if page.url contains '/about/' %}active{% endif %}">
+                <a href="/about/" class="nav-link">关于我们</a>
                 </li>
             </ul>
         </div>

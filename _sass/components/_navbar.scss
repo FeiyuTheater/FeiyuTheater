@@ -1,0 +1,37 @@
+@use "../base/variables" as *;
+
+.bg-navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid $secondary-color;
+}
+
+.navbar-normal {
+    padding: 15px 0;
+    transition: all 0.3s ease;
+    --navbar-height: 70px; // Estimated height based on padding and content
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+    &:hover {
+        color: $secondary-color !important;
+    }
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-item.active .nav-link {
+    color: $secondary-color !important;
+    border-bottom: 2px solid $secondary-color;
+}

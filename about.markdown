@@ -1,19 +1,32 @@
 ---
 layout: about
 js: about.js
-title: About
+title: About & Contact
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+# 关于非鱼剧社
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
+## 历史
 
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
+非鱼剧社bla bla bla
+
+## 使命
+
+让世界上不再有贫穷、饥饿和犯罪。
+
+## 加入我们
+
+欢迎加入！
+
+---
+
+# 联系方式
+
+联系我们！
 
 
-[jekyll-organization]: https://github.com/jekyll
+- **Email:**
+- **小红书：**
+- **Instagram：**
+
