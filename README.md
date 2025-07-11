@@ -1,6 +1,18 @@
 # FeiyuTheater
 非鱼剧社官方网站
 
+# 资源
+- 最终设计文件：https://drive.google.com/file/d/13Palsyuoxjm9LEBVaG8Hfr_geA9Atpet/view?usp=sharing
+
+# 维护建议与标准
+- Branch命名规格：`dev/<name>/<feature-name>`
+- 每个PR尽量小，比如现在我要implement主页，可能一个change只改layout，一个change改CSS。或者一个PR中包含几个commits，每个commit对应一种change（比如layout，css）
+- 在一开始不太熟悉Jekyll，HTML和CSS的时候，可以尽量多做小的change，然后开PR，收集反馈
+- 逻辑相同的change需要在一个commit里，所以如果你反复做了不同的修改，则需要squash （`git rebase -i HEAD~4`）这个操作就会让你选择在最新的4个commits里哪个要squash
+- 没有素材文件的话，比如一些图片（稍后会更新），就用纯色背景代替。
+- implement的时候尽量多想各元素之间的层级关系，比如我现在看到了左右两边margin比较大，需要考虑是这个元素（DOM）的问题，还是它Parent DOM的问题
+- 多多利用浏览器的开发模式调试，可以可视化每个元素的位置，CSS等
+
 # 维护教程
 ## 🧑🏻‍💻 环境配置
 可以参考[Notion文档](https://www.notion.so/bodong/Skeleton-Bringup-21637fe020f38047a325dcd759ae7829?source=copy_link)。
@@ -106,6 +118,7 @@ your-jekyll-site/
 - 所有的folder structure尽量有逻辑性，反应hierarchy关系。
 
 ## 关于如何使用Bootstrap
+- 如果可以用Bootstrap，尽量别用自带的CSS （比如CSS可以用margin来控制边框空白的大小，但是可以直接用Bootstrap的m-1，m-2之类的话就直接用）
 - 不要在特定的元素上直接堆叠Bootstrap的类，而是利用SCSS的`@extend`来把Bootstrap类加到特定的类上。下面的例子对比了两种代码风格：
 ```html
 
