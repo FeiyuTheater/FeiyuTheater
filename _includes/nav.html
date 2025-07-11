@@ -1,21 +1,52 @@
-<!-- Navigation Bar Section -->
-<nav id="navbar" class="navbar navbar-expand-sm bg-navbar fixed-top navbar-normal">
-    <div class="container">
-        <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbar_main">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="navbar_main" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="navbar-item mr-5">
-                    <a href="#" class="nav-link">非鱼主页</a>
-                </li>
-                <li class="navbar-item mr-5">
-                    <a href="{{ '/prev-work' | relative_url }}" class="nav-link">往期作品</a>
-                </li>
-                <li class="navbar-item mr-5">
-                    <a href="#" class="nav-link">关于非鱼</a>
-                </li>
-            </ul>
+<!-- _includes/navbar.html -->
+<nav class="navbar">
+    <div class="navbar-container">
+      <!-- Left side: Logo + Navigation -->
+      <div class="navbar-left">
+        <a href="{{ site.baseurl }}/" class="navbar-logo">
+          <img src="{{ site.baseurl }}/assets/imgs/logo.png" alt="{{ site.title }}">
+        </a>
+        
+        <ul class="navbar-nav">
+          <li class="navbar-item">
+            <a href="{{ site.baseurl }}/prev-work" class="navbar-link">往期作品</a>
+          </li>
+          <li class="navbar-item">
+            <a href="{{ site.baseurl }}/about" class="navbar-link">关于我们</a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Mobile menu toggle -->
+      <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+        <span class="navbar-toggle-icon"></span>
+        <span class="navbar-toggle-icon"></span>
+        <span class="navbar-toggle-icon"></span>
+      </button>
+  
+      <!-- Right side: Action buttons -->
+      <div class="navbar-actions">
+        <a href="#" class="navbar-btn navbar-btn-outline">联系我们</a>
+        <a href="#" class="navbar-btn navbar-btn-filled">支持我们</a>
+      </div>
+  
+      <!-- Mobile menu (hidden on desktop) -->
+      <div class="navbar-mobile-menu" id="navbar-menu">
+        <ul class="navbar-nav-mobile">
+          <li class="navbar-item">
+            <a href="{{ site.baseurl }}/prev-work" class="navbar-link">往期作品</a>
+          </li>
+          <li class="navbar-item">
+            <a href="{{ site.baseurl }}/about" class="navbar-link">关于我们</a>
+          </li>
+        </ul>
+        
+        <div class="navbar-actions-mobile">
+          <a href="#" class="navbar-btn navbar-btn-outline">联系我们</a>
+          <a href="#" class="navbar-btn navbar-btn-filled">支持我们</a>
         </div>
+      </div>
     </div>
-</nav>
+  </nav>
+  
+  <!-- JavaScript is now imported in the layout file -->
