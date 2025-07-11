@@ -1,10 +1,12 @@
-// assets/js/navbar.js
+console.log("navbar loaded")
+
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('navbar-toggle');
     const navbarMobileMenu = document.querySelector('.navbar-mobile-menu');
 
     // Toggle mobile menu
     function toggleMenu() {
+        console.log("toggle menu!")
         if (navbarMobileMenu) {
             navbarMobileMenu.classList.toggle('active');
         }

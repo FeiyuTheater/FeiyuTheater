@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: prev-work
 title: 往期作品
 permalink: /prev-work
 works:
@@ -29,18 +29,12 @@ works:
 ---
 <!-- Header Include -->
 
-{%include header.html %}
-
 <!-- Hero Banner Section -->
 <section class="hero-banner">
   <div class="hero-overlay">
     <h1 class="hero-title">往期作品</h1>
   </div>
 </section>
-
-<!-- Navigation Include -->
-
-{% include nav.html %}
 
 <!-- Main Content -->
 <main class="prev-works-main">
@@ -57,7 +51,3 @@ works:
     </div>
   </div>
 </main>
-
-<!-- Footer Include -->
-
-{% include footer.html %}
