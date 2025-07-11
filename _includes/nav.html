@@ -1,23 +1,19 @@
 <!-- Navigation Bar Section -->
 <nav id="navbar" class="navbar navbar-expand-sm bg-navbar navbar-normal">
     <div class="container">
-        <button
-            class="navbar-toggler border-0"
-            data-toggle="collapse"
-            data-target="#navbar_main"
-        >
+        <button class="navbar-toggler border-0" data-toggle="collapse" data-target="#navbar_main">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div id="navbar_main" class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="navbar-item mr-5">
-                <a href="#" class="nav-link">非鱼主页</a>
+                    <a href="#" class="nav-link">非鱼主页</a>
                 </li>
                 <li class="navbar-item mr-5">
-                <a href="#" class="nav-link">往期作品</a>
+                    <a href="{{ '/prev-work' | relative_url }}" class="nav-link">往期作品</a>
                 </li>
                 <li class="navbar-item mr-5">
-                <a href="#" class="nav-link">关于非鱼</a>
+                    <a href="#" class="nav-link">关于非鱼</a>
                 </li>
             </ul>
         </div>
