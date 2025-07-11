@@ -1,6 +1,6 @@
 @use "vendors/bootstrap-min";
 
-.banner {
+.home-banner {
     height: 50vh;
     color: white;
     background-color: black;
@@ -15,7 +15,7 @@
     @extend .justify-content-center;
 }
 
-.banner .container {
+.home-banner .container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,4 +32,10 @@
 .banner-text {
     flex: 1;
     padding: 40px;
+}
+
+.banner-text h2,
+.banner-text p,
+.countdown div {
+    color: white !important;
 }
