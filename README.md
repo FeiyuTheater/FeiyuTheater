@@ -2,7 +2,7 @@
 非鱼剧社官方网站
 
 # 资源
-- 最终设计文件：https://drive.google.com/file/d/13Palsyuoxjm9LEBVaG8Hfr_geA9Atpet/view?usp=sharing
+- 🎨 最终设计文件去这里找: [设计文件网盘地址](https://drive.google.com/file/d/13Palsyuoxjm9LEBVaG8Hfr_geA9Atpet/view?usp=sharing)
 
 # 维护建议与标准
 - Branch命名规格：`dev/<name>/<feature-name>`
