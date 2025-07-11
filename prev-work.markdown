@@ -27,9 +27,6 @@ works:
     image: "/assets/imgs/behanding.png"
     date: "2024年8月"
 ---
-<!-- Header Include -->
-
-{%include header.html %}
 
 <!-- Hero Banner Section -->
 <section class="hero-banner">
@@ -37,10 +34,6 @@ works:
     <h1 class="hero-title">往期作品</h1>
   </div>
 </section>
-
-<!-- Navigation Include -->
-
-{% include nav.html %}
 
 <!-- Main Content -->
 <main class="prev-works-main">
@@ -57,7 +50,3 @@ works:
     </div>
   </div>
 </main>
-
-<!-- Footer Include -->
-
-{% include footer.html %}
