@@ -35,12 +35,9 @@ plugins:
   - jekyll-feed
 
 collections:
-  news:
-    source: collections/_news
-  projects:
+  works:
     output: true
-    source: collections/_projects
-    permalink: /projects/:name
+    permalink: /prev-work/:name/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
