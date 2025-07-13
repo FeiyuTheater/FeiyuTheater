@@ -84,7 +84,7 @@ your-jekyll-site/
 │   │       └── breadcrumb.html
 │   ├── layout-parts/
 │   │   ├── head.html
-│   │   ├── header.html
+│   │   ├── nav.html
 │   │   ├── footer.html
 │   │   └── projects/
 │   │       └── project-specific-part.html
