@@ -27,7 +27,10 @@ works:
     image: "/assets/imgs/behanding.png"
     date: "2024年8月"
 ---
+<<<<<<< HEAD
+=======
 <!-- Header Include -->
+>>>>>>> main
 
 <!-- Hero Banner Section -->
 <section class="hero-banner">
