@@ -1,0 +1,130 @@
+<svg viewBox="0 0 1200 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Base gradient background -->
+  <defs>
+    <!-- Main background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#16213e;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0f3460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0e2954;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Spotlight gradients -->
+    <radialGradient id="spotlight1" cx="20%" cy="10%" r="40%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#ffed4a;stop-opacity:0.15" />
+      <stop offset="100%" style="stop-color:#transparent;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="spotlight2" cx="80%" cy="15%" r="35%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.25" />
+      <stop offset="50%" style="stop-color:#ff8e8e;stop-opacity:0.12" />
+      <stop offset="100%" style="stop-color:#transparent;stop-opacity:0" />
+    </radialGradient>
+    
+    <radialGradient id="spotlight3" cx="50%" cy="20%" r="45%">
+      <stop offset="0%" style="stop-color:#4ecdc4;stop-opacity:0.2" />
+      <stop offset="50%" style="stop-color:#7fcdcd;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#transparent;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- Curtain gradient -->
+    <linearGradient id="curtainGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b0000;stop-opacity:0.8" />
+      <stop offset="15%" style="stop-color:#a00000;stop-opacity:0.6" />
+      <stop offset="30%" style="stop-color:#8b0000;stop-opacity:0.4" />
+      <stop offset="70%" style="stop-color:#a00000;stop-opacity:0.4" />
+      <stop offset="85%" style="stop-color:#8b0000;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <!-- Stage floor gradient -->
+    <linearGradient id="stageGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#transparent;stop-opacity:0" />
+      <stop offset="60%" style="stop-color:#2c1810;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#1a0f08;stop-opacity:0.6" />
+    </linearGradient>
+    
+    <!-- Particle filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Stage floor -->
+  <rect width="1200" height="300" fill="url(#stageGradient)"/>
+  
+  <!-- Spotlight beams -->
+  <rect width="1200" height="300" fill="url(#spotlight1)"/>
+  <rect width="1200" height="300" fill="url(#spotlight2)"/>
+  <rect width="1200" height="300" fill="url(#spotlight3)"/>
+  
+  <!-- Theatre curtains (left) -->
+  <path d="M 0 0 Q 80 20 0 40 Q 80 60 0 80 Q 80 100 0 120 Q 80 140 0 160 Q 80 180 0 200 Q 80 220 0 240 Q 80 260 0 280 L 0 300 L 120 300 L 120 0 Z" 
+        fill="url(#curtainGradient)" opacity="0.7"/>
+  
+  <!-- Theatre curtains (right) -->
+  <path d="M 1200 0 Q 1120 20 1200 40 Q 1120 60 1200 80 Q 1120 100 1200 120 Q 1120 140 1200 160 Q 1120 180 1200 200 Q 1120 220 1200 240 Q 1120 260 1200 280 L 1200 300 L 1080 300 L 1080 0 Z" 
+        fill="url(#curtainGradient)" opacity="0.7"/>
+  
+  <!-- Stage lights -->
+  <g filter="url(#glow)">
+    <!-- Left stage light -->
+    <circle cx="200" cy="40" r="8" fill="#ffd700" opacity="0.8"/>
+    <circle cx="200" cy="40" r="4" fill="#fff" opacity="0.9"/>
+    
+    <!-- Center stage lights -->
+    <circle cx="400" cy="25" r="6" fill="#ff6b6b" opacity="0.7"/>
+    <circle cx="400" cy="25" r="3" fill="#fff" opacity="0.8"/>
+    
+    <circle cx="600" cy="30" r="7" fill="#4ecdc4" opacity="0.8"/>
+    <circle cx="600" cy="30" r="3" fill="#fff" opacity="0.9"/>
+    
+    <circle cx="800" cy="25" r="6" fill="#ffd700" opacity="0.7"/>
+    <circle cx="800" cy="25" r="3" fill="#fff" opacity="0.8"/>
+    
+    <!-- Right stage light -->
+    <circle cx="1000" cy="40" r="8" fill="#ff6b6b" opacity="0.8"/>
+    <circle cx="1000" cy="40" r="4" fill="#fff" opacity="0.9"/>
+  </g>
+  
+  <!-- Light beams -->
+  <g opacity="0.15">
+    <polygon points="200,40 150,300 250,300" fill="#ffd700"/>
+    <polygon points="400,25 350,300 450,300" fill="#ff6b6b"/>
+    <polygon points="600,30 550,300 650,300" fill="#4ecdc4"/>
+    <polygon points="800,25 750,300 850,300" fill="#ffd700"/>
+    <polygon points="1000,40 950,300 1050,300" fill="#ff6b6b"/>
+  </g>
+  
+  <!-- Atmospheric particles -->
+  <g opacity="0.6">
+    <circle cx="150" cy="80" r="1.5" fill="#ffd700"/>
+    <circle cx="320" cy="120" r="1" fill="#ff6b6b"/>
+    <circle cx="480" cy="90" r="1.5" fill="#4ecdc4"/>
+    <circle cx="650" cy="140" r="1" fill="#ffd700"/>
+    <circle cx="820" cy="100" r="1.5" fill="#ff6b6b"/>
+    <circle cx="980" cy="110" r="1" fill="#4ecdc4"/>
+    <circle cx="1100" cy="85" r="1.5" fill="#ffd700"/>
+    
+    <circle cx="180" cy="160" r="1" fill="#ffd700"/>
+    <circle cx="360" cy="180" r="1.5" fill="#ff6b6b"/>
+    <circle cx="540" cy="150" r="1" fill="#4ecdc4"/>
+    <circle cx="720" cy="190" r="1.5" fill="#ffd700"/>
+    <circle cx="900" cy="170" r="1" fill="#ff6b6b"/>
+    <circle cx="1080" cy="155" r="1.5" fill="#4ecdc4"/>
+  </g>
+  
+  <!-- Subtle texture overlay -->
+  <rect width="1200" height="300" fill="url(#bgGradient)" opacity="0.1"/>
+  
+  <!-- Bottom shadow for text readability -->
+  <rect x="0" y="200" width="1200" height="100" fill="url(#stageGradient)" opacity="0.8"/>
+</svg>

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: prev-work
 title: 往期作品
 permalink: /prev-work
 works:
@@ -27,6 +27,10 @@ works:
     image: "/assets/imgs/behanding.png"
     date: "2024年8月"
 ---
+<<<<<<< HEAD
+=======
+<!-- Header Include -->
+>>>>>>> main
 
 <!-- Hero Banner Section -->
 <section class="hero-banner">
