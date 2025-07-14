@@ -34,9 +34,11 @@ github_username:  jekyll
 plugins:
   - jekyll-feed
 
+# Collection directory settings
+collections_dir: collections
 collections:
   news:
-    source: collections/_news
+    output: true
   works:
     output: true
     permalink: /prev-work/:name/
