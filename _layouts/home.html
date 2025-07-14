@@ -1,104 +1,94 @@
-<!-- Navigation -->
-{% include nav.html %}
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Banner -->
-<section class="banner d-flex align-items-center">
-    <div class="container d-flex flex-wrap justify-content-between align-items-center">
-        <div class="banner-text" style="color: white;">
-            <h2>这个男人来自地球</h2>
-            <p class="mb-2">2025年6月8日 2:00PM<br>地点：SJSU Hammer Theatre, San Jose, CA</p>
-            <button class="btn btn-danger mb-3">点击购票</button>
-            <div class="countdown d-flex text-white">
-                <div class="me-3"><span>09</span> 天</div>
-                <div class="me-3"><span>19</span> 小时</div>
-                <div class="me-3"><span>15</span> 分</div>
-                <div><span>03</span> 秒</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+    <style>
+        section {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .banner {
+            background: black;
+            color: white;
+        }
+
+        .banner .container {
+            flex-direction: row;
+        }
+
+        .recent-events .container,
+        .main-pre-work .container {
+            text-align: center;
+        }
+
+        .banner-text h2,
+        .banner-text p,
+        .countdown div {
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        {% include nav.html %}
+    </header>
+
+    <main>
+        <!-- Banner -->
+        <section class="banner d-flex align-items-center">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center">
+                <div class="banner-text">
+                    <h2>这个男人来自地球aaa</h2>
+                    <p class="mb-2">2025年6月8日 2:00PM<br>地点：SJSU Hammer Theatre, San Jose, CA</p>
+                    <button class="btn btn-danger mb-3">点击购票</button>
+                    <div class="countdown d-flex">
+                        <div class="me-3"><span>09</span> 天</div>
+                        <div class="me-3"><span>19</span> 小时</div>
+                        <div class="me-3"><span>15</span> 分</div>
+                        <div><span>03</span> 秒</div>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <img src="/assets/images/banner-main.jpg" class="img-fluid" alt="Banner Image">
+                </div>
             </div>
-        </div>
-        <div class="banner-image">
-            <img src="/assets/images/banner-main.jpg" class="img-fluid" alt="Banner Image">
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- 近期活动 -->
-<section class="recent-events py-5">
-    <div class="container">
-        <h2 class="text-center mb-4 text-danger">近期活动</h2>
+        <!-- 近期活动 -->
+        {% include layout-parts/home-layout-parts/recent-events.html %}
 
-        <div class="event-item row mb-4">
-            <div class="col-md-4">
-                <img src="/assets/images/event1.jpg" class="img-fluid" alt="活动1">
-            </div>
-            <div class="col-md-8">
-                <p class="text-danger fw-bold">2025-06-08</p>
-                <h4>话剧《这个男人来自地球》</h4>
-                <p>地点：SJSU Hammer Theatre, San Jose, CA</p>
-                <p>这是一个关于一位大学教授突然宣布自己活了上万年的故事，引发了一连串令人深思的哲学对话和人性探讨。</p>
-                <button class="btn btn-danger">点击购票</button>
-            </div>
-        </div>
+        <!-- 往期作品 -->
+        {% include layout-parts/home-layout-parts/pre-works.html %}
 
-        <div class="event-item row mb-4">
-            <div class="col-md-4">
-                <img src="/assets/images/event2.jpg" class="img-fluid" alt="活动2">
-            </div>
-            <div class="col-md-8">
-                <p class="text-danger fw-bold">2025-03-08</p>
-                <h4>话剧《娜拉归来》</h4>
-                <p>地点：SJSU Hammer Theatre, San Jose, CA</p>
-                <p>延续易卜生经典话剧《玩偶之家》主题，探讨现代女性在社会中面对的选择与挑战。</p>
-                <button class="btn btn-danger">点击购票</button>
-            </div>
-        </div>
-    </div>
-</section>
+    </main>
 
-<!-- 往期作品 -->
-<section class="prev-works py-5 bg-light">
-    <div class="container text-center">
-        <h2 class="mb-4 text-danger">往期作品</h2>
-        <div class="row justify-content-center">
-            <div class="col-6 col-md-3 mb-3">
-                <img src="/assets/images/work1.jpg" class="img-fluid" alt="作品1">
-                <p>每一件美妙的小事</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="/assets/images/work2.jpg" class="img-fluid" alt="作品2">
-                <p>艺术作品</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="/assets/images/work3.jpg" class="img-fluid" alt="作品3">
-                <p>剧组招募</p>
-            </div>
-        </div>
-        <button class="btn btn-danger">查看更多</button>
-    </div>
-</section>
+    <footer>
+        {% include footer.html %}
+    </footer>
 
-<!-- Footer -->
-{% include footer.html %}
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    <script src="{{ " /assets/js/navbar.js" | relative_url }}"></script>
+    {% if page.js %}
+    <script src="{{ '/assets/js/pages/' | append: page.js | relative_url }}"></script>
+    {% endif %}
+</body>
 
-
-<style>
-    section {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .banner {
-        background: black;
-    }
-
-    .banner .container {
-        flex-direction: row;
-    }
-
-    .recent-events .container,
-    .prev-works .container {
-        text-align: center;
-    }
-</style>
+</html>
