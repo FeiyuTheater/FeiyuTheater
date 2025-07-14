@@ -2,7 +2,8 @@
 非鱼剧社官方网站
 
 # 资源
-- 最终设计文件：https://drive.google.com/file/d/13Palsyuoxjm9LEBVaG8Hfr_geA9Atpet/view?usp=sharing
+- 🎨 最终设计文件去这里找: [设计文件网盘地址](https://drive.google.com/file/d/13Palsyuoxjm9LEBVaG8Hfr_geA9Atpet/view?usp=sharing)
+- 📝 计划与分工：[Notion页面](https://www.notion.so/bodong/21637fe020f38061ab33dfb9d4840dea?v=21637fe020f380b9ba8b000cf01fe1c6&source=copy_link)
 
 # 维护建议与标准
 - Branch命名规格：`dev/<name>/<feature-name>`
@@ -84,7 +85,7 @@ your-jekyll-site/
 │   │       └── breadcrumb.html
 │   ├── layout-parts/
 │   │   ├── head.html
-│   │   ├── header.html
+│   │   ├── nav.html
 │   │   ├── footer.html
 │   │   └── projects/
 │   │       └── project-specific-part.html
