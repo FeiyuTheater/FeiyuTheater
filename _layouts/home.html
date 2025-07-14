@@ -12,11 +12,8 @@
 
     <style>
         section {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            padding-top: 80px;
+            padding-bottom: 80px;
         }
 
         .banner {
@@ -37,6 +34,14 @@
         .banner-text p,
         .countdown div {
             color: white !important;
+        }
+
+        .divider-line {
+            width: 100%;
+            max-width: 1200px;
+            height: 1px;
+            background-color: #ccc;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -62,13 +67,15 @@
                     </div>
                 </div>
                 <div class="banner-image">
-                    <img src="/assets/images/banner-main.jpg" class="img-fluid" alt="Banner Image">
+                    <img src="/assets/imgs/the-man-from-earth.png" class="img-fluid" alt="Banner Image">
                 </div>
             </div>
         </section>
 
         <!-- 近期活动 -->
         {% include layout-parts/home-layout-parts/recent-events.html %}
+
+        <div class="divider-line my-4"></div>
 
         <!-- 往期作品 -->
         {% include layout-parts/home-layout-parts/pre-works.html %}
