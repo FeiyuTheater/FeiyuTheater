@@ -35,6 +35,8 @@ plugins:
   - jekyll-feed
 
 collections:
+  news:
+    source: collections/_news
   works:
     output: true
     permalink: /prev-work/:name/
