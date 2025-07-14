@@ -4,7 +4,7 @@
 <!-- Banner -->
 <section class="banner d-flex align-items-center">
     <div class="container d-flex flex-wrap justify-content-between align-items-center">
-        <div class="banner-text text-white">
+        <div class="banner-text" style="color: white;">
             <h2>这个男人来自地球</h2>
             <p class="mb-2">2025年6月8日 2:00PM<br>地点：SJSU Hammer Theatre, San Jose, CA</p>
             <button class="btn btn-danger mb-3">点击购票</button>
@@ -78,3 +78,27 @@
 
 <!-- Footer -->
 {% include footer.html %}
+
+
+<style>
+    section {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .banner {
+        background: black;
+    }
+
+    .banner .container {
+        flex-direction: row;
+    }
+
+    .recent-events .container,
+    .prev-works .container {
+        text-align: center;
+    }
+</style>
