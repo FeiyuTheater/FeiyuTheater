@@ -2,17 +2,26 @@
     <div class="container text-center">
         <h2 class="mb-4 text-danger">往期作品</h2>
         <div class="row justify-content-center">
-            <div class="col-6 col-md-3 mb-3">
-                <img src="/assets/imgs/art.png" class="img-fluid" alt="作品1">
-                <p>艺术</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="/assets/imgs/a-dolls-house.png" class="img-fluid" alt="作品2">
-                <p>玩偶之家2</p>
-            </div>
-            <div class="col-6 col-md-3 mb-3">
-                <img src="/assets/imgs/behanding.png" class="img-fluid" alt="作品3">
-                <p>断手斯城</p>
+            <div class="container py-4">
+                <div class="works-grid">
+                    {% include components/card.html
+                    img="/assets/imgs/the-message.png"
+                    alt="这个男人来自地球"
+                    date="2025年1月"
+                    title="这个男人来自地球" %}
+
+                    {% include components/card.html
+                    img="/assets/imgs/the-man-from-earth.png"
+                    alt="这个男人来自地球"
+                    date="2025年1月"
+                    title="这个男人来自地球" %}
+
+                    {% include components/card.html
+                    img="/assets/imgs/the-man-from-earth.png"
+                    alt="这个男人来自地球"
+                    date="2025年1月"
+                    title="这个男人来自地球" %}
+                </div>
             </div>
         </div>
         <button class="btn btn-danger">查看更多</button>
