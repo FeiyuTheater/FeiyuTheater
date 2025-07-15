@@ -4,9 +4,6 @@ title: 往期作品
 permalink: /prev-work
 ---
 
-<!-- Header Include -->
->>>>>>> main
-
 <!-- Hero Banner Section -->
 <section class="hero-banner">
   <div class="hero-overlay">
