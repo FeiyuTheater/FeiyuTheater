@@ -34,13 +34,14 @@ github_username:  jekyll
 plugins:
   - jekyll-feed
 
+# Collection directory settings
+collections_dir: collections
 collections:
   news:
-    source: collections/_news
-  projects:
     output: true
-    source: collections/_projects
-    permalink: /projects/:name
+  works:
+    output: true
+    permalink: /prev-work/:name/
 
 # Exclude from processing.
 # The following items will not be processed, by default.
