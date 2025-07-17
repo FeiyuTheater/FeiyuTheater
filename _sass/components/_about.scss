@@ -1,0 +1,26 @@
+@use "vendors/bootstrap-min";
+
+#threeUpCarousel .carousel-item img {
+  height: 240px;           /* set your preferred height */
+  object-fit: cover;       /* neat crop */
+}
+
+.photo-card {
+      @extend .col-12;
+    @extend .col-md-4;
+
+    img {
+      @extend .d-block;
+      @extend .w-100;
+      @extend .rounded;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      
+      img {
+        transform: scale(1.1);
+      }
+    }
+
+}

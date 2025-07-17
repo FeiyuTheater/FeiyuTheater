@@ -27,10 +27,6 @@ works:
     image: "/assets/imgs/behanding.png"
     date: "2024年8月"
 ---
-<<<<<<< HEAD
-=======
-<!-- Header Include -->
->>>>>>> main
 
 <!-- Hero Banner Section -->
 <section class="hero-banner">
@@ -42,15 +38,25 @@ works:
 <!-- Main Content -->
 <main class="prev-works-main">
   <div class="container">
-    <!-- Works Grid -->
-    <div class="works-grid">
-      {% for work in page.works %}
-        {% include components/card.html 
-           image=work.image 
-           date=work.date 
-           title=work.title 
-        %}
-      {% endfor %}
+    <div id="carousel-example-multi" class="carousel carousel-multi slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-multi" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-multi" data-slide-to="1"></li>
+        <li data-target="#carousel-example-multi" data-slide-to="2"></li>
+        <li data-target="#carousel-example-multi" data-slide-to="3"></li>
+        <li data-target="#carousel-example-multi" data-slide-to="4"></li>
+        <li data-target="#carousel-example-multi" data-slide-to="5"></li>
+      </ol>
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-multi" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-multi" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
 </main>
