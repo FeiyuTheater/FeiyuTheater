@@ -39,6 +39,7 @@ collections_dir: collections
 collections:
   news:
     output: true
+    permalink: /news/:name/
   works:
     output: true
     permalink: /prev-work/:name/
