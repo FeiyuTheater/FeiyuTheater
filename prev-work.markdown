@@ -28,5 +28,3 @@ permalink: /prev-work
     </div>
   </div>
 </main>
-
-<script include 
