@@ -1,13 +1,68 @@
-// _footer.scss
+// Base styles for sticky footer
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// Main wrapper for sticky footer layout
+.site-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// Header styles
+.site-header {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    border-bottom: 1px solid #e9ecef;
+
+    nav {
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin: 0;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+
+                &:hover {
+                    color: #007bff;
+                }
+            }
+        }
+    }
+}
+
+// Main content area
+.site-main {
+    flex: 1; // This makes the main content area expand to fill available space
+    padding: 40px 0;
+
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+
+// Footer styles (updated from your original)
 .footer {
     background-color: rgb(35, 35, 35);
     color: rgb(135, 135, 135);
     width: 100%;
     padding: 40px 0 20px 0;
-    position: relative;
-    z-index: 900;
     font-size: 0.875rem;
     letter-spacing: 0.02em;
+    margin-top: auto; // This ensures footer stays at bottom when content is short
 
     &-container {
         max-width: 1200px;
@@ -158,11 +213,35 @@
             gap: 30px;
             text-align: center;
             margin-bottom: 20px;
+            align-items: center;
         }
         
         &-social,
         &-subscription {
             min-width: auto;
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+                text-align: center;
+                justify-content: center;
+            }
+        }
+
+        &-subscription {
+            p {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        &-copyright {
+            text-align: center;
+            width: 100%;
         }
     }
     
@@ -173,9 +252,17 @@
     .subscription-form {
         flex-direction: column;
         gap: 12px;
+        width: 100%;
+        align-items: center;
+
+        input {
+            width: 100%;
+            text-align: center;
+        }
 
         button {
             width: 100%;
+            max-width: 200px;
         }
     }
 }
@@ -188,19 +275,39 @@
             padding: 0 15px;
             gap: 25px;
             margin-bottom: 15px;
+            align-items: center;
+        }
+
+        &-social,
+        &-subscription {
+            max-width: 320px;
         }
 
         &-copyright {
             padding: 15px 0;
+            text-align: center;
+            width: 100%;
         }
+    }
+    
+    .site-main {
+        padding: 20px 0;
     }
     
     .social-icons {
         gap: 12px;
+        justify-content: center;
     }
     
     .social-icon {
         width: 35px;
         height: 35px;
+    }
+
+    .subscription-form {
+        input {
+            text-align: left;
+            padding-left: 16px;
+        }
     }
 }
