@@ -228,20 +228,20 @@
 }
 
 // Animation variations for grid items
-.works-grid .card-component {
-    &:nth-child(3n+1) {
+.works-grid .work-link {
+    &:nth-child(3n+1) .card-component{
         &:hover {
             transform: translateY(-8px) scale(1.02) rotate(1deg);
         }
     }
 
-    &:nth-child(3n+2) {
+    &:nth-child(3n+2) .card-component {
         &:hover {
             transform: translateY(-8px) scale(1.02);
         }
     }
 
-    &:nth-child(3n+3) {
+    &:nth-child(3n+3) .card-component {
         &:hover {
             transform: translateY(-8px) scale(1.02) rotate(-1deg);
         }
