@@ -849,12 +849,20 @@ $brown-dark: #8b5a3c;
 
     img {
         max-width: 500px;
+        width: 50%; /* Make logo size relative to container width */
         height: auto;
         filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
     }
 }
 
 // Responsive styles for About page
+@media (max-width: 992px) {
+    .hero-logo img {
+        width: 60%; /* Slightly larger percentage on medium screens */
+        max-width: 400px;
+    }
+}
+
 @media (max-width: 768px) {
     .about-main {
         padding: 40px 15px;
@@ -887,7 +895,15 @@ $brown-dark: #8b5a3c;
     }
 
     .hero-logo img {
-        max-width: 750px;
+        width: 70%; /* Larger percentage on mobile for better visibility */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo img {
+        width: 80%; /* Even larger percentage on small mobile screens */
+        max-width: 250px;
     }
 }
 
