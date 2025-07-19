@@ -6,20 +6,51 @@ layout: home
 js: home.js
 ---
 
-<!-- Page Banner Section -->
-<section id="banner" class="banner">
-    <h1 class="title mb-4">Banner Placeholder</h1>
+<!-- banner in home page -->
+<section class="banner-main-page">
+  {% for new in site.news limit:1 %}
+      {% include components/banner-content.html
+         image=new.new_details.poster_image
+         event_time=new.new_details.event_time
+         title=new.new_details.title
+         location=new.new_details.location
+      %}
+    {% endfor %}
 </section>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h2 class="m-4">Subheading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div class="col-md-6">
-            <h2 class="m-4">Subheading</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+<!-- recent events -->
+<section class="recent-events">
+  <div class="container">
+    <h2>近期活动</h2>
+    {% for new in site.news limit:3 %}
+      {% include components/recent-event-item.html
+         image=new.new_details.poster_image
+         event_time=new.new_details.event_time
+         title=new.new_details.title
+         location=new.new_details.location
+         description=new.new_details.description
+      %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- pre works -->
+<section class="home-pre-works">
+  <div class="container">
+    <h2>往期作品</h2>
+    <div class="works-grid">
+      {% for work in site.works limit:3 %}
+        <a href="{{ work.url | relative_url }}" class="work-link">
+          {% include components/card.html 
+             image=work.work_details.poster_image 
+             date=work.work_details.date 
+             title=work.work_details.title 
+          %}
+        </a>
+      {% endfor %}
     </div>
-</div>
+    <div class="load-more-button-wrapper">
+      <button class="btn btn-danger">查看更多</button>
+    </div>
+  </div>
+</section>
