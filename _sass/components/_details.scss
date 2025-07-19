@@ -679,3 +679,104 @@ $brown-dark: #8b5a3c;
         }
     }
 }
+
+// About Page Styles
+.about-main {
+    padding: 60px 20px;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .about-title {
+        margin-bottom: 40px;
+        font-weight: 700;
+        color: #ab2c2c;
+    }
+
+    .about-quote {
+        margin: 40px auto;
+        max-width: 800px;
+
+        blockquote {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-family: "楷体", KaiTi, "楷体_GB2312", KaiTi_GB2312, "STKaiti", serif;
+            font-weight: bold;
+        }
+
+        cite {
+            font-size: 1rem;
+            color: #777;
+        }
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 2;
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+// Hero Logo styles
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+        max-width: 500px;
+        height: auto;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    }
+}
+
+// Responsive styles for About page
+@media (max-width: 768px) {
+    .about-main {
+        padding: 40px 15px;
+
+        .about-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .about-quote {
+            margin: 30px auto;
+
+            blockquote {
+                font-size: 1.3rem;
+            }
+
+            cite {
+                font-size: 0.9rem;
+            }
+        }
+
+        .about-content {
+            line-height: 1.8;
+
+            p {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .hero-logo img {
+        max-width: 750px;
+    }
+}
