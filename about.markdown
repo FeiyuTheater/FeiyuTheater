@@ -28,5 +28,68 @@ permalink: /about
         “以戏剧探索人性，用创作连接彼此”
       </blockquote>
     </div>
+
+    <!-- Photo Album Slider -->
+    <div class="photo-album-container">
+
+      <div class="photo-slider">
+        <div class="slider-controls">
+          <button class="slider-arrow prev-arrow" aria-label="Previous photos">&#10094;</button>
+          <button class="slider-arrow next-arrow" aria-label="Next photos">&#10095;</button>
+        </div>
+
+        <div class="slider-track">
+          <!-- Sample images - replace with actual theater images -->
+          <div class="slider-item">
+            <img src="/assets/imgs/works/the-man-from-earth/photo1.JPG" alt="Theater performance 1">
+          </div>
+          <div class="slider-item">
+            <img src="/assets/imgs/works/the-man-from-earth/photo2.JPG" alt="Theater performance 2">
+          </div>
+          <div class="slider-item">
+            <img src="/assets/imgs/works/the-man-from-earth/photo3.JPG" alt="Theater performance 3">
+          </div>
+          <div class="slider-item">
+            <img src="/assets/imgs/works/the-man-from-earth/photo4.JPG" alt="Theater performance 4">
+          </div>
+          <div class="slider-item">
+            <img src="/assets/imgs/works/the-man-from-earth/photo5.JPG" alt="Theater performance 5">
+          </div>
+          <div class="slider-item">
+            <img src="/assets/imgs/works/the-man-from-earth/photo6.JPG" alt="Theater performance 6">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="about-title">支持我们</h1>
+
+    <div class="about-content">
+      <p>无论是个人捐款，或企业与组织的赞助，您的支持都是非鱼剧社持续创作与成长的动力。诚邀您加入，共同推动戏剧艺术的发展！</p>
+    </div>
+
+    <!-- Support Buttons -->
+    <div class="support-buttons">
+      <a href="#" class="support-button">
+        <div class="button-image">
+          <img src="/assets/imgs/works_page/icon_sponsorship.png" alt="商业赞助">
+        </div>
+        <div class="button-caption">商业赞助</div>
+      </a>
+
+      <a href="#" class="support-button">
+        <div class="button-image">
+          <img src="/assets/imgs/works_page/icon_individual_donation.png" alt="个人捐款">
+        </div>
+        <div class="button-caption">个人捐款</div>
+      </a>
+
+      <a href="#" class="support-button">
+        <div class="button-image">
+          <img src="/assets/imgs/works_page/icon_company_donation.png" alt="志愿服务">
+        </div>
+        <div class="button-caption">志愿服务</div>
+      </a>
+    </div>
   </div>
 </main>

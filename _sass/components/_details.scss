@@ -263,7 +263,6 @@ $brown-dark: #8b5a3c;
                     &:hover {
                         transform: translateY(-5px);
                         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                        border-color: $orange-dark;
                     }
 
                     .member-image {
@@ -424,6 +423,89 @@ $brown-dark: #8b5a3c;
                 font-weight: 500;
                 transition: background 0.3s ease;
             }
+        }
+    }
+}
+
+// Photo Album Slider
+.photo-album-container {
+    margin: 60px auto;
+    max-width: 1000px;
+
+    .album-title {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+}
+
+.photo-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .slider-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .slider-arrow {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        margin: 0 15px;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 20px;
+    }
+
+    .slider-item {
+        flex: 0 0 calc(33.333% - 14px); // Show 3 images at once with gap
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
         }
     }
 }
@@ -625,6 +707,34 @@ $brown-dark: #8b5a3c;
     }
 }
 
+// Responsive styles for photo slider
+@media (max-width: 768px) {
+    .photo-album-container {
+        margin: 40px auto;
+
+        .album-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    .photo-slider {
+        .slider-item {
+            flex: 0 0 calc(100% - 40px); // Show 1 image on mobile
+
+            img {
+                height: 200px;
+            }
+        }
+
+        .slider-arrow {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+        }
+    }
+}
+
 // Additional styles for custom content
 .custom-content {
     background: linear-gradient(135deg, $beige-dark 0%, $orange-light 100%);
@@ -778,5 +888,83 @@ $brown-dark: #8b5a3c;
 
     .hero-logo img {
         max-width: 750px;
+    }
+}
+
+// Support Buttons
+.support-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.support-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 180px;
+
+    &:hover {
+        transform: translateY(-8px);
+
+        .button-image {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-caption {
+            color: #ab2c2c;
+        }
+    }
+
+    .button-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .button-caption {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+}
+
+// Responsive styles for support buttons
+@media (max-width: 768px) {
+    .support-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 40px auto;
+    }
+
+    .support-button {
+        width: 160px;
+
+        .button-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 12px;
+        }
+
+        .button-caption {
+            font-size: 1.1rem;
+        }
     }
 }
