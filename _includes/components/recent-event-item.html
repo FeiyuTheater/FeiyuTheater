@@ -1,0 +1,25 @@
+<!-- _includes/recent-events.html -->
+<div class="recent-event-item">
+  <div class="event-card-wrapper">
+    <div class="card-component">
+      <div class="card-image">
+        <img src="{{ include.image }}" alt="{{ include.title }}">
+      </div>
+    </div>
+  </div>
+
+  <div class="event-text-wrapper">
+    <div class="event-text">
+      <p class="event-time">{{ include.event_time }}</p>
+      <h4 class="event-title">{{ include.title }}</h4>
+      <p class="event-location">地点：{{ include.location }}</p>
+      <p class="event-description">{{ include.description }}</p>
+    </div>
+
+    <div class="click-to-purchase-button-wrapper">
+      <button class="btn btn-danger">点击购票</button>
+    </div>
+  </div>
+</div>
+
+ <div class="divider-line"></div>
