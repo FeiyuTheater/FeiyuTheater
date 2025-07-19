@@ -1,30 +1,52 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const countdowns = document.querySelectorAll('.countdown-timer');
+document.addEventListener('DOMContentLoaded', function () {
+    const countdownTimer = document.querySelector('.countdown-timer');
+    const eventDateStr = countdownTimer.getAttribute('data-event-date');
+    const eventDate = new Date(eventDateStr).getTime();
 
-  countdowns.forEach(function (timer) {
-    const deadline = new Date(timer.getAttribute('data-deadline')).getTime();
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+    const countdownMessage = document.getElementById('countdown-message');
 
     function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = deadline - now;
+        const now = new Date().getTime();
+        const timeLeft = eventDate - now;
 
-      if (distance < 0) {
-        timer.querySelector(".countdown-values").innerHTML = "已结束";
-        return;
-      }
+        if (timeLeft < 0) {
+            // Event has started or passed
+            countdownTimer.style.display = 'none';
+            countdownMessage.style.display = 'block';
+            return;
+        }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        // Calculate time units
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-      timer.querySelector(".days").textContent = String(days).padStart(2, '0');
-      timer.querySelector(".hours").textContent = String(hours).padStart(2, '0');
-      timer.querySelector(".minutes").textContent = String(minutes).padStart(2, '0');
-      timer.querySelector(".seconds").textContent = String(seconds).padStart(2, '0');
+        // Update display with leading zeros
+        daysElement.textContent = days.toString().padStart(2, '0');
+        hoursElement.textContent = hours.toString().padStart(2, '0');
+        minutesElement.textContent = minutes.toString().padStart(2, '0');
+        secondsElement.textContent = seconds.toString().padStart(2, '0');
+
+        // Add animation effect
+        secondsElement.style.animation = 'pulse 1s ease-in-out';
+        setTimeout(() => {
+            secondsElement.style.animation = '';
+        }, 1000);
     }
 
-    updateCountdown(); // initial call
-    setInterval(updateCountdown, 1000); // update every second
-  });
+    // Update immediately
+    updateCountdown();
+
+    // Update every second
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Clean up interval when page is unloaded
+    window.addEventListener('beforeunload', function () {
+        clearInterval(countdownInterval);
+    });
 });

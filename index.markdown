@@ -1,14 +1,15 @@
 ---
-layout: default
-js: home.js
+layout: home
 title: "非鱼剧社"
 hero:
   title: "萨勒姆的女巫"
-  date: "2025年6月8日 2:00PM"
+  date: "2025年11月8日 2:00PM"
+  event_datetime: "2025-11-08T14:00:00-07:00" # ISO format with timezone
   location: "SJSU Hammer Theatre, San Jose, CA"
   background_image: "/assets/imgs/hero-banner.png"
 ---
 
+<!-- Hero Banner Section -->
 <!-- Hero Banner Section -->
 <section class="hero-section">
   <div class="hero-background" style="background-image: url('{{ page.hero.background_image }}');">
@@ -22,26 +23,29 @@ hero:
           </div>
           <a href="/tickets" class="hero-cta-button">点击购票</a>
           
-          <!-- Countdown Timer -->
+          <!-- Real Countdown Timer -->
           <div class="countdown-section">
             <p class="countdown-label">距离演出还有时间:</p>
-            <div class="countdown-timer">
+            <div class="countdown-timer" data-event-date="{{ page.hero.event_datetime }}">
               <div class="countdown-item">
-                <span class="countdown-number">{{ page.hero.countdown.days }}</span>
-                <span class="countdown-unit">Days</span>
+                <span class="countdown-number" id="days">00</span>
+                <span class="countdown-unit">天</span>
               </div>
               <div class="countdown-item">
-                <span class="countdown-number">{{ page.hero.countdown.hours }}</span>
-                <span class="countdown-unit">Hours</span>
+                <span class="countdown-number" id="hours">00</span>
+                <span class="countdown-unit">小时</span>
               </div>
               <div class="countdown-item">
-                <span class="countdown-number">{{ page.hero.countdown.minutes }}</span>
-                <span class="countdown-unit">Mins</span>
+                <span class="countdown-number" id="minutes">00</span>
+                <span class="countdown-unit">分</span>
               </div>
               <div class="countdown-item">
-                <span class="countdown-number">{{ page.hero.countdown.seconds }}</span>
-                <span class="countdown-unit">Secs</span>
+                <span class="countdown-number" id="seconds">00</span>
+                <span class="countdown-unit">秒</span>
               </div>
+            </div>
+            <div class="countdown-message" id="countdown-message" style="display: none;">
+              <p>演出已开始！</p>
             </div>
           </div>
         </div>
