@@ -6,7 +6,7 @@
 }
 
 .photo-card {
-      @extend .col-12;
+    @extend .col-12;
     @extend .col-md-4;
 
     img {
@@ -22,5 +22,9 @@
         transform: scale(1.1);
       }
     }
+}
 
+.about-main {
+    flex: 1;
+    padding-bottom: 60px;
 }

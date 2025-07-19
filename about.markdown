@@ -5,13 +5,13 @@ title: About
 permalink: /about/
 photos:
   - title: "这个男人来自地球"
-    asset: "/assets/imgs/the-man-from-earth.png"
+    asset: "/assets/imgs/works/the-man-from-earth/poster.png"
 
   - title: "玩偶之家2：娜拉归来"
-    asset: "/assets/imgs/a-dolls-house.png"
+    asset: "/assets/imgs/works/dolls-house/poster.png"
 
   - title: "每一件美好的小事"
-    asset: "/assets/imgs/every-brilliant-thing.png"
+    asset: "/assets/imgs/works/every-brilliant-thing/poster.png"
 
   - title: "艺术"
     asset: "/assets/imgs/art.png"
@@ -23,7 +23,7 @@ photos:
     asset: "/assets/imgs/behanding.png"
 ---
 
-<!-- Hero Banner Section -->
+<!-- Hero Banner Section Placeholder--> 
 <section class="hero-banner">
   <div class="hero-overlay">
   </div>
