@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: 非鱼剧社
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -37,9 +37,8 @@ plugins:
 # Collection directory settings
 collections_dir: collections
 collections:
-  news:
-    output: true
-    permalink: /news/:name/
+  activities:
+    output: false
   works:
     output: true
     permalink: /prev-work/:name/

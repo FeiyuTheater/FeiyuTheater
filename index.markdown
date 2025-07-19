@@ -61,7 +61,7 @@ hero:
             <img src="{{ activity.image }}" alt="{{ activity.title }}">
           </div>
           <div class="activity-content">
-            <div class="activity-date">{{ activity.date }}</div>
+            <div class="activity-date">{{ activity.date_str }}</div>
             <h3 class="activity-title">{{ activity.title }}</h3>
             <p class="activity-location">地点：{{ activity.location }}</p>
             <p class="activity-description">{{ activity.description }}</p>
@@ -78,8 +78,8 @@ hero:
   <div class="container">
     <h2 class="section-title">往期作品</h2>
     <div class="preview-works-grid">
-      <!-- {% assign preview_works = site.works | limit: 3 %} -->
-      {% for work in site.works | limit: 3 %}
+      {% assign preview_works = site.works | limit: 3 %}
+      {% for work in preview_works %}
         <!-- {% if work.work_details %} -->
           <a href="{{ work.url | relative_url }}" class="work-link">
             {% include components/card.html 
