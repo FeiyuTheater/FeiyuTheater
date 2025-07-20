@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     const countdownTimer = document.querySelector('.countdown-timer');
     const eventDateStr = countdownTimer.getAttribute('data-event-date');
+    console.log('eventDateStr: ', eventDateStr)
     const eventDate = new Date(eventDateStr).getTime();
 
+    console.log('eventDate:', eventDateStr)
     const daysElement = document.getElementById('days');
     const hoursElement = document.getElementById('hours');
     const minutesElement = document.getElementById('minutes');
