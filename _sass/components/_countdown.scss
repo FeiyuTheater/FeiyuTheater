@@ -1,0 +1,28 @@
+.countdown-timer {
+  font-size: 1.2rem;
+
+  .countdown-values {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+
+    .countdown-group {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+
+      .days
+      .hours
+      .minutes
+      .seconds {
+        font-size: 1.5rem;
+      }
+
+      .label {
+        font-size: 1.1rem;
+        color: #848383;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+}

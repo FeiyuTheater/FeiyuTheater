@@ -14,6 +14,7 @@ js: home.js
          event_time=new.new_details.event_time
          title=new.new_details.title
          location=new.new_details.location
+         early_bird_purchase_deadline=new.new_details.early_bird_purchase_deadline
       %}
     {% endfor %}
 </section>
