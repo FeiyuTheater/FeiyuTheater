@@ -162,15 +162,18 @@ $poster-title-color: #ffffff;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     justify-items: center;
+
+    @media (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 // Responsive design
 @media (max-width: 992px) {
-    .works-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-
     .hero-banner {
         height: 250px;
 
@@ -181,11 +184,6 @@ $poster-title-color: #ffffff;
 }
 
 @media (max-width: 768px) {
-    .works-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
     .hero-banner {
         height: 200px;
         margin-bottom: 40px;
