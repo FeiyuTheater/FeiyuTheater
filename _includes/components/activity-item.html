@@ -1,0 +1,12 @@
+<article class="activity-item">
+  <div class="activity-image">
+    <img src="{{ include.activity.image }}" alt="{{ include.activity.title }}">
+  </div>
+  <div class="activity-content">
+    <div class="activity-date">{{ include.activity.date_str }}</div>
+    <h3 class="activity-title">{{ include.activity.title }}</h3>
+    <p class="activity-location">地点：{{ include.activity.location }}</p>
+    <p class="activity-description">{{ include.activity.description }}</p>
+    <a href="{{ include.activity.link }}" class="activity-cta">点击查看</a>
+  </div>
+</article>
