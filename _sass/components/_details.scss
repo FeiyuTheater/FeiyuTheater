@@ -263,7 +263,6 @@ $brown-dark: #8b5a3c;
                     &:hover {
                         transform: translateY(-5px);
                         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                        border-color: $orange-dark;
                     }
 
                     .member-image {
@@ -424,6 +423,89 @@ $brown-dark: #8b5a3c;
                 font-weight: 500;
                 transition: background 0.3s ease;
             }
+        }
+    }
+}
+
+// Photo Album Slider
+.photo-album-container {
+    margin: 60px auto;
+    max-width: 1000px;
+
+    .album-title {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+}
+
+.photo-slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+
+    .slider-controls {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .slider-arrow {
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: auto;
+        margin: 0 15px;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .slider-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        gap: 20px;
+    }
+
+    .slider-item {
+        flex: 0 0 calc(33.333% - 14px); // Show 3 images at once with gap
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.05);
         }
     }
 }
@@ -625,6 +707,34 @@ $brown-dark: #8b5a3c;
     }
 }
 
+// Responsive styles for photo slider
+@media (max-width: 768px) {
+    .photo-album-container {
+        margin: 40px auto;
+
+        .album-title {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    .photo-slider {
+        .slider-item {
+            flex: 0 0 calc(100% - 40px); // Show 1 image on mobile
+
+            img {
+                height: 200px;
+            }
+        }
+
+        .slider-arrow {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+        }
+    }
+}
+
 // Additional styles for custom content
 .custom-content {
     background: linear-gradient(135deg, $beige-dark 0%, $orange-light 100%);
@@ -676,6 +786,201 @@ $brown-dark: #8b5a3c;
 
         li {
             margin-bottom: 8px;
+        }
+    }
+}
+
+// About Page Styles
+.about-main {
+    padding: 60px 20px;
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .about-title {
+        margin-bottom: 40px;
+        font-weight: 700;
+        color: #ab2c2c;
+    }
+
+    .about-quote {
+        margin: 40px auto;
+        max-width: 800px;
+
+        blockquote {
+            font-size: 1.5rem;
+            color: #555;
+            margin-bottom: 10px;
+            font-family: "楷体", KaiTi, "楷体_GB2312", KaiTi_GB2312, "STKaiti", serif;
+            font-weight: bold;
+        }
+
+        cite {
+            font-size: 1rem;
+            color: #777;
+        }
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 2;
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+// Hero Logo styles
+.hero-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    img {
+        max-width: 500px;
+        width: 50%; /* Make logo size relative to container width */
+        height: auto;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+    }
+}
+
+// Responsive styles for About page
+@media (max-width: 992px) {
+    .hero-logo img {
+        width: 60%; /* Slightly larger percentage on medium screens */
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-main {
+        padding: 40px 15px;
+
+        .about-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .about-quote {
+            margin: 30px auto;
+
+            blockquote {
+                font-size: 1.3rem;
+            }
+
+            cite {
+                font-size: 0.9rem;
+            }
+        }
+
+        .about-content {
+            line-height: 1.8;
+
+            p {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .hero-logo img {
+        width: 70%; /* Larger percentage on mobile for better visibility */
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo img {
+        width: 80%; /* Even larger percentage on small mobile screens */
+        max-width: 250px;
+    }
+}
+
+// Support Buttons
+.support-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.support-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 180px;
+
+    &:hover {
+        transform: translateY(-8px);
+
+        .button-image {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-caption {
+            color: #ab2c2c;
+        }
+    }
+
+    .button-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .button-caption {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+}
+
+// Responsive styles for support buttons
+@media (max-width: 768px) {
+    .support-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 40px auto;
+    }
+
+    .support-button {
+        width: 160px;
+
+        .button-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 12px;
+        }
+
+        .button-caption {
+            font-size: 1.1rem;
         }
     }
 }

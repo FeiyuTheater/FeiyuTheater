@@ -1,8 +1,12 @@
 @use "vendors/bootstrap-min";
 
-#threeUpCarousel .carousel-item img {
-  height: 240px;           /* set your preferred height */
-  object-fit: cover;       /* neat crop */
+#threeUpCarousel {
+  margin-bottom: 4rem;     /* add extra vertical space after carousel */
+
+  .carousel-item img {
+    height: 240px;         /* set your preferred height */
+    object-fit: cover;     /* neat crop */
+  }
 }
 
 .photo-card {
@@ -17,7 +21,7 @@
 
     &:hover {
       transform: scale(1.05);
-      
+
       img {
         transform: scale(1.1);
       }
