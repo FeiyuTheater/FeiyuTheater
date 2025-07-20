@@ -1,23 +1,27 @@
-<!-- _includes/countdown.html -->
-<div class="countdown-timer" data-deadline="{{ include.early_bird_purchase_deadline }}">
-  <div class="mb-2">早鸟票剩余时间：</div>
-
-  <div class="countdown-values">
-    <div class="countdown-group">
-      <span class="days">00</span>
-      <span class="label">Days</span>
+<!-- Real Countdown Timer -->
+<div class="countdown-section">
+  <p class="countdown-label">距离演出还有时间:</p>
+  <div class="countdown-timer" id="countdown-timer" data-event-date="{{ include.event_datetime }}">
+    <div class="countdown-item">
+      <span class="countdown-number" id="days">00</span>
+      <span class="countdown-unit">天</span>
     </div>
-    <div class="countdown-group">
-      <span class="hours">00</span>
-      <span class="label">Hours</span>
+    <div class="countdown-item">
+      <span class="countdown-number" id="hours">00</span>
+      <span class="countdown-unit">小时</span>
     </div>
-    <div class="countdown-group">
-      <span class="minutes">00</span>
-      <span class="label">Mins</span>
+    <div class="countdown-item">
+      <span class="countdown-number" id="minutes">00</span>
+      <span class="countdown-unit">分</span>
     </div>
-    <div class="countdown-group">
-      <span class="seconds">00</span>
-      <span class="label">Secs</span>
+    <div class="countdown-item">
+      <span class="countdown-number" id="seconds">00</span>
+      <span class="countdown-unit">秒</span>
     </div>
   </div>
+  <div class="countdown-message" id="countdown-message" style="display: none;">
+    <p>演出已开始！</p>
+  </div>
 </div>
+
+<script src="{{ '/assets/js/countdown.js' | append: page.js | relative_url }}"></script>

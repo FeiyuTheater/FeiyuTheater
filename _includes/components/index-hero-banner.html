@@ -1,0 +1,18 @@
+<!-- Hero Banner Section -->
+<section class="hero-section">
+  <div class="hero-background" style="background-image: url('{{ include.hero.background_image }}');">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">{{ include.hero.title }}</h1>
+          <div class="hero-meta">
+            <p class="hero-date">{{ include.hero.date }}</p>
+            <p class="hero-location">地点：{{ include.hero.location }}</p>
+          </div>
+          {% include components/countdown.html event_datetime=include.hero.event_datetime%}
+          <a href="/tickets" class="hero-cta-button">点击购票</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
