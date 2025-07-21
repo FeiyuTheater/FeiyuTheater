@@ -5,11 +5,10 @@ permalink: /prev-work
 ---
 
 <!-- Hero Banner Section -->
-<section class="hero-banner">
-  <div class="hero-overlay">
-    <h1 class="hero-title">往期作品</h1>
-  </div>
-</section>
+{% include hero-banner.html
+    background="/assets/imgs/works_page/banner.png"
+    content="<h1 class='hero-title'>往期作品</h1>"
+%}
 
 <!-- Main Content -->
 <main class="prev-works-main">
