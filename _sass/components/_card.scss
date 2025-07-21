@@ -1,24 +1,25 @@
+$poster-date-color: #ff4444;
+$poster-title-color: #ffffff;
+
 .card-component {
     position: relative;
-    width: 300px;
+    // The standard poster ratio is 4 / 3
     height: 450px;
+    width: 337.5px;
+
     background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
-    border-radius: 12px;
+    border-radius: 2px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     &:hover {
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-
-        .card-image img {
-            transform: scale(1.1);
-        }
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 8px 12px 30px rgba(0, 0, 0, 0.6);
 
         .card-content {
-            background: linear-gradient(135deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.4) 100%);
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.9) 100%);
         }
     }
 
@@ -59,54 +60,52 @@
         left: 0;
         right: 0;
         padding: 20px;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.3) 100%);
+        padding-top: 50px;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.9) 100%);
         transition: background 0.3s ease;
 
         .card-date {
-            color: #ff4444;
-            font-size: 14px;
-            font-weight: 600;
+            color: $poster-date-color;
+            font-size: 1.1rem;
+            font-weight: bold;
             text-transform: uppercase;
-            letter-spacing: 1px;
             margin-bottom: 8px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.85);
+
+            @media (max-width: 768px) {
+                font-size: 0.9rem;
+            }
         }
 
         .card-title {
-            color: #ffd700;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 1.3;
+            color: $poster-title-color;
+            font-size: 1.3rem;
+            font-weight: bold;
             margin: 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.85);
 
             // Handle long titles
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+
+            @media (max-width: 768px) {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 16px;
+            padding-top: 40px;
         }
     }
-}
 
-// Responsive design
-@media (max-width: 768px) {
-    .card-component {
-        width: 280px;
+    @media (max-width: 768px) {
+        // The standard poster ratio is 4 / 3
+        width: 285px;
         height: 380px;
-
-        .card-content {
-            padding: 16px;
-
-            .card-date {
-                font-size: 12px;
-                margin-bottom: 6px;
-            }
-
-            .card-title {
-                font-size: 18px;
-            }
-        }
+        margin: 0 auto;
     }
 }
 
@@ -163,15 +162,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     justify-items: center;
-
-    .card-component {
-        width: 100%;
-        max-width: 320px;
-
-        &:hover {
-            transform: translateY(-8px) scale(1.02);
-        }
-    }
 }
 
 // Responsive design
@@ -208,12 +198,6 @@
     .prev-works-main {
         padding: 0 15px 40px;
     }
-
-    .card-component {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
 }
 
 @media (max-width: 480px) {
@@ -223,27 +207,6 @@
         .hero-title {
             font-size: 1.8rem;
             letter-spacing: 1px;
-        }
-    }
-}
-
-// Animation variations for grid items
-.works-grid .work-link {
-    &:nth-child(3n+1) .card-component{
-        &:hover {
-            transform: translateY(-8px) scale(1.02) rotate(1deg);
-        }
-    }
-
-    &:nth-child(3n+2) .card-component {
-        &:hover {
-            transform: translateY(-8px) scale(1.02);
-        }
-    }
-
-    &:nth-child(3n+3) .card-component {
-        &:hover {
-            transform: translateY(-8px) scale(1.02) rotate(-1deg);
         }
     }
 }
