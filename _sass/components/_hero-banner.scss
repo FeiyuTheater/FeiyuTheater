@@ -1,0 +1,97 @@
+// Hero Banner is used on the non-main page (previous works, about pages etc)
+
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    background-image: url('/assets/imgs/prev-work-bg.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+
+    .hero-overlay {
+        height: 100%;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.05), transparent 20%);
+    }
+
+    .hero-content-container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        // Used on the "Previous Works" page
+        .hero-title {
+            color: white;
+            font-size: 3rem;
+
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 1px 4px 8px rgba(0, 0, 0, 0.7);
+            margin: 0;
+            letter-spacing: 2px;
+
+            @media (max-width: 992px) {
+                font-size: 2.6rem;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 2.2rem;
+            }
+        }
+
+        // Used on the "About" page
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100%;
+            width: 100%;
+
+            img {
+                // width: 50%; /* Make logo size relative to container width */
+                width: 50%;
+                max-width: 750px;
+                // height: auto;
+                filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.5))
+                        brightness(1.2);
+
+                // Responsive styles for About page
+                @media (max-width: 992px) {
+                    width: 60%; /* Slightly larger percentage on medium screens */
+                    max-width: 550px;
+                }
+
+                @media (max-width: 768px) {
+                    width: 70%; /* Larger percentage on mobile for better visibility */
+                    max-width: 350px;
+                }
+
+                @media (max-width: 480px) {
+                    width: 80%; /* Even larger percentage on small mobile screens */
+                    max-width: 280px;
+                }
+            }
+        }
+    }
+
+    // Responsive design
+    @media (max-width: 992px) {
+        height: 280px;
+    }
+
+    @media (max-width: 768px) {
+        height: 220px;
+    }
+}
