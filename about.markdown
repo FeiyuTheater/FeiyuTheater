@@ -24,13 +24,10 @@ photos:
 ---
 
 <!-- Hero Banner Section -->
-<section class="hero-banner" style="background-image: url('/assets/imgs/about_page/about_banner.png');">
-  <div class="hero-overlay">
-    <div class="hero-logo">
-      <img src="/assets/imgs/logo.png" alt="Feiyu Theater Logo">
-    </div>
-  </div>
-</section>
+{% include hero-banner.html
+    background="/assets/imgs/about_page/banner.png"
+    content='<div class="hero-logo"><img src="/assets/imgs/logo.png" alt="Feiyu Theater Logo"></div>'
+%}
 
 <!-- Main Content -->
 <main class="about-main">

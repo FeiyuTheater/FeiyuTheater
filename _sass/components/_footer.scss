@@ -1,3 +1,5 @@
+@use "vendors/bootstrap-min";
+
 // Base styles for sticky footer
 html, body {
     height: 100%;
@@ -5,109 +7,85 @@ html, body {
     padding: 0;
 }
 
-// Main wrapper for sticky footer layout
-.site-wrapper {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-// Header styles
-.site-header {
-    background-color: #f8f9fa;
-    padding: 20px 0;
-    border-bottom: 1px solid #e9ecef;
-
-    nav {
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        h1 {
-            color: #333;
-            font-size: 1.8rem;
-            margin: 0;
-
-            a {
-                color: inherit;
-                text-decoration: none;
-
-                &:hover {
-                    color: #007bff;
-                }
-            }
-        }
-    }
-}
-
-// Main content area
-.site-main {
-    flex: 1; // This makes the main content area expand to fill available space
-    padding: 40px 0;
-
-    .content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-}
-
 // Footer styles (updated from your original)
 .footer {
+    $section-title-font-color: white;
+    $section-title-font-size: 1.5rem;
+    $section-title-font-weight: bold;
+
     background-color: rgb(35, 35, 35);
     color: rgb(135, 135, 135);
     width: 100%;
-    padding: 40px 0 20px 0;
-    font-size: 0.875rem;
+
+    font-size: 1rem;
     letter-spacing: 0.02em;
     margin-top: auto; // This ensures footer stays at bottom when content is short
 
     &-container {
         max-width: 1200px;
-        margin: 0 auto;
+        width: 100%;
+
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        width: 100%;
-        padding: 0 20px;
-        gap: 40px;
-        margin-bottom: 30px;
+
+        @extend .p-5;
+        @extend .m-auto;
+
+        @media (max-width: 768px) {
+            gap: 3rem;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+        }
     }
 
     &-social {
         flex: 1;
         min-width: 200px;
-
         h4 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            font-weight: 600;
+            color: $section-title-font-color;
+            font-size: $section-title-font-size;
+            font-weight: $section-title-font-weight;
+
+            margin-bottom: 32px;
             display: flex;
             align-items: center;
             gap: 8px;
 
             &::before {
-                content: '👥';
-                font-size: 1.2rem;
+                content: ' ';
+                width: 1.5rem;
+                height: 1.5rem;
+                background-image: url('/assets/icons/footer/follow.png');
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         }
-    }
 
-    &-copyright {
-        text-align: center;
-        padding: 20px 0;
-        border-top: 1px solid rgb(60, 60, 60);
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
 
-        p {
-            margin: 0;
-            font-size: 0.875rem;
-            color: rgb(135, 135, 135);
+            .social-icon {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                border-radius: 8px;
+                overflow: hidden;
+                transition: transform 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-2px);
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
         }
     }
 
@@ -116,17 +94,23 @@ html, body {
         min-width: 280px;
 
         h4 {
-            color: white;
+            color: $section-title-font-color;
+            font-size: $section-title-font-size;
+            font-weight: $section-title-font-weight;
+
             margin-bottom: 8px;
-            font-size: 1.1rem;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 8px;
 
             &::before {
-                content: '📧';
-                font-size: 1.2rem;
+                content: ' ';
+                width: 1.3rem;
+                height: 1.3rem;
+                background-image: url('/assets/icons/footer/subscribe.png');
+                background-size: contain;
+                background-repeat: no-repeat;
             }
         }
 
@@ -135,87 +119,89 @@ html, body {
             font-size: 0.875rem;
             line-height: 1.4;
         }
-    }
-}
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
+        .subscription-form {
+            display: flex;
+            gap: 10px;
 
-.social-icon {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
+            input {
+                flex: 1;
+                padding: 12px 16px;
+                border: 1px solid rgb(60, 60, 60);
+                border-radius: 6px;
+                background-color: rgb(50, 50, 50);
+                color: white;
+                font-size: 0.875rem;
+                transition: border-color 0.3s ease;
+                max-width: 400px;
 
-    &:hover {
-        transform: translateY(-2px);
-    }
+                &:focus {
+                    outline: none;
+                    border-color: rgb(100, 100, 100);
+                }
 
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
+                &::placeholder {
+                    color: rgb(135, 135, 135);
+                }
 
-.subscription-form {
-    display: flex;
-    gap: 10px;
+                @media (max-width: 768px) {
+                    width: 80%;
+                    max-width: none;
+                    text-align: center;
+                }
+            }
 
-    input {
-        flex: 1;
-        padding: 12px 16px;
-        border: 1px solid rgb(60, 60, 60);
-        border-radius: 6px;
-        background-color: rgb(50, 50, 50);
-        color: white;
-        font-size: 0.875rem;
-        transition: border-color 0.3s ease;
+            button {
+                padding: 12px 20px;
+                background-color: rgb(180, 50, 50);
+                color: white;
+                border: none;
+                border-radius: 6px;
+                font-size: 0.875rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                white-space: nowrap;
 
-        &:focus {
-            outline: none;
-            border-color: rgb(100, 100, 100);
+                &:hover {
+                    background-color: rgb(220, 50, 50);
+                }
+
+                @media (max-width: 768px) {
+                    width: 80%;
+                    text-align: center;
+                }
+            }
+
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+                align-items: center;
+            }
         }
+    }
 
-        &::placeholder {
+    &-copyright {
+        text-align: center;
+        border-top: 1px solid rgb(60, 60, 60);
+        width: 100%;
+
+        p {
+            margin: 0;
+            font-size: 0.875rem;
             color: rgb(135, 135, 135);
         }
-    }
 
-    button {
-        padding: 12px 20px;
-        background-color: rgb(200, 50, 50);
-        color: white;
-        border: none;
-        border-radius: 6px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        white-space: nowrap;
-
-        &:hover {
-            background-color: rgb(180, 40, 40);
-        }
+        @extend .d-flex;
+        @extend .justify-content-center;
+        @extend .p-2;
     }
 }
 
 // Mobile responsive layout
 @media (max-width: 768px) {
     .footer {
-        &-container {
-            flex-direction: column;
-            gap: 30px;
-            text-align: center;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-        
         &-social,
         &-subscription {
             min-width: auto;
@@ -244,40 +230,15 @@ html, body {
             width: 100%;
         }
     }
-    
+
     .social-icons {
         justify-content: center;
-    }
-    
-    .subscription-form {
-        flex-direction: column;
-        gap: 12px;
-        width: 100%;
-        align-items: center;
-
-        input {
-            width: 100%;
-            text-align: center;
-        }
-
-        button {
-            width: 100%;
-            max-width: 200px;
-        }
     }
 }
 
 @media (max-width: 480px) {
     .footer {
         padding: 30px 0 15px 0;
-
-        &-container {
-            padding: 0 15px;
-            gap: 25px;
-            margin-bottom: 15px;
-            align-items: center;
-        }
-
         &-social,
         &-subscription {
             max-width: 320px;
@@ -289,16 +250,12 @@ html, body {
             width: 100%;
         }
     }
-    
-    .site-main {
-        padding: 20px 0;
-    }
-    
+
     .social-icons {
         gap: 12px;
         justify-content: center;
     }
-    
+
     .social-icon {
         width: 35px;
         height: 35px;

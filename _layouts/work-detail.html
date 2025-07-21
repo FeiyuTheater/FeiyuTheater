@@ -134,8 +134,11 @@ layout: default
 </section>
 
 <!-- Custom content from markdown -->
+{% assign content_stripped = content | strip %}
+{% if content_stripped != "" %}
 <div class="custom-content">
     {{ content }}
 </div>
+{% endif %}
 
 <script src="{{ '/assets/js/work-detail.js' | append: page.js | relative_url }}"></script>
