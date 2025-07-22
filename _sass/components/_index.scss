@@ -1,23 +1,58 @@
 @use "base/variables" as *;
+// Content
+$hero-title-size: 2.5rem;
+$hero-title-size-small: 2rem;
+$hero-meta-size: 1.25rem;
+$hero-meta-size-small: 1rem;
+
+// Countdown Timer
+$countdown-title-size: 1rem;
+$countdown-title-size-small: 0.85rem;
+
+$number-size-normal: 1.5rem;
+$number-size-small: 1.2rem;
+
+$unit-size-normal: 1rem;
+$unit-size-small: 0.8rem;
 
 // Hero Section
 .hero-section {
+  display: grid;
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  height: 600px;
   overflow: hidden;
-  
-  .hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+  background-color: black;
+
+  @media (max-width: 992px) {
+    height: 480px;
+  }
+
+  @media (max-width: 768px) {
+    height: 480px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-background-container {
+    height: 100%;
+    width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 1;
+    display: flex;
+
+    position: relative;
+  }
+
+  .hero-background-overlay {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 1) 100%);
   }
   
   .hero-overlay {
@@ -26,102 +61,128 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(139, 90, 107, 0.4));
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.8) 25%, rgb(100 70 70 / 20%) 100%);
     display: flex;
     align-items: center;
-    z-index: 2;
+    z-index: 1;
   }
-  
+}
+
+.hero-section {
   .hero-content {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
-    
-    .hero-text {
-      max-width: 600px;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 2;
+
+    .hero-title {
+      font-size: $hero-title-size;
+      font-weight: 700;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+      line-height: 1.2;
+
+      margin-bottom: 16px;
+
+      @media (max-width: 768px) {
+        font-size: $hero-title-size-small;
+      }
+    }
+
+    .hero-meta {
+      margin-bottom: 25px;
+
+      .hero-date, .hero-location {
+        font-size: $hero-meta-size;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+
+        margin-bottom:  10px;
+
+        @media (max-width: 768px) {
+          font-size: $hero-meta-size-small;
+        }
+      }
+    }
+
+    .hero-cta-button {
+      margin-top: 30px;
+
+      display: inline-block;
+      background: #c8102e;
       color: white;
-      
-      .hero-title {
-        font-size: 4rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
-        line-height: 1.2;
-      }
-      
-      .hero-meta {
-        margin-bottom: 30px;
-        
-        .hero-date, .hero-location {
-          font-size: 1.3rem;
-          margin: 8px 0;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-        }
-      }
-      
-      .hero-cta-button {
-        display: inline-block;
-        background: #c8102e;
+      padding: 12px 48px;
+      border-radius: 24px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #a60e26;
         color: white;
-        padding: 15px 30px;
-        border-radius: 8px;
         text-decoration: none;
-        font-weight: 600;
-        font-size: 1.1rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
-        margin-bottom: 40px;
-        margin-top: 30px;
-        
-        &:hover {
-          background: #a60e26;
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(200, 16, 46, 0.6);
-          color: white;
-          text-decoration: none;
+      }
+    }
+  }
+}
+
+.hero-section {
+  .hero-content {
+    .countdown-section {
+      .countdown-label {
+        font-size: $countdown-title-size;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+        margin-bottom: 10px;
+
+        @media (max-width: 768px) {
+          font-size: $countdown-title-size-small;
         }
       }
-      
-      .countdown-section {
-        .countdown-label {
-          font-size: 1rem;
-          margin-bottom: 15px;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-        }
-        
-        .countdown-timer {
-          display: flex;
-          gap: 20px;
-          
-          .countdown-item {
-            text-align: center;
-            
-            .countdown-number {
-              display: block;
-              font-size: 2.5rem;
-              font-weight: 700;
-              text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-              line-height: 1;
-              transition: all 0.3s ease;
+
+      .countdown-timer {
+        display: flex;
+        gap: 30px;
+
+        .countdown-item {
+          text-align: center;
+
+          .countdown-number {
+            display: block;
+            font-size: $number-size-normal;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            line-height: 1;
+            transition: all 0.3s ease;
+
+            @media (max-width: 768px) {
+              font-size: $number-size-small;
             }
-            
-            .countdown-unit {
-              display: block;
-              font-size: 0.9rem;
-              margin-top: 5px;
-              opacity: 0.9;
+          }
+
+          .countdown-unit {
+            display: block;
+            font-size: $unit-size-normal;
+            margin-top: 10px;
+            opacity: 0.9;
+
+            @media (max-width: 768px) {
+              font-size: $unit-size-small;
             }
           }
         }
-        
-        .countdown-message {
-          text-align: center;
-          font-size: 1.5rem;
-          font-weight: 600;
-          color: #ffd700;
-          text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-        }
+      }
+
+      .countdown-message {
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffd700;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
       }
     }
   }
@@ -129,10 +190,6 @@
 
 // Responsive Design
 @media (max-width: 992px) {
-  .hero-section {
-    .hero-content {
-      padding: 0 30px;
-      
       .hero-text .hero-title {
         font-size: 3rem;
       }
@@ -144,17 +201,10 @@
           font-size: 2rem;
         }
       }
-    }
-  }
 }
 
 @media (max-width: 768px) {
-  .hero-section {
-    height: 80vh;
-    min-height: 500px;
-    
-    .hero-content {
-      padding: 0 20px;
+
       
       .hero-text .hero-title {
         font-size: 2.5rem;
@@ -167,31 +217,6 @@
           font-size: 1.5rem;
         }
       }
-    }
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    .hero-content .hero-text {
-      .hero-title {
-        font-size: 2rem;
-      }
-      
-      .hero-meta .hero-date,
-      .hero-meta .hero-location {
-        font-size: 1.1rem;
-      }
-      
-      .countdown-timer .countdown-item .countdown-number {
-        font-size: 1.2rem;
-      }
-      
-      .countdown-message {
-        font-size: 1.2rem;
-      }
-    }
-  }
 }
 
 // Pulse animation for countdown seconds
