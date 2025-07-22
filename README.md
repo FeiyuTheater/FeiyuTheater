@@ -14,6 +14,58 @@
 - implement的时候尽量多想各元素之间的层级关系，比如我现在看到了左右两边margin比较大，需要考虑是这个元素（DOM）的问题，还是它Parent DOM的问题
 - 多多利用浏览器的开发模式调试，可以可视化每个元素的位置，CSS等
 
+# 内容更新教程
+在话剧演出后，又制作人或宣传团队更新演出内容。只需要为新的演出建立一个新的文件，网站就会随之更新，详细步骤如下：
+1. 先基于`main`branch创建一个git branch，命名规则为`update/<author-name>/<project-name>`。比如:`update/boning/the-man-from-earth`。
+2. 在`collections/_works/`中建立一个新的`.md`文件，用剧的名字命名（可以参考其他文件）。
+3. 文件中需要更新的内容是一些key value pairs，建议复制一份其他文件基于现有的内容修改。注意文件中前后两个`---`是必须的，不能省略。这里解释其中一些key的使用方法：
+  ```
+  ---
+  layout: work-detail                   <=== "这里必须是work-detail"
+  title: "玩偶之家2:娜拉归来"              <=== "话剧名称，显示在网页中"
+  work_details:                         <=== "影响'作品详情'页的内容"
+    title: "玩偶之家2:娜拉归来"            <=== "话剧名称，显示在'作品详情'页中，一般与上边的title相同"
+    location: "地球的某个地方"            <=== "(optional) 演出地点"
+    date: "某个时间"                     <=== "(optional) 演出时间"
+    banner_image:                       <=== "横版图片链接，为了网站效果专业统一，必须要有"
+    poster_image:                       <=== "海报图片链接要求4/3比例，为了网站效果专业统一，必须要有"
+    brochure:                           <=== "(optional) 场刊信息"
+    introduction: "了不起的玩偶之家故事"    <=== "剧目详细介绍"
+    production_team:                     <=== "演职员团队信息"
+      - page_title: "主要演员"            <=== "为了分类显示，每类演职员需要写好类"
+        members:
+          - name: "主演1"
+            person: "演员姓名"
+            role: "角色名称"
+          - name: "主演2"
+            person: "演员姓名"
+            role: "角色名称"
+      - page_title: "制作团队"
+        members:
+          - name: "制作人"
+            person: "制作人姓名"
+          - name: "导演"
+            person: "导演姓名"
+      - page_title: "后台"
+        members:
+          - name: "灯光"
+            person: "了不起的灯光"
+            role: "灯光负责人"
+    youtube_video: "mee4gJM3kls"         <=== "Youtube视频，click share，选embed， 复制'https://www.youtube.com/embed/'之后'?'之前的字符串"
+    photos:                              <=== "照片array，为了效果推荐至少放6张照片，包括演出照片三种，合照，现场照片等"
+      - image: ""                        <=== "照片链接"
+        size: "large"                    <=== "照片尺寸可以是"large","medium","small"
+        caption: "演出"                   <=== "caption"
+      - image: ""
+        caption: "谢幕"
+        size: "large"
+  ---
+  ```
+4. 填写上述信息时会需要用到图片，场刊等assets。assets要存放到相应的目录下。存好后用相应的路径填写到上述`md`文件里：
+  - banner, poster和photos放路径`/assets/images/works/<project-name>/<img-name>`
+  - 其他文件（如场刊）存放路径`/assets/files/works/<project-name>/<file-name>`
+5. 一切就绪后，开一个新的PR，请求审核。PR被approve，merge后内容更新就完成了。
+
 # 维护教程
 ## 🧑🏻‍💻 环境配置
 可以参考[Notion文档](https://www.notion.so/bodong/Skeleton-Bringup-21637fe020f38047a325dcd759ae7829?source=copy_link)。
