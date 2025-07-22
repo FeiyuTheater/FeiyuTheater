@@ -1,22 +1,23 @@
+$poster-card-radius: 6px;
 $poster-date-color: #ff4444;
 $poster-title-color: #ffffff;
 
 .card-component {
     position: relative;
     // The standard poster ratio is 4 / 3
-    height: 450px;
-    width: 337.5px;
+    max-width: 337.5px;
+    aspect-ratio: 3 / 4;
 
     background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
-    border-radius: 2px;
+    border-radius: $poster-card-radius;
     overflow: hidden;
-    box-shadow: 4px 6px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.35);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
 
     &:hover {
-        transform: translateY(-8px) scale(1.01);
-        box-shadow: 8px 12px 30px rgba(0, 0, 0, 0.6);
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 4px 12px 32px rgba(0, 0, 0, 0.4);
 
         .card-content {
             background: linear-gradient(180deg, rgba(0, 0, 0, 0.0) 0%, rgba(0, 0, 0, 0.9) 100%);
@@ -101,11 +102,13 @@ $poster-title-color: #ffffff;
         }
     }
 
+    @media (max-width: 992px) {
+        max-width: 400px;
+
+    }
+
     @media (max-width: 768px) {
-        // The standard poster ratio is 4 / 3
-        width: 285px;
-        height: 380px;
-        margin: 0 auto;
+        margin: 0rem 1rem;
     }
 }
 

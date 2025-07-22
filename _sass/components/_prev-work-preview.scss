@@ -1,9 +1,13 @@
 // Previous Works Preview Section
 @use "base/variables" as *;
 
+// $button-color: #c8102e;
+// $button-color-hover: #a60e26;
+
 .prev-works-preview-section {
-    background: linear-gradient(135deg, $rose-light 0%, $rose-medium 100%);
+    background: linear-gradient(135deg, $background-grey-light 0%, $bacgkround-grey-heavy 100%);
     padding: 80px 0;
+    box-shadow: -1px 0px 72px rgba(0, 0, 0, 0.05);
 
     .container {
         max-width: 1200px;
@@ -21,9 +25,10 @@
 
     .preview-works-grid {
         display: grid;
+        justify-items: center;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
-        margin-bottom: 50px;
+        margin-bottom: 60px;
 
         .work-link {
             text-decoration: none;
@@ -35,27 +40,31 @@
                 color: inherit;
             }
         }
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
     }
 
     .view-more-section {
         text-align: center;
 
+        $button-color: #c8102e;
+        $button-color-hover: #a60e26;
+
         .view-more-button {
             display: inline-block;
-            background: #c8102e;
+            background: $button-color;
             color: white;
-            padding: 15px 40px;
-            border-radius: 8px;
+            padding: 12px 48px;
+            border-radius: 24px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.3);
 
             &:hover {
-                background: #a60e26;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(200, 16, 46, 0.5);
+                background: $button-color-hover;
                 color: white;
                 text-decoration: none;
             }
@@ -65,12 +74,7 @@
 
 
 // Responsive Design
-@media (max-width: 992px) {
-    .preview-works-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-    }
-}
+
 
 @media (max-width: 768px) {
     .prev-works-preview-section {
@@ -78,12 +82,6 @@
 
         .section-title {
             font-size: 2rem;
-            margin-bottom: 40px;
-        }
-
-        .preview-works-grid {
-            grid-template-columns: 1fr;
-            gap: 20px;
             margin-bottom: 40px;
         }
     }
