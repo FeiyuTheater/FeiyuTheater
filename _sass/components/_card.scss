@@ -5,8 +5,8 @@ $poster-title-color: #ffffff;
 .card-component {
     position: relative;
     // The standard poster ratio is 4 / 3
-    height: 450px;
-    width: 337.5px;
+    max-width: 337.5px;
+    aspect-ratio: 3 / 4;
 
     background: linear-gradient(135deg, #1e1e1e 0%, #2a2a2a 100%);
     border-radius: $poster-card-radius;
@@ -102,11 +102,13 @@ $poster-title-color: #ffffff;
         }
     }
 
+    @media (max-width: 992px) {
+        max-width: 400px;
+
+    }
+
     @media (max-width: 768px) {
-        // The standard poster ratio is 4 / 3
-        width: 285px;
-        height: 380px;
-        margin: 0 auto;
+        margin: 0rem 1rem;
     }
 }
 
