@@ -17,7 +17,7 @@
 # 内容更新教程
 在话剧演出后，又制作人或宣传团队更新演出内容。只需要为新的演出建立一个新的文件，网站就会随之更新，详细步骤如下：
 1. 先基于`main`branch创建一个git branch，命名规则为`update/<author-name>/<project-name>`。比如:`update/boning/the-man-from-earth`。
-2. 在`collections/_works/`中建立一个新的`.md`文件，用剧的名字命名（可以参考其他文件）。
+2. 在`collections/_works/`中建立一个新的`.md`文件，用年份+季节+剧的名字命名，e.g. `2025-spring-dolls-house.md`（可以参考其他文件）。
 3. 文件中需要更新的内容是一些key value pairs，建议复制一份其他文件基于现有的内容修改。注意文件中前后两个`---`是必须的，不能省略。这里解释其中一些key的使用方法：
   ```
   ---
