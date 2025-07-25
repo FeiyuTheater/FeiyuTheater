@@ -1,0 +1,42 @@
+
+.name-card {
+    $circle-background-light: #bab4b1 ;
+    $circle-background-heavy: #7c7774;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    &-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+
+        background: linear-gradient(135deg, $circle-background-light 0%, $circle-background-heavy 100%);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-bottom: 16px;
+
+        .name-card-character {
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+    }
+
+    &-name {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+    &-role {
+        font-size: 14px;
+        color: #666;
+    }
+}
