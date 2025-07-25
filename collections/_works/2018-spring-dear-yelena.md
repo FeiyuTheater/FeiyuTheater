@@ -28,6 +28,12 @@ work_details:
           role: "巴沙"
     - page_title: "导演制作团队"
       members:
+        - name: "制作人"
+          person: "周思韵"
+        - name: "制作人"
+          person: "李周嘉"
+        - name: "助理制作人"
+          person: "周梓桐"
         - name: "导演"
           person: "李泽宇"
         - name: "副导演"
