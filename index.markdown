@@ -29,13 +29,13 @@ hero:
   <div class="container">
     <h2 class="section-title">往期作品</h2>
     <div class="preview-works-grid">
-      {% assign preview_works = site.works | limit: 3 %}
-      {% for work in preview_works %}
+      {% assign preview_works = site.works | sort: 'work_details.date' | reverse %}
+      {% for work in preview_works | limit: 3 %}
           <a href="{{ work.url | relative_url }}" class="work-link">
-            {% include components/card.html 
-               image=work.work_details.poster_image 
-               date=work.work_details.date 
-               title=work.work_details.title 
+            {% include components/card.html
+               image=work.work_details.poster_image
+               date=work.work_details.date
+               title=work.work_details.title
             %}
           </a>
       {% endfor %}

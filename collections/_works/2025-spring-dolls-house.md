@@ -4,7 +4,7 @@ title: "玩偶之家2:娜拉归来"
 work_details:
   title: "玩偶之家2:娜拉归来"
   location: "地球的某个地方"
-  date: "某个时间"
+  date: "2025年4月12日 & 13日"
   banner_image: "/assets/imgs/works/dolls-house/banner.png"
   poster_image: "/assets/imgs/works/dolls-house/poster.png"
   introduction: "了不起的玩偶之家故事"

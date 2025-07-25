@@ -4,7 +4,7 @@ title: "每一件美妙的小事"
 work_details:
   title: "每一件美妙的小事"
   location: "地球的某个地方"
-  date: "某个时间"
+  date: "2024年10月19日 & 20日"
   banner_image: "/assets/imgs/works/every-brilliant-thing/banner.png"
   poster_image: "/assets/imgs/works/every-brilliant-thing/poster.png"
   introduction: "了不起的玩偶之家故事"
