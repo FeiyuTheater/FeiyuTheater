@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "这个男人来自地球"
+sort_by_date: "2025-06-08"
 work_details:
   title: "这个男人来自地球"
   location: "SJSU Hammer Theater, San Jose, CA"

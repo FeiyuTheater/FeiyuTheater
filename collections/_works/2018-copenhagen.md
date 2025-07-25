@@ -1,10 +1,11 @@
 ---
-layout: work-detail                   
-title: "哥本哈根"              
-work_details:                   
-  title: "哥本哈根"            
-  location: "Clubhouse Ballroom, Stanford University"   
-  date: "2018年10月13日&10月20日"   
+layout: work-detail
+title: "哥本哈根"
+sort_by_date: "2018-10-13"
+work_details:
+  title: "哥本哈根"
+  location: "Clubhouse Ballroom, Stanford University"
+  date: "2018年10月13日 & 20日"
   banner_image: "/assets/imgs/works/2018-copenhagen/copenhagen-banner.jpg"
   poster_image: "/assets/imgs/works/2018-copenhagen/copenhagen-poster.jpg"
   introduction: "1941年9月，二战的战火蔓延在欧洲。德国物理学家海森堡来到被纳粹占领的哥本哈根，拜访自己昔日的导师玻尔。在那场神秘的对话后，海森堡和玻尔的友谊却就此终结了。他为什么要来？这个问题事后困扰着玻尔和他的妻子，困扰着无数历史学家们，也困扰着海森堡自己。在天堂中，三个备受困扰的灵魂再次会面，追忆当年的经历、驳斥对方的说法、探讨事件的真相。那万物内核中的不确定性，在这场触及人心的思维实验中体现得淋漓尽致。"
@@ -57,16 +58,16 @@ work_details:
         - name: "摄影"
           person: "刘锐，张若鹏"
   youtube_video: "YvIqO7AM_Ls"
-  photos:                              
-    - image: "/assets/imgs/works/2018-copenhagen/stage1.jpg"   
-      size: "medium"                   
-      caption: "演出剧照" 
-    - image: "/assets/imgs/works/2018-copenhagen/stage2.jpg"   
-      size: "medium"                   
-      caption: "演出剧照"   
-    - image: "/assets/imgs/works/2018-copenhagen/stage3.jpg"   
-      size: "medium"                   
-      caption: "演出剧照"   
+  photos:
+    - image: "/assets/imgs/works/2018-copenhagen/stage1.jpg"
+      size: "medium"
+      caption: "演出剧照"
+    - image: "/assets/imgs/works/2018-copenhagen/stage2.jpg"
+      size: "medium"
+      caption: "演出剧照"
+    - image: "/assets/imgs/works/2018-copenhagen/stage3.jpg"
+      size: "medium"
+      caption: "演出剧照"
     - image: "/assets/imgs/works/2018-copenhagen/curtain-call.jpg"
       caption: "谢幕"
       size: "large"

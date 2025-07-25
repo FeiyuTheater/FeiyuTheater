@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "车站"
+sort_by_date: "2017-05-21"
 work_details:
   title: "车站"
   location: "Stanford Cubberley Auditorium"

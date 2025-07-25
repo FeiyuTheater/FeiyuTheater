@@ -15,7 +15,7 @@ permalink: /prev-work
   <div class="container">
     <!-- Works Grid -->
     <div class="works-grid">
-      {% assign sorted_works = site.works | sort: 'work_details.date' | reverse %}
+      {% assign sorted_works = site.works | sort: 'sort_by_date' | reverse %}
       {% for work in sorted_works %}
         <a href="{{ work.url | relative_url }}" class="work-link">
           {% include components/card.html
