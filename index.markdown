@@ -30,7 +30,7 @@ hero:
     <h2 class="section-title">往期作品</h2>
     <div class="preview-works-grid">
       {% assign preview_works = site.works | sort: 'work_details.date' | reverse %}
-      {% for work in preview_works | limit: 3 %}
+      {% for work in preview_works limit: 3 %}
           <a href="{{ work.url | relative_url }}" class="work-link">
             {% include components/card.html
                image=work.work_details.poster_image
