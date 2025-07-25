@@ -134,6 +134,57 @@ $brown-dark: #8b5a3c;
 .introduction-section {
     background: linear-gradient(135deg, $beige-light 0%, $beige-medium 100%);
 
+    .poster-description-container {
+        $subcontainer-padding-x: 20px;
+        $subcontainer-padding-y: 20px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 0px 20px;
+
+        @media (max-width: 992px) {
+            grid-template-columns: 1fr;
+        }
+
+        .poster-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 0px 40px;
+
+            @media (max-width: 992px) {
+                grid-template-columns: 1fr;
+            }
+
+
+            .work-poster {
+                width: 100%;
+                max-width: 420px;
+                border-radius: 12px;
+
+                height: auto;
+                object-fit: cover;
+                aspect-ratio: auto; // Maintain original aspect ratio
+
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+                &:hover {
+                    transform: scale(1.015);
+                    // box-shadow: 4px 12px 32px rgba(0, 0, 0, 0.4);
+                }
+            }
+        }
+
+        .description-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: $subcontainer-padding-x $subcontainer-padding-y;
+        }
+    }
+
     .introduction-text {
         font-size: 1.3rem;
         line-height: 1.8;
@@ -152,26 +203,9 @@ $brown-dark: #8b5a3c;
 
     .poster-cast-grid {
         display: grid;
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1;
         gap: 60px;
         align-items: start;
-    }
-
-    .poster-container {
-        .work-poster {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            object-fit: cover;
-            aspect-ratio: auto; // Maintain original aspect ratio
-
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
     }
 
     .cast-container {
@@ -559,12 +593,6 @@ $brown-dark: #8b5a3c;
         }
     }
 
-    .poster-container {
-        .work-poster {
-            max-width: 350px; // Slightly smaller on tablet
-        }
-    }
-
     .detail-section {
         padding: 60px 0;
 
@@ -666,15 +694,6 @@ $brown-dark: #8b5a3c;
                 width: 10px;
                 height: 10px;
             }
-        }
-    }
-
-    .poster-container {
-        text-align: center;
-
-        .work-poster {
-            max-width: 250px;
-            margin: 0 auto;
         }
     }
 

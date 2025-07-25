@@ -25,8 +25,15 @@ layout: default
             剧情简介
             <span class="title-dash">——</span>
         </h2>
-        <div class="section-content">
-            <p class="introduction-text">{{ page.work_details.introduction }}</p>
+
+        <div class="poster-description-container">
+            <div class="poster-container">
+                <img src="{{ page.work_details.poster_image }}" alt="{{ page.work_details.title }} 海报"
+                    class="work-poster">
+            </div>
+            <div class="description-container">
+                <p class="introduction-text">{{ page.work_details.introduction }}</p>
+            </div>
         </div>
     </div>
 </section>
@@ -41,10 +48,6 @@ layout: default
         </h2>
         <div class="section-content">
             <div class="poster-cast-grid">
-                <div class="poster-container">
-                    <img src="{{ page.work_details.poster_image }}" alt="{{ page.work_details.title }} 海报"
-                        class="work-poster">
-                </div>
                 <div class="cast-container">
                     <!-- Production Team Carousel -->
                     <div class="production-team-carousel">
