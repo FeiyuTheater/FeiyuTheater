@@ -17,12 +17,13 @@
 # 内容更新教程
 在话剧演出后，又制作人或宣传团队更新演出内容。只需要为新的演出建立一个新的文件，网站就会随之更新，详细步骤如下：
 1. 先基于`main`branch创建一个git branch，命名规则为`update/<author-name>/<project-name>`。比如:`update/boning/the-man-from-earth`。
-2. 在`collections/_works/`中建立一个新的`.md`文件，用剧的名字命名（可以参考其他文件）。
+2. 在`collections/_works/`中建立一个新的`.md`文件，用年份+季节+剧的名字命名，e.g. `2025-spring-dolls-house.md`（可以参考其他文件）。
 3. 文件中需要更新的内容是一些key value pairs，建议复制一份其他文件基于现有的内容修改。注意文件中前后两个`---`是必须的，不能省略。这里解释其中一些key的使用方法：
   ```
   ---
   layout: work-detail                   <=== "这里必须是work-detail"
   title: "玩偶之家2:娜拉归来"              <=== "话剧名称，显示在网页中"
+  sort_by_date: "2025-07-25"            <=== "演出日期，用于给往期作品排序，请使用YYYY-MM-DD格式，必须要有“
   work_details:                         <=== "影响'作品详情'页的内容"
     title: "玩偶之家2:娜拉归来"            <=== "话剧名称，显示在'作品详情'页中，一般与上边的title相同"
     location: "地球的某个地方"            <=== "(optional) 演出地点"
@@ -51,7 +52,7 @@
           - name: "灯光"
             person: "了不起的灯光"
             role: "灯光负责人"
-    youtube_video: "mee4gJM3kls"         <=== "Youtube视频，click share，选embed， 复制'https://www.youtube.com/embed/'之后'?'之前的字符串"
+    youtube_video: "mee4gJM3kls"         <=== "(optional) Youtube视频，click share，选embed， 复制'https://www.youtube.com/embed/'之后'?'之前的字符串"
     photos:                              <=== "照片array，为了效果推荐至少放6张照片，包括演出照片三种，合照，现场照片等"
       - image: ""                        <=== "照片链接"
         size: "large"                    <=== "照片尺寸可以是"large","medium","small"
