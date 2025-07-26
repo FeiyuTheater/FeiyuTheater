@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "青春禁忌游戏"
+sort_by_date: "2018-05-12"
 work_details:
   title: "青春禁忌游戏"
   location: "SJSU剧场"

@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "玩偶之家2:娜拉归来"
+sort_by_date: "2025-04-12"
 work_details:
   title: "玩偶之家2:娜拉归来"
   location: "地球的某个地方"

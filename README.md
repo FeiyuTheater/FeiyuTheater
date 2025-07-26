@@ -23,6 +23,7 @@
   ---
   layout: work-detail                   <=== "这里必须是work-detail"
   title: "玩偶之家2:娜拉归来"              <=== "话剧名称，显示在网页中"
+  sort_by_date: "2025-07-25"            <=== "演出日期，用于给往期作品排序，请使用YYYY-MM-DD格式，必须要有“
   work_details:                         <=== "影响'作品详情'页的内容"
     title: "玩偶之家2:娜拉归来"            <=== "话剧名称，显示在'作品详情'页中，一般与上边的title相同"
     location: "地球的某个地方"            <=== "(optional) 演出地点"

@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "每一件美妙的小事"
+sort_by_date: "2024-10-19"
 work_details:
   title: "每一件美妙的小事"
   location: "地球的某个地方"
