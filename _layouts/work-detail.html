@@ -47,52 +47,7 @@ layout: default
             <span class="title-dash">——</span>
         </h2>
         <div class="section-content">
-            <div class="poster-cast-grid">
-                <div class="cast-container">
-                    <!-- Production Team Carousel -->
-                    <div class="production-team-carousel">
-                        <!-- Navigation Arrows -->
-                        <button class="carousel-nav carousel-prev" aria-label="上一页">
-                            <span>‹</span>
-                        </button>
-                        <button class="carousel-nav carousel-next" aria-label="下一页">
-                            <span>›</span>
-                        </button>
-
-                        <!-- Carousel Container -->
-                        <div class="carousel-container">
-                            <div class="carousel-track">
-                                {% for team_page in page.work_details.production_team %}
-                                <div class="carousel-slide">
-                                    <h3 class="team-page-title">{{ team_page.page_title }}</h3>
-                                    <div class="team-grid">
-                                        {% for member in team_page.members %}
-                                        <div class="team-member">
-                                            <div class="member-info">
-                                                <div class="character-name">{{ member.name }}</div>
-                                                <div class="actor-name">{{ member.person }}</div>
-                                                <div class="role-description">{{ member.role }}</div>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-
-                        <!-- Page Indicators -->
-                        <div class="carousel-indicators">
-                            {% for team_page in page.work_details.production_team %}
-                            <button class="indicator{% if forloop.first %} active{% endif %}"
-                                data-slide="{{ forloop.index0 }}">
-                                {{ forloop.index }}
-                            </button>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include cast-poster.html production_team=page.work_details.production_team poster_image=page.work_details.poster_image %}
         </div>
     </div>
 </section>

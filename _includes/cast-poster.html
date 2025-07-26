@@ -1,0 +1,58 @@
+{% assign poster_image = include.poster_image | default: '' %}
+{% assign production_team = include.production_team | default: page.production_team %}
+
+<!-- 处理数据转换为JavaScript格式 -->
+{% assign cast_data = '' %}
+{% capture cast_data_json %}
+{
+  {% for team in production_team %}
+    "{{ forloop.index0 }}": {
+      "title": "{{ team.page_title }}",
+      "members": [
+        {% for member in team.members %}
+        {
+          "avatar": "{{ member.person | slice: 0 }}",
+          "name": "{{ member.person }}",
+          "role": "{% if member.role %}{{ member.role }}{% endif %}",
+          "position": "{{ member.name }}"
+        }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+}
+{% endcapture %}
+
+<div class="cast-poster-container" data-cast='{{ cast_data_json | strip }}' data-teams='{{ production_team | jsonify }}'>
+  <!-- 海报部分 -->
+  <div class="cast-poster-section">
+    <div class="cast-poster">
+      {% if poster_image != '' %}
+        <img src="{{ poster_image | relative_url }}" alt="电影海报" loading="lazy">
+      {% endif %}
+    </div>
+  </div>
+  
+  <!-- 演员信息部分 -->
+  <div class="cast-section">
+    <div class="cast-section-tabs">
+      {% for team in production_team %}
+        <button class="cast-tab-button {% if forloop.first %}active{% endif %}" data-section="{{ forloop.index0 }}">
+          {{ team.page_title }}
+        </button>
+      {% endfor %}
+    </div>
+    
+    <div class="cast-grid" id="castMemberGrid">
+      <!-- 动态生成内容 -->
+    </div>
+    
+    <div class="cast-section-page-indicator">
+      <div id="castPageInfo"></div>
+      <div class="cast-page-dots" id="castPageDots"></div>
+    </div>
+    
+    <button class="cast-navigation cast-nav-left" id="castNavLeft">‹</button>
+    <button class="cast-navigation cast-nav-right" id="castNavRight">›</button>
+  </div>
+</div>
