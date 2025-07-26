@@ -1009,6 +1009,7 @@ $brown-dark: #8b5a3c;
     max-height: 70vh;
     object-fit: contain;
     display: block;
+    transition: opacity 0.3s ease; // Add smooth fade transition
 }
 
 .lightbox-caption {
@@ -1018,6 +1019,7 @@ $brown-dark: #8b5a3c;
     font-size: 16px;
     color: #333;
     border-top: 1px solid #eee;
+    transition: opacity 0.2s ease; // Smooth caption transition
 }
 
 .lightbox-close {

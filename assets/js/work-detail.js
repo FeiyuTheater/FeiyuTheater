@@ -233,7 +233,6 @@ function initLightbox() {
             caption: caption ? caption.textContent : ''
         });
         
-        // Add click handler
         item.addEventListener('click', function() {
             currentIndex = index;
             openLightbox();
@@ -245,33 +244,27 @@ function initLightbox() {
     function openLightbox() {
         const photo = photos[currentIndex];
         
+        // Create/update modal content
         lightbox.innerHTML = `
             <div class="lightbox-content">
                 <button class="lightbox-close" aria-label="Close"></button>
                 <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
                 <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
-                <div class="lightbox-loading">Loading...</div>
+                <img class="lightbox-image" src="${photo.src}" alt="${photo.alt}" style="opacity: 0;">
+                <div class="lightbox-caption">${photo.caption}</div>
             </div>
         `;
         
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
         
-        const img = new Image();
-        img.onload = function() {
-            lightbox.innerHTML = `
-                <div class="lightbox-content">
-                    <button class="lightbox-close" aria-label="Close"></button>
-                    <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
-                    <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
-                    <img class="lightbox-image" src="${photo.src}" alt="${photo.alt}">
-                    <div class="lightbox-caption">${photo.caption}</div>
-                </div>
-            `;
-            updateNavigation();
-            bindLightboxEvents();
+        // Fade in image once loaded
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        lightboxImage.onload = function() {
+            this.style.opacity = '1';
         };
-        img.src = photo.src;
+        
+        updateNavigation();
     }
     
     function closeLightbox() {
@@ -306,20 +299,18 @@ function initLightbox() {
         }
     }
     
-    function bindLightboxEvents() {
-        const closeBtn = lightbox.querySelector('.lightbox-close');
-        const prevBtn = lightbox.querySelector('.lightbox-prev');
-        const nextBtn = lightbox.querySelector('.lightbox-next');
-        
-        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-        if (prevBtn) prevBtn.addEventListener('click', prevPhoto);
-        if (nextBtn) nextBtn.addEventListener('click', nextPhoto);
-    }
-    
+    // Use event delegation for lightbox controls
     lightbox.addEventListener('click', function(e) {
-        if (e.target === lightbox) closeLightbox();
+        if (e.target.classList.contains('lightbox-close') || e.target === lightbox) {
+            closeLightbox();
+        } else if (e.target.classList.contains('lightbox-prev')) {
+            prevPhoto();
+        } else if (e.target.classList.contains('lightbox-next')) {
+            nextPhoto();
+        }
     });
     
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (!lightbox.classList.contains('active')) return;
         
