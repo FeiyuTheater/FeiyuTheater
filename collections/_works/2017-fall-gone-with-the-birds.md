@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "鸟之殇"
+sort_by_date: "2017-10-14"
 work_details:
   title: "鸟之殇"
   location: "Stanford Spilker Courtyard"
