@@ -51,7 +51,7 @@
           - name: "灯光"
             person: "了不起的灯光"
             role: "灯光负责人"
-    youtube_video: "mee4gJM3kls"         <=== "Youtube视频，click share，选embed， 复制'https://www.youtube.com/embed/'之后'?'之前的字符串"
+    youtube_video: "mee4gJM3kls"         <=== "(optional) Youtube视频，click share，选embed， 复制'https://www.youtube.com/embed/'之后'?'之前的字符串"
     photos:                              <=== "照片array，为了效果推荐至少放6张照片，包括演出照片三种，合照，现场照片等"
       - image: ""                        <=== "照片链接"
         size: "large"                    <=== "照片尺寸可以是"large","medium","small"
