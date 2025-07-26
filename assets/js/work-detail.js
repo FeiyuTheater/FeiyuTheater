@@ -148,3 +148,67 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize
     updateCarousel();
 });
+
+// Masonary
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM loaded, looking for photo wall...');
+    const photoWall = document.querySelector('#photo-wall');
+
+    if (!photoWall) {
+        console.error('Photo wall element not found!');
+        return;
+    }
+
+    console.log('Photo wall found, images count:', photoWall.querySelectorAll('.photo-item').length);
+
+    // Check if Masonry is available
+    if (typeof Masonry === 'undefined') {
+        console.error('Masonry library not loaded!');
+        return;
+    }
+
+    // Check if imagesLoaded is available
+    if (typeof imagesLoaded === 'undefined') {
+        console.error('imagesLoaded library not loaded!');
+        // Initialize masonry without waiting for images
+        initMasonry();
+        return;
+    }
+
+    // Wait for images to load before initializing masonry
+    imagesLoaded(photoWall, function () {
+        console.log('All images loaded, initializing masonry...');
+        initMasonry();
+    });
+
+    function initMasonry() {
+        try {
+            // Initialize Masonry
+            const masonry = new Masonry(photoWall, {
+                itemSelector: '.photo-item',
+                columnWidth: '.photo-item',
+                gutter: 0, // We handle spacing with CSS margins
+                percentPosition: true,
+                fitWidth: false // Changed to false for better responsiveness
+            });
+
+            console.log('Masonry initialized successfully');
+
+            // Add loaded class for animation
+            photoWall.classList.add('masonry-loaded');
+
+            // Handle window resize for responsive layout
+            let resizeTimer;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function () {
+                    console.log('Relaying masonry...');
+                    masonry.layout();
+                }, 250);
+            });
+
+        } catch (error) {
+            console.error('Error initializing masonry:', error);
+        }
+    }
+});

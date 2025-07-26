@@ -123,7 +123,7 @@ layout: default
             <span class="title-dash">——</span>
         </h2>
         <div class="section-content">
-            <div class="photo-wall">
+            <div class="photo-wall" id="photo-wall">
                 {% for photo in page.work_details.photos %}
                 <div class="photo-item photo-{{ photo.size }}">
                     <img src="{{ photo.image }}" alt="{{ photo.caption }}" class="photo-image">
@@ -143,4 +143,7 @@ layout: default
 </div>
 {% endif %}
 
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="{{ '/assets/js/work-detail.js' | append: page.js | relative_url }}"></script>
+
