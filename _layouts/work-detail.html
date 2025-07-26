@@ -123,9 +123,9 @@ layout: default
             <span class="title-dash">——</span>
         </h2>
         <div class="section-content">
-            <div class="photo-wall">
+            <div class="photo-wall" id="photo-wall">
                 {% for photo in page.work_details.photos %}
-                <div class="photo-item photo-{{ photo.size }}">
+                <div class="photo-item photo-{{ photo.size }}" data-lightbox-src="{{ photo.full_image | default: photo.image }}">
                     <img src="{{ photo.image }}" alt="{{ photo.caption }}" class="photo-image">
                     <div class="photo-caption">{{ photo.caption }}</div>
                 </div>
@@ -135,6 +135,16 @@ layout: default
     </div>
 </section>
 
+<!-- Photo lightbox -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <button class="lightbox-close" aria-label="Close"></button>
+        <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
+        <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
+        <img class="lightbox-image" src="" alt="">
+        <div class="lightbox-caption"></div>
+    </div>
+</div>
 <!-- Custom content from markdown -->
 {% assign content_stripped = content | strip %}
 {% if content_stripped != "" %}
@@ -143,4 +153,6 @@ layout: default
 </div>
 {% endif %}
 
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="{{ '/assets/js/work-detail.js' | append: page.js | relative_url }}"></script>

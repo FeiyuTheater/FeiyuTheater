@@ -148,3 +148,178 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize
     updateCarousel();
 });
+
+// Masonary
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOM loaded, looking for photo wall...');
+    const photoWall = document.querySelector('#photo-wall');
+
+    if (!photoWall) {
+        console.error('Photo wall element not found!');
+        return;
+    }
+
+    console.log('Photo wall found, images count:', photoWall.querySelectorAll('.photo-item').length);
+
+    // Check if Masonry is available
+    if (typeof Masonry === 'undefined') {
+        console.error('Masonry library not loaded!');
+        return;
+    }
+
+    // Check if imagesLoaded is available
+    if (typeof imagesLoaded === 'undefined') {
+        console.error('imagesLoaded library not loaded!');
+        // Initialize masonry without waiting for images
+        initMasonry();
+        return;
+    }
+
+    // Wait for images to load before initializing masonry
+    imagesLoaded(photoWall, function () {
+        console.log('All images loaded, initializing masonry...');
+        initMasonry();
+    });
+
+    function initMasonry() {
+        try {
+            // Initialize Masonry
+            const masonry = new Masonry(photoWall, {
+                itemSelector: '.photo-item',
+                columnWidth: '.photo-item',
+                gutter: 0, // We handle spacing with CSS margins
+                percentPosition: true,
+                fitWidth: false // Changed to false for better responsiveness
+            });
+
+            console.log('Masonry initialized successfully');
+
+            // Add loaded class for animation
+            photoWall.classList.add('masonry-loaded');
+
+            // Handle window resize for responsive layout
+            let resizeTimer;
+            window.addEventListener('resize', function () {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function () {
+                    console.log('Relaying masonry...');
+                    masonry.layout();
+                }, 250);
+            });
+
+        } catch (error) {
+            console.error('Error initializing masonry:', error);
+        }
+    }
+});
+
+// Add this function and call after masonry initialization
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const photoItems = document.querySelectorAll('.photo-item');
+    
+    let currentIndex = 0;
+    let photos = [];
+    
+    // Collect all photos data
+    photoItems.forEach((item, index) => {
+        const img = item.querySelector('.photo-image');
+        const caption = item.querySelector('.photo-caption');
+        const fullSrc = item.dataset.lightboxSrc || img.src;
+        
+        photos.push({
+            src: fullSrc,
+            alt: img.alt,
+            caption: caption ? caption.textContent : ''
+        });
+        
+        item.addEventListener('click', function() {
+            currentIndex = index;
+            openLightbox();
+        });
+        
+        item.style.cursor = 'pointer';
+    });
+    
+    function openLightbox() {
+        const photo = photos[currentIndex];
+        
+        // Create/update modal content
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <button class="lightbox-close" aria-label="Close"></button>
+                <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
+                <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
+                <img class="lightbox-image" src="${photo.src}" alt="${photo.alt}" style="opacity: 0;">
+                <div class="lightbox-caption">${photo.caption}</div>
+            </div>
+        `;
+        
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Fade in image once loaded
+        const lightboxImage = lightbox.querySelector('.lightbox-image');
+        lightboxImage.onload = function() {
+            this.style.opacity = '1';
+        };
+        
+        updateNavigation();
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function nextPhoto() {
+        if (currentIndex < photos.length - 1) {
+            currentIndex++;
+            openLightbox();
+        }
+    }
+    
+    function prevPhoto() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            openLightbox();
+        }
+    }
+    
+    function updateNavigation() {
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        
+        if (photos.length <= 1) {
+            lightbox.setAttribute('data-single', 'true');
+        } else {
+            lightbox.removeAttribute('data-single');
+            if (prevBtn) prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+            if (nextBtn) nextBtn.style.display = currentIndex < photos.length - 1 ? 'flex' : 'none';
+        }
+    }
+    
+    // Use event delegation for lightbox controls
+    lightbox.addEventListener('click', function(e) {
+        if (e.target.classList.contains('lightbox-close') || e.target === lightbox) {
+            closeLightbox();
+        } else if (e.target.classList.contains('lightbox-prev')) {
+            prevPhoto();
+        } else if (e.target.classList.contains('lightbox-next')) {
+            nextPhoto();
+        }
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape': closeLightbox(); break;
+            case 'ArrowLeft': prevPhoto(); break;
+            case 'ArrowRight': nextPhoto(); break;
+        }
+    });
+}
+
+initLightbox();
