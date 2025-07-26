@@ -1,6 +1,7 @@
 ---
 layout: work-detail
 title: "哗变"
+sort_by_date: "2025-01-23" 
 work_details:
   title: "哗变"
   location: "Online"
