@@ -146,28 +146,34 @@ $brown-dark: #8b5a3c;
     }
 }
 
-// Poster and Cast Section
+// Fixed Poster and Cast Section
 .poster-cast-section {
     background: linear-gradient(135deg, $orange-light 0%, $orange-medium 100%);
 
     .poster-cast-grid {
         display: grid;
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 400px 1fr; // Fixed poster width, flexible carousel
         gap: 60px;
         align-items: start;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
     }
 
     .poster-container {
+        // Fix: Maintain exact poster dimensions
+        width: 400px; // Fixed width
+        flex-shrink: 0; // Don't allow shrinking
+        
         .work-poster {
             width: 100%;
-            max-width: 400px;
             height: auto;
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
             object-fit: cover;
             aspect-ratio: auto; // Maintain original aspect ratio
-
+            
             &:hover {
                 transform: scale(1.05);
             }
@@ -175,13 +181,20 @@ $brown-dark: #8b5a3c;
     }
 
     .cast-container {
+        // Fix: Allow this to be flexible but set consistent internal sizing
+        min-width: 0; // Allow shrinking if needed
+        overflow: hidden; // Prevent content overflow
+        
         .production-team-carousel {
             position: relative;
-            overflow: visible; // Allow arrows to be visible outside container
+            overflow: visible;
             background: rgba(255, 255, 255, 0.2);
             border-radius: 15px;
             padding: 20px;
-            margin: 0 30px; // Add margin to make space for arrows
+            margin: 0 40px; // Space for arrows
+            // Fix: Set consistent height regardless of content
+            min-height: 450px; // Prevents height fluctuations
+            width: calc(100% - 80px); // Account for arrow space
 
             .carousel-nav {
                 position: absolute;
@@ -210,33 +223,40 @@ $brown-dark: #8b5a3c;
                 }
 
                 &.carousel-prev {
-                    left: -40px; // Move further outside
+                    left: -40px;
                 }
 
                 &.carousel-next {
-                    right: -40px; // Move further outside
+                    right: -40px;
                 }
             }
 
             .carousel-container {
                 overflow: hidden;
                 border-radius: 10px;
-                position: relative; // Ensure proper positioning context
+                position: relative;
+                // Fix: Consistent height for all carousel content
+                height: 480px; // Fixed height prevents size changes
+                width: 100%;
             }
 
             .carousel-track {
                 display: flex;
                 transition: transform 0.3s ease;
                 cursor: grab;
+                height: 100%; // Take full container height
 
                 &:active {
                     cursor: grabbing;
-                }
+                } 
             }
 
             .carousel-slide {
                 flex: 0 0 100%;
-                min-height: 400px;
+                height: 100%; // Use full track height
+                // Remove min-height as we set fixed height above
+                display: flex;
+                flex-direction: column;
 
                 .team-page-title {
                     font-size: 1.8rem;
@@ -244,12 +264,16 @@ $brown-dark: #8b5a3c;
                     margin-bottom: 25px;
                     text-align: center;
                     font-weight: 700;
+                    flex-shrink: 0; // Don't shrink title
                 }
 
                 .team-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                     gap: 20px;
+                    flex: 1; // Take remaining space
+                    align-content: start; // Align items to top
+                    overflow-y: auto; // Scroll if content exceeds height
                 }
 
                 .team-member {
@@ -259,6 +283,7 @@ $brown-dark: #8b5a3c;
                     text-align: center;
                     border: 2px solid rgba(212, 165, 116, 0.3);
                     transition: all 0.3s ease;
+                    height: fit-content; // Adjust to content
 
                     &:hover {
                         transform: translateY(-5px);
@@ -310,6 +335,7 @@ $brown-dark: #8b5a3c;
                 justify-content: center;
                 gap: 10px;
                 margin-top: 20px;
+                flex-shrink: 0; // Don't shrink indicators
 
                 .indicator {
                     width: 12px;
@@ -536,7 +562,7 @@ $brown-dark: #8b5a3c;
     }
 }
 
-// Responsive Design
+// Update responsive styles as well
 @media (max-width: 992px) {
     .work-detail-banner {
         height: 300px;
@@ -553,41 +579,57 @@ $brown-dark: #8b5a3c;
         }
     }
 
-    .poster-cast-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-
-    .production-team-carousel {
-        .carousel-nav {
-            width: 45px;
-            height: 45px;
-            font-size: 20px;
-
-            &.carousel-prev {
-                left: -35px;
-            }
-
-            &.carousel-next {
-                right: -35px;
+    .poster-cast-section {
+        .poster-cast-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+            padding: 0 20px;
+        }
+        
+        .poster-container {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto; // Center the poster
+            
+            .work-poster {
+                max-width: 100%;
             }
         }
+        
+        .cast-container {
+            .production-team-carousel {
+                min-height: 400px; // Slightly smaller on tablets
+                margin: 0 35px;
+                width: calc(100% - 70px);
+                
+                .carousel-container {
+                    height: 330px;
+                }
+                
+                .carousel-nav {
+                    width: 45px;
+                    height: 45px;
+                    font-size: 20px;
 
-        .team-grid {
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
-        }
+                    &.carousel-prev {
+                        left: -35px;
+                    }
 
-        .team-member .member-image {
-            width: 60px;
-            height: 60px;
-        }
-    }
+                    &.carousel-next {
+                        right: -35px;
+                    }
+                }
 
-    .poster-container {
-        .work-poster {
-            max-width: 350px; // Slightly smaller on tablet
+                .team-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                    gap: 15px;
+                }
+
+                .team-member .member-image {
+                    width: 60px;
+                    height: 60px;
+                }
+            }
         }
     }
 
@@ -610,97 +652,78 @@ $brown-dark: #8b5a3c;
         }
     }
 
-    .poster-cast-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .cast-container {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .production-team-carousel {
-        margin: 0;
-        padding: 15px;
-        width: 100%;
-        max-width: 320px; // Limit overall carousel width
-
-        .carousel-nav {
-            display: none; // Hide arrows on mobile, rely on swipe
+    .poster-cast-section {
+        .poster-cast-grid {
+            padding: 0 15px;
         }
-
-        .carousel-container {
-            width: 100%;
+        
+        .poster-container {
+            max-width: 280px;
         }
+        
+        .cast-container {
+            .production-team-carousel {
+                margin: 0;
+                padding: 15px;
+                width: 100%;
+                max-width: 320px;
+                min-height: auto; // Allow natural height on mobile
+                margin: 0 auto; // Center on mobile
+                
+                .carousel-nav {
+                    display: none; // Hide arrows on mobile
+                }
+                
+                .carousel-container {
+                    height: auto; // Auto height on mobile
+                }
+                
+                .carousel-slide {
+                    height: auto; // Auto height on mobile
+                    min-height: auto;
+                }
+                
+                .team-grid {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    align-items: center;
+                }
+                
+                .team-member {
+                    width: 100%;
+                    max-width: 280px;
+                    
+                    .member-image {
+                        width: 60px;
+                        height: 60px;
+                        margin-bottom: 10px;
+                    }
 
-        .carousel-track {
-            width: 100%;
-        }
+                    .member-info {
+                        .character-name {
+                            font-size: 1rem;
+                        }
 
-        .carousel-slide {
-            min-height: auto;
-            padding: 0;
-            width: 100%;
+                        .actor-name {
+                            font-size: 0.9rem;
+                        }
 
-            .team-page-title {
-                font-size: 1.5rem;
-                margin-bottom: 20px;
-                text-align: center;
-            }
-        }
-
-        .team-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
-            align-items: center;
-        }
-
-        .team-member {
-            padding: 15px;
-            width: 100%;
-            max-width: 280px; // Control individual member card width
-
-            .member-image {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 10px;
-            }
-
-            .member-info {
-                .character-name {
-                    font-size: 1rem;
+                        .role-description {
+                            font-size: 0.8rem;
+                        }
+                    }
                 }
 
-                .actor-name {
-                    font-size: 0.9rem;
-                }
+                .carousel-indicators {
+                    margin-top: 15px;
 
-                .role-description {
-                    font-size: 0.8rem;
+                    .indicator {
+                        width: 10px;
+                        height: 10px;
+                    }
                 }
             }
-        }
-
-        .carousel-indicators {
-            margin-top: 15px;
-
-            .indicator {
-                width: 10px;
-                height: 10px;
-            }
-        }
-    }
-
-    .poster-container {
-        text-align: center;
-
-        .work-poster {
-            max-width: 250px;
-            margin: 0 auto;
         }
     }
 
