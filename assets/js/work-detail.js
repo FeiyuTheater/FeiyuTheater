@@ -212,3 +212,123 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 });
+
+// Add this function and call after masonry initialization
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const photoItems = document.querySelectorAll('.photo-item');
+    
+    let currentIndex = 0;
+    let photos = [];
+    
+    // Collect all photos data
+    photoItems.forEach((item, index) => {
+        const img = item.querySelector('.photo-image');
+        const caption = item.querySelector('.photo-caption');
+        const fullSrc = item.dataset.lightboxSrc || img.src;
+        
+        photos.push({
+            src: fullSrc,
+            alt: img.alt,
+            caption: caption ? caption.textContent : ''
+        });
+        
+        // Add click handler
+        item.addEventListener('click', function() {
+            currentIndex = index;
+            openLightbox();
+        });
+        
+        item.style.cursor = 'pointer';
+    });
+    
+    function openLightbox() {
+        const photo = photos[currentIndex];
+        
+        lightbox.innerHTML = `
+            <div class="lightbox-content">
+                <button class="lightbox-close" aria-label="Close"></button>
+                <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
+                <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
+                <div class="lightbox-loading">Loading...</div>
+            </div>
+        `;
+        
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        const img = new Image();
+        img.onload = function() {
+            lightbox.innerHTML = `
+                <div class="lightbox-content">
+                    <button class="lightbox-close" aria-label="Close"></button>
+                    <button class="lightbox-nav lightbox-prev" aria-label="Previous"></button>
+                    <button class="lightbox-nav lightbox-next" aria-label="Next"></button>
+                    <img class="lightbox-image" src="${photo.src}" alt="${photo.alt}">
+                    <div class="lightbox-caption">${photo.caption}</div>
+                </div>
+            `;
+            updateNavigation();
+            bindLightboxEvents();
+        };
+        img.src = photo.src;
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    function nextPhoto() {
+        if (currentIndex < photos.length - 1) {
+            currentIndex++;
+            openLightbox();
+        }
+    }
+    
+    function prevPhoto() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            openLightbox();
+        }
+    }
+    
+    function updateNavigation() {
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        
+        if (photos.length <= 1) {
+            lightbox.setAttribute('data-single', 'true');
+        } else {
+            lightbox.removeAttribute('data-single');
+            if (prevBtn) prevBtn.style.display = currentIndex > 0 ? 'flex' : 'none';
+            if (nextBtn) nextBtn.style.display = currentIndex < photos.length - 1 ? 'flex' : 'none';
+        }
+    }
+    
+    function bindLightboxEvents() {
+        const closeBtn = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
+        
+        if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+        if (prevBtn) prevBtn.addEventListener('click', prevPhoto);
+        if (nextBtn) nextBtn.addEventListener('click', nextPhoto);
+    }
+    
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (!lightbox.classList.contains('active')) return;
+        
+        switch(e.key) {
+            case 'Escape': closeLightbox(); break;
+            case 'ArrowLeft': prevPhoto(); break;
+            case 'ArrowRight': nextPhoto(); break;
+        }
+    });
+}
+
+initLightbox();
