@@ -1,9 +1,10 @@
 ---
 layout: work-detail            
-title: "车下莫干山"            
+title: "车下莫干山"  
+sort_by_date: "2019-11-16"          
 work_details:                     
   title: "车下莫干山"          
-  location: "Haymarket Theater, 50 Embarcadero Rd, Palo Alto"
+  location: "Haymarket Theater, Palo Alto"
   date: "2019年11月16日"
   banner_image: "/assets/imgs/works/2019-the-ride-down-mt-morgan/the-ride-down-mt-morgan-banner.jpg"
   poster_image: "/assets/imgs/works/2019-the-ride-down-mt-morgan/the-ride-down-mt-morgan-poster.jpg"
@@ -65,7 +66,6 @@ work_details:
           person: "张小，Jerry Li，Jeremy Bao"
         - name: "场监"
           person: "王艳秋，朱本正，贾小荣"
-        
   youtube_video: "QLRztReSL3U"
   photos:                          
     - image: "/assets/imgs/works/2019-the-ride-down-mt-morgan/stage1.jpg"        
