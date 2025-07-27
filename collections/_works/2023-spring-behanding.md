@@ -4,7 +4,7 @@ title: "断手斯城"
 sort_by_date: "2023-02-18"
 work_details:
   title: "断手斯城"
-  location: "Spangenberg Performing Arts Theater"
+  location: "MVCPA, Mountain View, CA"
   date: "2023年2月18日 - 2023年2月19日"
   banner_image: "/assets/imgs/works/behanding/banner.png"
   poster_image: "/assets/imgs/works/behanding/poster.png"
