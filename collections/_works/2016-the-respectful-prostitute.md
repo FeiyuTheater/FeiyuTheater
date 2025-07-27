@@ -8,7 +8,9 @@ work_details:
   date: "2016年5月22日"
   banner_image: "/assets/imgs/works/the-respectful-prostitute/banner.jpg"
   poster_image: "/assets/imgs/works/the-respectful-prostitute/poster.png"
-  brochure: "/assets/files/works/the-respectful-prostitute/brochure_2.jpg"
+  brochure: 
+    - "/assets/files/works/the-respectful-prostitute/brochure_1.jpg"
+    - "/assets/files/works/the-respectful-prostitute/brochure_2.jpg"
   introduction: "风尘女子丽瑟由于成为一桩杀人案的关键证人而不得不周旋于三个男人之间。她倾心于一位有钱的恩客——市长的儿子弗莱特，却发现弗莱特与她接触是另有图谋；出于良心，她想要替因为她打抱不平而面临牢狱之灾的流浪汉出面作证，却在市长父子的威逼利诱之下屈服。丽瑟对正义有着朴素的认识与追求，但面对权力与道德的双重夹击，她的软弱与单纯使她最终妥协，成为了上流社会伪善道德观的奴隶。"
   production_team:
     - page_title: "主要演员"
