@@ -21,9 +21,9 @@ layout: default
 <section class="detail-section introduction-section">
     <div class="container">
         <h2 class="section-title">
-            <span class="title-dash">——</span>
+            <!-- <span class="title-dash">——</span> -->
             剧目简介
-            <span class="title-dash">——</span>
+            <!-- <span class="title-dash">——</span> -->
         </h2>
 
         <div class="description-container">
@@ -38,15 +38,18 @@ layout: default
     </div>
 </section>
 
-<!-- Video Section -->
-{% if page.work_details.youtube_video %}
-<section class="detail-section video-section">
+
+<section class="detail-section highlight-section">
     <div class="container">
         <h2 class="section-title">
-            <span class="title-dash">——</span>
-            精彩片段
-            <span class="title-dash">——</span>
+            <!-- <span class="title-dash">——</span> -->
+            精彩回顾
+            <!-- <span class="title-dash">——</span> -->
         </h2>
+
+<!-- Video Section -->
+{% if page.work_details.youtube_video %}
+    <section class="video-section">
         <div class="section-content">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/{{ page.work_details.youtube_video }}" frameborder="0"
@@ -54,29 +57,24 @@ layout: default
                 </iframe>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endif %}
 
 <!-- Photos Section -->
-<section class="detail-section photos-section">
-    <div class="container">
-        <h2 class="section-title">
-            <span class="title-dash">——</span>
-            演出花絮
-            <span class="title-dash">——</span>
-        </h2>
-        <div class="section-content">
-            <div class="photo-wall">
-                {% for photo in page.work_details.photos %}
-                <div class="photo-item photo-{{ photo.size }}">
-                    <img src="{{ photo.image }}" alt="{{ photo.caption }}" class="photo-image">
-                    <div class="photo-caption">{{ photo.caption }}</div>
+    <section class="photos-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="photo-wall">
+                    {% for photo in page.work_details.photos %}
+                    <div class="photo-item photo-{{ photo.size }}">
+                        <img src="{{ photo.image }}" alt="{{ photo.caption }}" class="photo-image">
+                        <div class="photo-caption">{{ photo.caption }}</div>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 </section>
 
 <!-- Custom content from markdown -->

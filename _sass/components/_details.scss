@@ -156,7 +156,7 @@ $brown-dark: #8b5a3c;
 
 // Introduction Section
 .introduction-section {
-    background: linear-gradient(135deg, $beige-light 0%, $beige-medium 100%);
+    background: linear-gradient(135deg, #f4f4f4 0%, #f0f0f0 100%);
 
     .description-container {
         $subcontainer-padding-x: 20px;
@@ -191,12 +191,18 @@ $brown-dark: #8b5a3c;
     }
 }
 
+.highlight-section {
+    background: linear-gradient(135deg, #f4f4f4 0%, #f0f0f0 100%);
+    box-shadow: -1px 0px 72px rgba(0, 0, 0, 0.05);
+}
+
 // Video Section
 .video-section {
-    background: linear-gradient(135deg, $beige-medium 0%, $beige-dark 100%);
+    margin: 0px 20px;
+    margin-bottom: 100px;
 
     .video-container {
-        max-width: 900px;
+        max-width: 1040px;
         margin: 0 auto;
         position: relative;
         width: 100%;
@@ -219,7 +225,11 @@ $brown-dark: #8b5a3c;
 
 // Photos Section
 .photos-section {
-    background: linear-gradient(135deg, $orange-medium 0%, $brown-light 100%);
+    margin: 0px 30px;
+
+    @media (max-width: 1024px) {
+        margin: 0px 0px;
+    }
 
     .photo-wall {
         display: grid;
