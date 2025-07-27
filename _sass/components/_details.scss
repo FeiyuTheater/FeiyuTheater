@@ -10,6 +10,8 @@ $orange-dark: #d4a574;
 $brown-light: #c4966a;
 $brown-medium: #a67c52;
 $brown-dark: #8b5a3c;
+$intro-color: #333;
+$section-title-color: #c8102e;
 
 // Hero Banner
 .work-detail-banner {
@@ -40,7 +42,7 @@ $brown-dark: #8b5a3c;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(139, 90, 60, 0.4));
+        background: linear-gradient(135deg, rgb(0 0 0 / 60%), rgb(59 36 36 / 40%));
         display: flex;
         align-items: center;
         justify-content: center;
@@ -132,6 +134,7 @@ $brown-dark: #8b5a3c;
 // Section Base Styles
 .detail-section {
     padding: 80px 0;
+    padding-bottom: 120px;
 
     .container {
         max-width: 1200px;
@@ -144,7 +147,7 @@ $brown-dark: #8b5a3c;
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 50px;
-        color: $brown-dark;
+        color: $section-title-color;
 
         .title-dash {
             color: $orange-dark;
@@ -169,12 +172,11 @@ $brown-dark: #8b5a3c;
     .introduction-text {
         font-size: 1.3rem;
         line-height: 1.8;
-        color: $brown-dark;
+        color: $intro-color;
         text-align: left;
         max-width: 960px;
         margin: 0 auto;
-        font-weight: 400;
-        letter-spacing: 0.5px;
+        font-weight: normal;
     }
 }
 
@@ -424,6 +426,7 @@ $brown-dark: #8b5a3c;
 
     .detail-section {
         padding: 60px 0;
+        padding-bottom: 100px;
 
         .section-title {
             font-size: 2.2rem;
@@ -540,6 +543,7 @@ $brown-dark: #8b5a3c;
 
     .detail-section {
         padding: 40px 0;
+        padding-bottom: 100px;
 
         .section-title {
             font-size: 1.8rem;
