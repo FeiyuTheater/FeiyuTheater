@@ -22,30 +22,16 @@ layout: default
     <div class="container">
         <h2 class="section-title">
             <span class="title-dash">——</span>
-            剧情简介
+            剧目简介
             <span class="title-dash">——</span>
         </h2>
 
-        <div class="poster-description-container">
-            <div class="poster-container">
-                <img src="{{ page.work_details.poster_image }}" alt="{{ page.work_details.title }} 海报"
-                    class="work-poster">
-            </div>
+        <div class="description-container">
             <div class="description-container">
                 <p class="introduction-text">{{ page.work_details.introduction }}</p>
             </div>
         </div>
-    </div>
-</section>
 
-<!-- Poster and Production Team Section -->
-<section class="detail-section">
-    <div class="container">
-        <h2 class="section-title">
-            <span class="title-dash">——</span>
-            制作团队
-            <span class="title-dash">——</span>
-        </h2>
         <div class="poster-cast-section section-content">
             {% include cast-poster.html production_team=page.work_details.production_team poster_image=page.work_details.poster_image %}
         </div>
