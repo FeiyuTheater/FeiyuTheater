@@ -27,10 +27,10 @@ work_details:
         - name: "演员"
           person: "梁晨"
           role: "老头"
-	- name: "演员"
+        - name: "演员"
           person: "徐静"
           role: "老太"
-	- name: "演员"
+        - name: "演员"
           person: "尹欣驰"
           role: "炮友"
   photos:
