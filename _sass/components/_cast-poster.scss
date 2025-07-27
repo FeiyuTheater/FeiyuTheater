@@ -142,7 +142,7 @@ $cast-breakpoints: (
 
 .cast-section {
   flex: 1;
-  padding: 60px 60px 60px 80px;
+  padding: 20px 20px 20px 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,28 +151,29 @@ $cast-breakpoints: (
   overflow: visible;
 
   @include cast-respond-to(tablet) {
-    padding: 40px 30px;
+    padding: 30px 20px;
   }
 
   @include cast-respond-to(mobile) {
-    padding: 30px 20px;
+    padding: 20px 10px;
   }
 }
 
 .cast-section-tabs {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   gap: 8px;
   flex-wrap: wrap;
 
   @include cast-respond-to(tablet) {
     gap: 6px;
+    margin-bottom: 30px;
   }
 
   @include cast-respond-to(mobile) {
     gap: 4px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
   }
 }
 
