@@ -6,8 +6,8 @@ work_details:
   title: "九号车厢"
   location: "Stanford"
   date: "2015年9月27日"
-  banner_image: "/assets/imgs/works/2015-inside-no-9/banner.png"
-  poster_image: "/assets/imgs/works/2015-inside-no-9/poster.jpg"
+  banner_image: "/assets/imgs/works/2015-inside-no-9/banner.jpg"
+  poster_image: "/assets/imgs/works/2015-inside-no-9/poster.pdf"
   introduction: "一场因误会而引发的密闭车厢闹剧"
   production_team:
     - page_title: "主要演员"
