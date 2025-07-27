@@ -29,10 +29,10 @@ work_details:
           role: "丘立安"
         - name: "演员"
           person: "周思韵"
-	  role: "丘丽叶"
+          role: "丘丽叶"
         - name: "演员"
           person: "管乐莹"
-	  role: "少年"
+          role: "少年"
     - page_title: "导演制作团队"
       members:
         - name: "制作人"
@@ -45,7 +45,7 @@ work_details:
           person: "贾捷阳"
         - name: "舞台监督助理"
           person: "廖舟怡"
-	- name: "设计总监"
+        - name: "设计总监"
           person: "朱本正"
   photos:
     - image: "/assets/imgs/works/flower-and-sword/logo.png"
