@@ -4,7 +4,7 @@ title: "九号车厢"
 sort_by_date: "2015-09-27"
 work_details:
   title: "九号车厢"
-  location: "某节车厢"
+  location: "Stanford"
   date: "2015年9月27日"
   banner_image: "/assets/imgs/works/2015-inside-no-9/banner.png"
   poster_image: "/assets/imgs/works/2015-inside-no-9/poster.jpg"
