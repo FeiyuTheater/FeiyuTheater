@@ -137,7 +137,7 @@ class CastPosterComponent {
         <div class="cast-avatar">${member.avatar}</div>
         <div class="cast-name">${member.name}</div>
         <div class="cast-character">
-          ${member.role ? `饰 ${member.role}<br>` : ''}${member.position}
+          ${member.role ? `饰 ${member.role}<br>` : ''}${member.position === '演员' ? '' : member.position}
         </div>
       </div>
     `).join('');
