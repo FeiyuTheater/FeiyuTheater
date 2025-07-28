@@ -10,7 +10,7 @@ work_details:
   poster_image: "/assets/imgs/works/golden-cangue/poster.png"
   introduction: "麻油铺曹家的大姑娘七巧出嫁了。她要嫁的人家，是城里姓姜的大户，听说世代书香，家底丰厚。街坊挤在巷子里瞧热闹，争相议论：姜家这样的官宦人家，怎么和麻油铺的结了亲？七巧的父母不在了，婚事是哥哥嫂子替她张罗的。她是个泼辣爽利的姑娘，平日里挽着袖子盘着辫子在铺子里帮忙，算账干活都是一等一的好手。别家的新媳妇出嫁都三请四催的，七巧却自己三两下地就跨进了花轿。倒是她的哥哥嫂嫂神情复杂地站在家门口抹着眼泪。不是七巧心急，实在是这眼前的生活令人向往。她暗自揣度着，自己这样能干，理家管事都不会错，一定把日子过得红红火火。更重要的是，刚才透过盖头的缝，七巧悄悄地瞧了瞧新郎倌，他骑在马上，高大挺拔，令人不禁心驰神往。真好啊！七巧想着，从今天开始，每一天都是有盼头的好日子。她不知道，就是从这天开始，她的人生掉进了深渊。"
   production_team:
-    - page_title: "演员1"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "李周嘉"
@@ -30,8 +30,6 @@ work_details:
         - name: "演员"
           person: "董仕"
           role: "大爷"
-    - page_title: "演员2"
-      members:
         - name: "演员"
           person: "张找找"
           role: "大奶奶"
@@ -50,8 +48,6 @@ work_details:
         - name: "演员"
           person: "周康彦"
           role: "马师爷"
-    - page_title: "演员3"
-      members:
         - name: "演员"
           person: "魏子寒"
           role: "九老太爷"
@@ -64,7 +60,7 @@ work_details:
         - name: "演员"
           person: "王尤雅"
           role: "女同学"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "贾小荣"
@@ -76,7 +72,7 @@ work_details:
           person: "李泽宇"
         - name: "导演"
           person: "李云琦"
-    - page_title: "舞台技术团队1"
+    - page_title: "后台团队"
       members:
         - name: "舞台监督"
           person: "孟毅"
@@ -90,8 +86,6 @@ work_details:
           person: "王尤雅"
         - name: "舞台道具"
           person: "棵未"
-    - page_title: "舞台技术团队2"
-      members:
         - name: "舞台道具"
           person: "豆豆"
         - name: "灯光"
@@ -104,13 +98,21 @@ work_details:
           person: "李泽宇"
         - name: "音效"
           person: "刘小叶"
-    - page_title: "舞台技术团队3"
-      members:
         - name: "音效"
           person: "宁达非"
         - name: "音效"
           person: "王璇"
-    - page_title: "服装化妆团队"
+        - name: "舞台工作人员"
+          person: "张茜"
+        - name: "舞台工作人员"
+          person: "石晰然"
+        - name: "舞台工作人员"
+          person: "董秋洁"
+        - name: "舞台工作人员"
+          person: "李寅辰"
+        - name: "舞台工作人员"
+          person: "高宇彤"
+    - page_title: "服化团队"
       members:
         - name: "服装化妆"
           person: "李蒋蒋"
@@ -120,7 +122,7 @@ work_details:
           person: "张逸飞"
         - name: "服装化妆"
           person: "张小依妮"
-    - page_title: "宣传设计团队"
+    - page_title: "宣传团队"
       members:
         - name: "宣传"
           person: "周梓桐"
@@ -140,18 +142,6 @@ work_details:
           person: "李扬"
         - name: "摄像"
           person: "若鹏"
-    - page_title: "舞台工作人员"
-      members:
-        - name: "舞台工作人员"
-          person: "张茜"
-        - name: "舞台工作人员"
-          person: "石晰然"
-        - name: "舞台工作人员"
-          person: "董秋洁"
-        - name: "舞台工作人员"
-          person: "李寅辰"
-        - name: "舞台工作人员"
-          person: "高宇彤"
     - page_title: "外联团队"
       members:
         - name: "外联"

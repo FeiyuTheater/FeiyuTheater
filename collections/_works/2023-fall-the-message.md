@@ -10,7 +10,7 @@ work_details:
   poster_image: "/assets/imgs/works/2023-fall-the-message/poster.png"
   introduction: "1940年初，日本侵华战争进入白热化。这日，日军特高课课长樱井洋子截获密电，代号为老鬼的地下党在和平军淞沪司令部内潜伏已久。经过排查，目标锁定为四人：和平军淞沪司令部第二剿匪大队长吴志国、军事机要处处长金生火、译电科科长李宁玉和科员顾晓梦。夜色渐浓，吴、金、李、顾四人被带到位于孤山南麓的裘庄。等待他们的是严酷的审讯和彼此间的猜忌与背叛… 孤山风起云涌，裘庄危机四伏。9月9日，裘庄大门开启，邀你一窥四人命运。"
   production_team:
-    - page_title: "演员1"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "靠靠"
@@ -30,8 +30,6 @@ work_details:
         - name: "演员"
           person: "Jefferey"
           role: "金生火"
-    - page_title: "演员2"
-      members:
         - name: "演员"
           person: "Jade"
           role: "顾母"
@@ -50,8 +48,6 @@ work_details:
         - name: "演员"
           person: "陈思源"
           role: "运输处副处长汪子明"
-    - page_title: "演员3"
-      members:
         - name: "演员"
           person: "孙研"
           role: "日本兵甲"
@@ -61,7 +57,7 @@ work_details:
         - name: "演员"
           person: "李泽宇"
           role: "刘林宗"
-    - page_title: "导演制作团队1"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "马慧琦"
@@ -78,8 +74,6 @@ work_details:
           person: "棵未"
         - name: "副导演"
           person: "高原"
-    - page_title: "导演制作团队2"
-      members:
         - name: "编剧"
           person: "李周嘉"
         - name: "舞台监督"
@@ -88,8 +82,6 @@ work_details:
           person: "高宇彤"
         - name: "舞台副理"
           person: "黄洁雯"
-    - page_title: "舞台团队"
-      members:
         - name: "表演指导"
           person: "李泽宇"
         - name: "舞台美术"
@@ -100,7 +92,7 @@ work_details:
           person: "何增鸿"
         - name: "舞台美术"
           person: "Ago"
-    - page_title: "后台技术团队1"
+    - page_title: "后台团队"
       members:
         - name: "道具"
           person: "李雅馨"
@@ -114,8 +106,6 @@ work_details:
           person: "郭汀莹"
         - name: "灯光"
           person: "谌冲慧"
-    - page_title: "后台技术团队1"
-      members:
         - name: "灯光"
           person: "张特"
         - name: "音乐音效"
@@ -124,8 +114,6 @@ work_details:
           person: "刘小叶"
         - name: "音乐音效"
           person: "钟宜吟"
-    - page_title: "服装化妆团队"
-      members:
         - name: "服装/化妆"
           person: "周思韵"
         - name: "服装/化妆"
@@ -138,8 +126,6 @@ work_details:
           person: "周容好"
         - name: "服装/化妆"
           person: "Becca Li"
-    - page_title: "舞台工作人员"
-      members:
         - name: "舞台工作人员"
           person: "张逸飞"
         - name: "舞台工作人员"
@@ -150,7 +136,7 @@ work_details:
           person: "Kaylee"
         - name: "舞台工作人员"
           person: "阿荣"
-    - page_title: "副场监督团队1"
+    - page_title: "副场监督团队"
       members:
         - name: "副场监督"
           person: "吴鋆蕊"
@@ -164,8 +150,6 @@ work_details:
           person: "王军"
         - name: "副场监督"
           person: "石晰然"
-    - page_title: "副场监督团队2"
-      members:
         - name: "副场监督"
           person: "段天霖"
         - name: "副场监督"
@@ -190,7 +174,7 @@ work_details:
           person: "马慧琦"
         - name: "摄影摄像"
           person: "周康彦"
-    - page_title: "宣传团队1"
+    - page_title: "宣发团队"
       members:
         - name: "宣传"
           person: "倪爽"
@@ -204,8 +188,6 @@ work_details:
           person: "董仕"
         - name: "宣传"
           person: "李周嘉"
-    - page_title: "宣传团队2"
-      members:
         - name: "宣传"
           person: "棵未"
         - name: "宣传"
@@ -220,6 +202,12 @@ work_details:
           person: "刘一格"
         - name: "宣传"
           person: "何增鸿"
+        - name: "设计"
+          person: "李周嘉"
+        - name: "设计"
+          person: "棵未"
+        - name: "设计"
+          person: "张小"
     - page_title: "外联团队"
       members:
         - name: "外联"
@@ -232,14 +220,6 @@ work_details:
           person: "Ago"
         - name: "外联"
           person: "周康彦"
-    - page_title: "设计团队"
-      members:
-        - name: "设计"
-          person: "李周嘉"
-        - name: "设计"
-          person: "棵未"
-        - name: "设计"
-          person: "张小"
   photos:
     - image: "/assets/imgs/works/2023-fall-the-message/1.jpg"
       caption: "演出"

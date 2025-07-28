@@ -182,7 +182,7 @@ $cast-breakpoints: (
   color: cast-get(text-secondary);
   padding: 10px 20px;
   border-radius: cast-get(border-radius-xl);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   border: none;
   cursor: pointer;
@@ -308,7 +308,7 @@ $cast-breakpoints: (
 }
 
 .cast-name {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   color: cast-get(text-primary);
   margin-bottom: 4px;
@@ -316,7 +316,6 @@ $cast-breakpoints: (
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -326,19 +325,17 @@ $cast-breakpoints: (
   @include cast-respond-to(tablet) {
     height: 18px;
     font-size: 14px;
-    width: 50px;
   }
 
   @include cast-respond-to(mobile) {
     font-size: 14px;
     margin-bottom: 3px;
     height: 17px;
-    width: 45px;
   }
 }
 
 .cast-character {
-  font-size: 13px;
+  font-size: 12px;
   color: cast-get(text-secondary);
   font-weight: 400;
   line-height: 1.3;
@@ -355,12 +352,12 @@ $cast-breakpoints: (
 
   @include cast-respond-to(tablet) {
     height: 48px;
-    font-size: 12px;
+    font-size: 11px;
     width: 70px;
   }
 
   @include cast-respond-to(mobile) {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 1.2;
     height: 42px;
     width: 65px;
