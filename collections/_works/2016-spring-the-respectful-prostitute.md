@@ -75,7 +75,7 @@ work_details:
           person: "张馨元"
   youtube_video: "usZddiYjOnA"
   photos:
-    - image: "/assets/imgs/works/the-respectful-prostitute/show-1.jpeg"
+    - image: "/assets/imgs/works/the-respectful-prostitute/show-1.jpg"
       size: "large"
       caption: "演出"
     - image: "/assets/imgs/works/the-respectful-prostitute/show-2.jpeg"
@@ -87,7 +87,7 @@ work_details:
     - image: "/assets/imgs/works/the-respectful-prostitute/show-4.jpeg"
       size: "large"
       caption: "演出"
-    - image: "/assets/imgs/works/the-respectful-prostituteh/show-5.jpeg"
+    - image: "/assets/imgs/works/the-respectful-prostitute/show-5.jpeg"
       caption: "演出"
       size: "large"
     - image: "/assets/imgs/works/the-respectful-prostitute/show-6.jpeg"
