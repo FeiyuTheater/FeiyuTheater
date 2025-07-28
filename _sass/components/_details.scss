@@ -10,6 +10,8 @@ $orange-dark: #d4a574;
 $brown-light: #c4966a;
 $brown-medium: #a67c52;
 $brown-dark: #8b5a3c;
+$intro-color: #333;
+$section-title-color: #c8102e;
 
 // Hero Banner
 .work-detail-banner {
@@ -40,7 +42,7 @@ $brown-dark: #8b5a3c;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(139, 90, 60, 0.4));
+        background: linear-gradient(135deg, rgb(0 0 0 / 60%), rgb(59 36 36 / 40%));
         display: flex;
         align-items: center;
         justify-content: center;
@@ -57,24 +59,48 @@ $brown-dark: #8b5a3c;
             font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 20px;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+            text-shadow: 1px 4px 8px rgba(0, 0, 0, 0.4);
             letter-spacing: 2px;
         }
 
         .work-meta {
             display: flex;
-            gap: 30px;
+            gap: 15px;
             justify-content: center;
-            font-size: 1.2rem;
+            flex-direction: column;
+            align-items: center;
+
+            text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.35);
             font-weight: 500;
 
-            .work-location,
+            @media (max-width: 992px) {
+                gap: 10px;
+                font-size: 0.95rem;
+            }
+
             .work-date {
-                padding: 8px 20px;
+                font-size: 1.05rem;
+            }
+
+            .work-location {
+            // .work-date {
+                font-size: 0.85rem;
+                padding: 5px 15px;
                 background: rgba(255, 255, 255, 0.2);
                 border-radius: 25px;
-                backdrop-filter: blur(5px);
+                backdrop-filter: blur(10px);
                 border: 1px solid rgba(255, 255, 255, 0.3);
+
+                @media (max-width: 992px) {
+                    font-size: 0.8rem;
+                }
+
+                &::before {
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f3c5"; /* Location arrow icon */
+                    font-weight: 900;
+                    margin-right: 10px;
+                }
             }
         }
     }
@@ -108,6 +134,7 @@ $brown-dark: #8b5a3c;
 // Section Base Styles
 .detail-section {
     padding: 80px 0;
+    padding-bottom: 120px;
 
     .container {
         max-width: 1200px;
@@ -120,7 +147,7 @@ $brown-dark: #8b5a3c;
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 50px;
-        color: $brown-dark;
+        color: $section-title-color;
 
         .title-dash {
             color: $orange-dark;
@@ -132,238 +159,82 @@ $brown-dark: #8b5a3c;
 
 // Introduction Section
 .introduction-section {
-    background: linear-gradient(135deg, $beige-light 0%, $beige-medium 100%);
+    background: linear-gradient(135deg, #f4f4f4 0%, #f0f0f0 100%);
+
+    .description-container {
+        $subcontainer-padding-x: 20px;
+        $subcontainer-padding-y: 20px;
+
+        padding: 0px 20px;
+        margin-bottom: 60px;
+    }
 
     .introduction-text {
         font-size: 1.3rem;
         line-height: 1.8;
-        color: $brown-dark;
+        color: $intro-color;
         text-align: left;
-        max-width: 800px;
+        max-width: 960px;
         margin: 0 auto;
-        font-weight: 400;
-        letter-spacing: 0.5px;
+        font-weight: normal;
     }
 }
 
 // Fixed Poster and Cast Section
 .poster-cast-section {
-    background: linear-gradient(135deg, $orange-light 0%, $orange-medium 100%);
+    margin: 0px 60px;
 
-    .poster-cast-grid {
-        display: grid;
-        grid-template-columns: 400px 1fr; // Fixed poster width, flexible carousel
-        gap: 60px;
-        align-items: start;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
+    @media (max-width: 1024px) {
+        margin: 0px 20px;
+    }
+    
+    @media (max-width: 480px) {
+        margin: 0px 10px;
     }
 
-    .poster-container {
-        // Fix: Maintain exact poster dimensions
-        width: 400px; // Fixed width
-        flex-shrink: 0; // Don't allow shrinking
-        
-        .work-poster {
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-            object-fit: cover;
-            aspect-ratio: auto; // Maintain original aspect ratio
-            
-            &:hover {
-                transform: scale(1.05);
-            }
-        }
-    }
+    // .poster-cast-grid {
+    //     display: grid;
+    //     grid-template-columns: 400px 1fr; // Fixed poster width, flexible carousel
+    //     gap: 60px;
+    //     align-items: start;
+    //     max-width: 1200px;
+    //     margin: 0 auto;
+    //     padding: 0 20px;
+    // }
 
-    .cast-container {
-        // Fix: Allow this to be flexible but set consistent internal sizing
-        min-width: 0; // Allow shrinking if needed
-        overflow: hidden; // Prevent content overflow
-        
-        .production-team-carousel {
-            position: relative;
-            overflow: visible;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 0 40px; // Space for arrows
-            // Fix: Set consistent height regardless of content
-            min-height: 450px; // Prevents height fluctuations
-            width: calc(100% - 80px); // Account for arrow space
+    // .poster-container {
+    //     // Fix: Maintain exact poster dimensions
+    //     width: 400px; // Fixed width
+    //     flex-shrink: 0; // Don't allow shrinking
 
-            .carousel-nav {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 50px;
-                height: 50px;
-                background: rgba(139, 90, 60, 0.9);
-                border: 2px solid rgba(255, 255, 255, 0.8);
-                border-radius: 50%;
-                color: white;
-                font-size: 24px;
-                font-weight: bold;
-                cursor: pointer;
-                z-index: 10;
-                transition: all 0.3s ease;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    //     .work-poster {
+    //         width: 100%;
+    //         height: auto;
+    //         border-radius: 12px;
+    //         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    //         transition: transform 0.3s ease;
+    //         object-fit: cover;
+    //         aspect-ratio: auto; // Maintain original aspect ratio
 
-                &:hover {
-                    background: rgba(139, 90, 60, 1);
-                    transform: translateY(-50%) scale(1.1);
-                    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-                }
+    //         &:hover {
+    //             transform: scale(1.05);
+    //         }
+    //     }
+    // }
+}
 
-                &.carousel-prev {
-                    left: -40px;
-                }
-
-                &.carousel-next {
-                    right: -40px;
-                }
-            }
-
-            .carousel-container {
-                overflow: hidden;
-                border-radius: 10px;
-                position: relative;
-                // Fix: Consistent height for all carousel content
-                height: 480px; // Fixed height prevents size changes
-                width: 100%;
-            }
-
-            .carousel-track {
-                display: flex;
-                transition: transform 0.3s ease;
-                cursor: grab;
-                height: 100%; // Take full container height
-
-                &:active {
-                    cursor: grabbing;
-                } 
-            }
-
-            .carousel-slide {
-                flex: 0 0 100%;
-                height: 100%; // Use full track height
-                // Remove min-height as we set fixed height above
-                display: flex;
-                flex-direction: column;
-
-                .team-page-title {
-                    font-size: 1.8rem;
-                    color: $brown-dark;
-                    margin-bottom: 25px;
-                    text-align: center;
-                    font-weight: 700;
-                    flex-shrink: 0; // Don't shrink title
-                }
-
-                .team-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-                    gap: 20px;
-                    flex: 1; // Take remaining space
-                    align-content: start; // Align items to top
-                    overflow-y: auto; // Scroll if content exceeds height
-                }
-
-                .team-member {
-                    background: rgba(255, 255, 255, 0.6);
-                    padding: 15px;
-                    border-radius: 12px;
-                    text-align: center;
-                    border: 2px solid rgba(212, 165, 116, 0.3);
-                    transition: all 0.3s ease;
-                    height: fit-content; // Adjust to content
-
-                    &:hover {
-                        transform: translateY(-5px);
-                        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                    }
-
-                    .member-image {
-                        width: 80px;
-                        height: 80px;
-                        margin: 0 auto 15px;
-                        border-radius: 50%;
-                        overflow: hidden;
-                        border: 3px solid $orange-dark;
-
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
-                    }
-
-                    .member-info {
-                        .character-name {
-                            font-size: 1.1rem;
-                            font-weight: 700;
-                            color: $brown-dark;
-                            margin-bottom: 5px;
-                        }
-
-                        .actor-name {
-                            font-size: 1rem;
-                            font-weight: 600;
-                            color: $brown-medium;
-                            margin-bottom: 5px;
-                        }
-
-                        .role-description {
-                            font-size: 0.85rem;
-                            color: $brown-light;
-                            font-style: italic;
-                            line-height: 1.3;
-                        }
-                    }
-                }
-            }
-
-            .carousel-indicators {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 20px;
-                flex-shrink: 0; // Don't shrink indicators
-
-                .indicator {
-                    width: 12px;
-                    height: 12px;
-                    border-radius: 50%;
-                    border: none;
-                    background: rgba(139, 90, 60, 0.3);
-                    cursor: pointer;
-                    transition: all 0.3s ease;
-                    font-size: 0;
-
-                    &.active,
-                    &:hover {
-                        background: $brown-dark;
-                        transform: scale(1.2);
-                    }
-                }
-            }
-        }
-    }
+.highlight-section {
+    background: linear-gradient(135deg, #f4f4f4 0%, #f0f0f0 100%);
+    box-shadow: -1px 0px 72px rgba(0, 0, 0, 0.05);
 }
 
 // Video Section
 .video-section {
-    background: linear-gradient(135deg, $beige-medium 0%, $beige-dark 100%);
+    margin: 0px 20px;
+    margin-bottom: 100px;
 
     .video-container {
-        max-width: 900px;
+        max-width: 1040px;
         margin: 0 auto;
         position: relative;
         width: 100%;
@@ -386,7 +257,11 @@ $brown-dark: #8b5a3c;
 
 // Photos Section
 .photos-section {
-    background: linear-gradient(135deg, $orange-medium 0%, $brown-light 100%);
+    margin: 0px 30px;
+
+    @media (max-width: 1024px) {
+        margin: 0px 0px;
+    }
 
     /* Photo wall masonary styles */
     .photo-wall {
@@ -571,12 +446,6 @@ $brown-dark: #8b5a3c;
         .banner-content .work-title {
             font-size: 2.8rem;
         }
-
-        .work-meta {
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
     }
 
     .poster-cast-section {
@@ -635,6 +504,7 @@ $brown-dark: #8b5a3c;
 
     .detail-section {
         padding: 60px 0;
+        padding-bottom: 100px;
 
         .section-title {
             font-size: 2.2rem;
@@ -723,12 +593,38 @@ $brown-dark: #8b5a3c;
                         height: 10px;
                     }
                 }
+
+                .role-description {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+        .carousel-indicators {
+            margin-top: 15px;
+
+            .indicator {
+                width: 10px;
+                height: 10px;
+            }
+        }
+    }
+
+    .photo-wall {
+        grid-template-columns: repeat(2, 1fr);
+
+        .photo-item.photo-large {
+            grid-row: span 1;
+
+            .photo-image {
+                aspect-ratio: 4/3;
             }
         }
     }
 
     .detail-section {
         padding: 40px 0;
+        padding-bottom: 100px;
 
         .section-title {
             font-size: 1.8rem;
