@@ -14,6 +14,23 @@ work_details:
   
   作为McDonagh的冷门佳作，《断手斯城》将黑色幽默玩转到极致。本次非鱼剧社将采用独特的黑匣子剧场，为你近距离呈现这段精彩的故事。惊悚与荒诞，残酷与温情，在非鱼的呈现下，它又会有怎样不同的质感呢？"
   production_team:
+    - page_title: "演员"
+      members:
+        - name: "演员"
+        - person: "陈思源"
+        - role: "卡迈克"
+      members:
+        - name: "演员"
+        - person: "董仕"
+        - role: "托比"
+      members:
+        - name: "演员"
+        - person: "邵航"
+        - role: "莫文"
+      members:
+        - name: "演员"
+        - person: "郭汀莹"
+        - role: "玛丽琳"
     - page_title: "核心创作团队"
       members:
         - name: "导演"
