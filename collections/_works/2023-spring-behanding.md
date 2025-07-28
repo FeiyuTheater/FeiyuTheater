@@ -17,20 +17,17 @@ work_details:
     - page_title: "演员"
       members:
         - name: "演员"
-        - person: "陈思源"
-        - role: "卡迈克"
-      members:
+          person: "陈思源"
+          role: "卡迈克"
         - name: "演员"
-        - person: "董仕"
-        - role: "托比"
-      members:
+          person: "董仕"
+          role: "托比"
         - name: "演员"
-        - person: "邵航"
-        - role: "莫文"
-      members:
+          person: "邵航"
+          role: "莫文"
         - name: "演员"
-        - person: "郭汀莹"
-        - role: "玛丽琳"
+          person: "郭汀莹"
+          role: "玛丽琳"
     - page_title: "核心创作团队"
       members:
         - name: "导演"
