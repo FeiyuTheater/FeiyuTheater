@@ -90,23 +90,23 @@ photos:
     <div class="support-buttons">
       <a href="#" class="support-button">
         <div class="button-image">
-          <img src="/assets/imgs/works_page/icon_sponsorship.png" alt="商业赞助">
+          <img src="/assets/imgs/about_page/icon_sponsorship.png" alt="商业赞助">
         </div>
         <div class="button-caption">商业赞助</div>
       </a>
 
       <a href="#" class="support-button">
         <div class="button-image">
-          <img src="/assets/imgs/works_page/icon_individual_donation.png" alt="个人捐款">
+          <img src="/assets/imgs/about_page/icon_individual_donation.png" alt="个人捐款">
         </div>
         <div class="button-caption">个人捐款</div>
       </a>
 
       <a href="#" class="support-button">
         <div class="button-image">
-          <img src="/assets/imgs/works_page/icon_company_donation.png" alt="志愿服务">
+          <img src="/assets/imgs/about_page/icon_collaboration.png" alt="志愿服务">
         </div>
-        <div class="button-caption">志愿服务</div>
+        <div class="button-caption">合作意向</div>
       </a>
     </div>
   </div>
