@@ -3,6 +3,7 @@
 // About Page Styles
 .about-main {
     padding: 60px 20px;
+    background-color: linear-gradient(135deg, #f4f4f4 0%, #f0f0f0 100%);
 
     .container {
         max-width: 1200px;
@@ -16,7 +17,7 @@
     .about-title {
         margin-bottom: 40px;
         font-weight: 700;
-        color: #ab2c2c;
+        color: #c8102e;
     }
 
     .about-quote {
@@ -25,7 +26,7 @@
 
         blockquote {
             font-size: 1.5rem;
-            color: #555;
+            color: #333;
             margin-bottom: 10px;
             font-family: "楷体", KaiTi, "楷体_GB2312", KaiTi_GB2312, "STKaiti", serif;
             font-weight: bold;
