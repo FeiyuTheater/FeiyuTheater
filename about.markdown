@@ -4,23 +4,23 @@ js: about.js
 title: 关于我们
 permalink: /about
 photos:
-  - title: "这个男人来自地球"
-    asset: "/assets/imgs/works/the-man-from-earth/poster.png"
+  - title: "演出照片：2019-灵魂拒葬"
+    asset: "/assets/imgs/about_page/2019-灵魂拒葬.jpg"
 
-  - title: "玩偶之家2：娜拉归来"
-    asset: "/assets/imgs/works/dolls-house/poster.png"
+  - title: "演出照片：2024-每一件美妙的小事"
+    asset: "/assets/imgs/about_page/2024-小事.jpeg"
 
-  - title: "每一件美好的小事"
-    asset: "/assets/imgs/works/every-brilliant-thing/poster.png"
+  - title: "演出照片：2025-玩偶之家2"
+    asset: "/assets/imgs/about_page/2025-玩偶之家2.JPG"
 
-  - title: "艺术"
-    asset: "/assets/imgs/art.png"
+  - title: "演出照片：2020-茶话会"
+    asset: "/assets/imgs/about_page/2020-茶话会.jpg"
 
-  - title: "风声"
-    asset: "/assets/imgs/the-message.png"
+  - title: "排练花絮：2022-金锁记"
+    asset: "/assets/imgs/about_page/2022-金锁记.JPG"
 
-  - title: "断手斯城"
-    asset: "/assets/imgs/behanding.png"
+  - title: "剧组合影：2021-有客来访三则"
+    asset: "/assets/imgs/about_page/2021-有客来访三则.JPG"
 ---
 
 <!-- Hero Banner Section -->
