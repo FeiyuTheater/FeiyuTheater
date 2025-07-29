@@ -144,9 +144,13 @@
         // Bottom section
         .activity-content-bottom {
           display: flex;
-          justify-content: center;
+          justify-content: left;
 
           padding: 10px 0px;
+
+          @media (max-width: 992px) {
+            justify-content: center;
+          }
 
           .activity-cta {
             display: inline-block;
