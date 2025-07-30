@@ -1,11 +1,184 @@
 @use "vendors/bootstrap-min";
 
+// About Page Styles
+.about-main {
+    padding: 40px 20px 60px 20px;
+    background-color: linear-gradient(135deg, #f4f4f4 0%, #f0f0f0 100%);
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .about-title {
+        margin-bottom: 40px;
+        font-weight: 700;
+        color: #c8102e;
+    }
+
+    .about-quote {
+        margin: 40px auto;
+        max-width: 800px;
+
+        blockquote {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-family: "楷体", KaiTi, "楷体_GB2312", KaiTi_GB2312, "STKaiti", serif;
+            font-weight: bold;
+        }
+
+        cite {
+            font-size: 1rem;
+            color: #777;
+        }
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 2;
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .about-main {
+        padding: 40px 15px;
+
+        .about-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .about-quote {
+            margin: 30px auto;
+
+            blockquote {
+                font-size: 1.3rem;
+            }
+
+            cite {
+                font-size: 0.9rem;
+            }
+        }
+
+        .about-content {
+            line-height: 1.8;
+
+            p {
+                font-size: 1.1rem;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+// Support Buttons
+.support-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.support-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    width: 180px;
+
+    &:hover {
+        transform: translateY(-8px);
+
+        .button-image {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .button-caption {
+            color: #ab2c2c;
+        }
+    }
+
+    .button-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    .button-caption {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        transition: color 0.3s ease;
+    }
+}
+
+// Responsive styles for support buttons
+@media (max-width: 768px) {
+    .support-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        margin: 40px auto;
+    }
+
+    .support-button {
+        width: 160px;
+
+        .button-image {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 12px;
+        }
+
+        .button-caption {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+// Carousel
 #threeUpCarousel {
   margin-bottom: 4rem;     /* add extra vertical space after carousel */
 
-  .carousel-item img {
+  .carousel-inner {
+    overflow: hidden;
+    padding: 40px 30px;
+  }
+
+  .carousel-item img
+  {
     height: 240px;         /* set your preferred height */
     object-fit: cover;     /* neat crop */
+  }
+
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    width: 15px;
+    height: 15px;
   }
 }
 
@@ -14,16 +187,21 @@
     @extend .col-md-4;
 
     img {
+      box-shadow: 1px 4px 12px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
       @extend .d-block;
       @extend .w-100;
       @extend .rounded;
     }
 
     &:hover {
-      transform: scale(1.05);
+      // transform: scale(1.05);
 
       img {
-        transform: scale(1.1);
+        // transform: scale(1.1);
+        transform: translateY(-5px) scale(1.01);
+        box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.35);
       }
     }
 }
