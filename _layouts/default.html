@@ -50,6 +50,9 @@
     <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/cast-poster.js' | relative_url }}"></script>
+    <!-- Mailchimp form validation -->
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript" src="{{ '/assets/js/mailchimp.js' | relative_url }}"></script>
     <!-- Conditionally load layout specific JavaScript -->
     {% if page.js %}
     <script src="{{ '/assets/js/pages/' | append: page.js | relative_url }}"></script>
