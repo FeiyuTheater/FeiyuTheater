@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // Cast Poster Component Variables
 $cast-poster: (
   primary-color: #837a6f,
@@ -21,7 +23,7 @@ $cast-poster: (
 );
 
 @function cast-get($key) {
-  @return map-get($cast-poster, $key);
+  @return map.get($cast-poster, $key);
 }
 
 // Breakpoints
@@ -33,16 +35,16 @@ $cast-breakpoints: (
 );
 
 @mixin cast-respond-to($breakpoint) {
-  @if map-has-key($cast-breakpoints, $breakpoint) {
-    @media (max-width: map-get($cast-breakpoints, $breakpoint)) {
+  @if map.has-key($cast-breakpoints, $breakpoint) {
+    @media (max-width: map.get($cast-breakpoints, $breakpoint)) {
       @content;
     }
   }
 }
 
 @mixin cast-respond-between($min, $max) {
-  @if map-has-key($cast-breakpoints, $min) and map-has-key($cast-breakpoints, $max) {
-    @media (min-width: #{map-get($cast-breakpoints, $min) + 1px}) and (max-width: map-get($cast-breakpoints, $max)) {
+  @if map.has-key($cast-breakpoints, $min) and map.has-key($cast-breakpoints, $max) {
+    @media (min-width: #{map.get($cast-breakpoints, $min) + 1px}) and (max-width: map.get($cast-breakpoints, $max)) {
       @content;
     }
   }
