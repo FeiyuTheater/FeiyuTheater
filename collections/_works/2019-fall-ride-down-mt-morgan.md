@@ -5,7 +5,8 @@ sort_by_date: "2019-11-16"
 work_details:
   title: "车下莫根山"
   location: "Haymarket Theater"
-  date: "2019年11月16日"
+  dates:
+    - "2019-11-16"
   banner_image: "/assets/imgs/works/2019-the-ride-down-mt-morgan/the-ride-down-mt-morgan-banner.jpg"
   poster_image: "/assets/imgs/works/2019-the-ride-down-mt-morgan/the-ride-down-mt-morgan-poster.jpg"
   introduction: "莱曼是一位精明能干、巧舌如簧的保险业大亨。在莱曼光鲜亮丽的事业背后，隐藏着一个不为人知的秘密：他同时与两位女士保持着婚姻关系。因为一次耐人寻味的莫根山车祸，莱曼被送进了重症病房，他的两位妻子也在这里不期而遇。究竟是什么阻止着莱曼在她们之间做出选择？面对爱情与道德的冲突，激情与责任的碰撞，他将何去何从？一场现实与回忆的协奏曲，在莱曼的病床前徐徐拉开帷幕……"

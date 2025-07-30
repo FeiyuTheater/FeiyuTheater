@@ -5,7 +5,8 @@ sort_by_date: "2022/07/16"
 work_details:
   title: "金锁记"
   location: "Woodside High School - Performing Center, Woodside, CA"
-  date: "2022年7月16日"
+  dates:
+    - "2022-07-16"
   banner_image: "/assets/imgs/works/golden-cangue/banner.png"
   poster_image: "/assets/imgs/works/golden-cangue/poster.png"
   introduction: "麻油铺曹家的大姑娘七巧出嫁了。她要嫁的人家，是城里姓姜的大户，听说世代书香，家底丰厚。街坊挤在巷子里瞧热闹，争相议论：姜家这样的官宦人家，怎么和麻油铺的结了亲？七巧的父母不在了，婚事是哥哥嫂子替她张罗的。她是个泼辣爽利的姑娘，平日里挽着袖子盘着辫子在铺子里帮忙，算账干活都是一等一的好手。别家的新媳妇出嫁都三请四催的，七巧却自己三两下地就跨进了花轿。倒是她的哥哥嫂嫂神情复杂地站在家门口抹着眼泪。不是七巧心急，实在是这眼前的生活令人向往。她暗自揣度着，自己这样能干，理家管事都不会错，一定把日子过得红红火火。更重要的是，刚才透过盖头的缝，七巧悄悄地瞧了瞧新郎倌，他骑在马上，高大挺拔，令人不禁心驰神往。真好啊！七巧想着，从今天开始，每一天都是有盼头的好日子。她不知道，就是从这天开始，她的人生掉进了深渊。"

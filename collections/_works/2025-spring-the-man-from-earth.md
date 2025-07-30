@@ -5,7 +5,8 @@ sort_by_date: "2025-06-08"
 work_details:
   title: "这个男人来自地球"
   location: "SJSU Hammer Theater, San Jose, CA"
-  date: "2025年6月8日"
+  dates:
+    - "2025-06-08"
   banner_image: "/assets/imgs/works/the-man-from-earth/banner.png"
   poster_image: "/assets/imgs/works/the-man-from-earth/poster.png"
   introduction: "一个看似普通的大学教授即将搬家，在告别聚会上，他向朋友们透露了一个惊人的秘密：他已经活了14000年。这个看似荒诞的声明引发了一场关于信仰、科学和人性的深刻讨论。陋室一间，门扉轻掩。深不可测的叙述者，横贯纪元的奥德赛。挣脱了时间的束缚，记忆会是什么形状？流变不居的故事里，如何才能定义真相？"

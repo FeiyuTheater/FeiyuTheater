@@ -5,7 +5,8 @@ sort_by_date: "2023-01-14"
 work_details:
   title: "每一件美妙的小事"
   location: "Mountain View Center for the Performing Arts"
-  date: "2023年1月14日"
+  dates:
+    - "2023-01-14"
   banner_image: "/assets/imgs/works/2022-every-brilliant-thing/banner.png"
   poster_image: "/assets/imgs/works/2022-every-brilliant-thing/poster.png"
   introduction: "香蕉、旺仔牛奶、善良的老奶奶、冰淇淋、体育课自由活动……七岁的你认真记录下这个世界上所有美好的事物，在妈妈第一次尝试自杀之后，放在妈妈的床头。你知道妈妈读了你的清单，因为她修改了你的错别字。<br><br>“自杀”、“抑郁”、“患者”似乎是残酷凛冽的主题，可《每一件美妙的小事》却用诙谐的语言和温情的互动，带领观众进入抑郁症患者家庭中的“幸存者”视角。它对所有深陷泥沼的人说，这是一百万件美妙的小事，在彻底绝望之前，先任这份清单自由生长吧。"

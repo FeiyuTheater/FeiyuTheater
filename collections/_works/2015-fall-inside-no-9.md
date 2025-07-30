@@ -5,7 +5,8 @@ sort_by_date: "2015-09-27"
 work_details:
   title: "九号车厢"
   location: "Stanford"
-  date: "2015年9月27日"
+  dates:
+    - "2015-09-27"
   banner_image: "/assets/imgs/works/2015-inside-no-9/banner.jpg"
   poster_image: "/assets/imgs/works/2015-inside-no-9/poster.jpg"
   introduction: "一场因误会而引发的密闭车厢闹剧"

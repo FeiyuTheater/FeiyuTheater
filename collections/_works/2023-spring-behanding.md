@@ -5,7 +5,9 @@ sort_by_date: "2023-02-18"
 work_details:
   title: "断手斯城"
   location: "Mountain View Center for the Performing Arts"
-  date: "2023年2月18日 & 19日"
+  dates:
+    - "2023-02-18"
+    - "2023-02-19"
   banner_image: "/assets/imgs/works/behanding/banner.png"
   poster_image: "/assets/imgs/works/behanding/poster.png"
   introduction: "神秘男子重金悬赏遗失的断手，一对小情侣宣称找到失物。双方相约在一间旧旅馆碰头，却遇见了一个古怪的前台。交易并没有如期进行……断手的真相到底是什么？在这部黑色喜剧里，我们将为失控的人生，找到一个意料之外的答案。"
