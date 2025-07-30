@@ -5,7 +5,8 @@ sort_by_date: "2016-05-22"
 work_details:
   title: "恭顺的妓女"
   location: "Stanford Clubhouse Ballroom"
-  date: "2016年5月22日"
+  dates:
+    - "2016-05-22"
   banner_image: "/assets/imgs/works/the-respectful-prostitute/banner.jpg"
   poster_image: "/assets/imgs/works/the-respectful-prostitute/poster.png"
   brochure: 

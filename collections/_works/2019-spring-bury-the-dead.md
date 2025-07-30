@@ -5,7 +5,8 @@ sort_by_date: "2019-05-18"
 work_details:
   title: "灵魂拒葬"
   location: "SJSU Morris Dailey Auditorium"
-  date: "2019年5月18日"
+  dates:
+    - "2019-05-18"
   banner_image: "/assets/imgs/works/2019-bury-the-dead/bury-the-dead-banner.jpg"
   poster_image: "/assets/imgs/works/2019-bury-the-dead/bury-the-dead-poster.jpg"
   brochure: "/assets/files/works/2019-bury-the-dead/bury-the-dead-brochure.pdf"

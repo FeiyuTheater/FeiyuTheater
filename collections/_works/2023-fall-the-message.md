@@ -5,7 +5,8 @@ sort_by_date: "2023-09-09"
 work_details:
   title: "风声"
   location: "Spangenberg Performing Arts Theater"
-  date: "2023年9月9日"
+  dates:
+    - "2023-09-09"
   banner_image: "/assets/imgs/works/2023-fall-the-message/banner.png"
   poster_image: "/assets/imgs/works/2023-fall-the-message/poster.png"
   introduction: "1940年初，日本侵华战争进入白热化。这日，日军特高课课长樱井洋子截获密电，代号为老鬼的地下党在和平军淞沪司令部内潜伏已久。经过排查，目标锁定为四人：和平军淞沪司令部第二剿匪大队长吴志国、军事机要处处长金生火、译电科科长李宁玉和科员顾晓梦。夜色渐浓，吴、金、李、顾四人被带到位于孤山南麓的裘庄。等待他们的是严酷的审讯和彼此间的猜忌与背叛… 孤山风起云涌，裘庄危机四伏。9月9日，裘庄大门开启，邀你一窥四人命运。"

@@ -5,7 +5,9 @@ sort_by_date: "2024-04-27"
 work_details:
   title: "艺术"
   location: "Haymarket Theater, Palo Alto"
-  date: "2024年10月19日 & 20日"
+  dates:
+    - "2024-10-19"
+    - "2024-10-20"
   banner_image: "/assets/imgs/works/2024-art/banner.png"
   poster_image: "/assets/imgs/works/2024-art/poster.png"
   introduction: "孙绍明最近很难受，因为他的⽼朋友赵仁杰花重⾦买了⼀幅了不得的油画。这其实也不关孙绍明什么事，⽤他们共同好友潘⽂的话来说，赵仁杰“喜欢就好”<br/><br/>可这购画行为似乎止这十多年的友谊突然起了一个疙瘩，被深深扰动的孙绍明决定找两位朋友好好聊聊此事。他们仨就这样聊着，聊着......咦！怎么吵起来了？<br/><br/>《艺术》是法国剧作家雅丝米娜·雷札（Yasmina Reza）的作品，于1994年首演于法国巴黎，并迅速轰动话剧界，被翻译成30种语言于全球50多个国家演出，获得了法国莫里哀戏剧奖最佳编剧奖、伦敦奥利弗戏剧奖最佳喜剧奖以及美国托尼奖最佳编剧奖。"
