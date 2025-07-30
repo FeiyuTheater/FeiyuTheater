@@ -5,22 +5,22 @@ title: 关于我们
 permalink: /about
 photos:
   - title: "演出照片：2019-灵魂拒葬"
-    asset: "/assets/imgs/about_page/2019-灵魂拒葬.jpg"
+    asset: "/assets/imgs/about_page/2019-bury-the-dead.jpg"
 
   - title: "演出照片：2024-每一件美妙的小事"
-    asset: "/assets/imgs/about_page/2024-小事.jpeg"
+    asset: "/assets/imgs/about_page/2024-every-brilliant-thing.jpeg"
 
   - title: "演出照片：2025-玩偶之家2"
-    asset: "/assets/imgs/about_page/2025-玩偶之家2.JPG"
+    asset: "/assets/imgs/about_page/2025-dolls-house.JPG"
 
   - title: "演出照片：2020-茶话会"
-    asset: "/assets/imgs/about_page/2020-茶话会.jpg"
+    asset: "/assets/imgs/about_page/2020-tea-talk.jpg"
 
   - title: "排练花絮：2022-金锁记"
-    asset: "/assets/imgs/about_page/2022-金锁记.JPG"
+    asset: "/assets/imgs/about_page/2022-the-golden-cangue.JPG"
 
   - title: "剧组合影：2021-有客来访三则"
-    asset: "/assets/imgs/about_page/2021-有客来访三则.JPG"
+    asset: "/assets/imgs/about_page/2021-san-ze.JPG"
 ---
 
 <!-- Hero Banner Section -->
