@@ -19,7 +19,7 @@
 # in the templates via {{ site.myvariable }}.
 
 title: 非鱼剧社
-email: feiyu.theatre@gmail.com
+email: feiyu.theater@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   The official website of Feiyu Theater.
 baseurl: "" # the subpath of your site, e.g. /blog
