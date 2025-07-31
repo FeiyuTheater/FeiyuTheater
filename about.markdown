@@ -80,7 +80,7 @@ photos:
     </div>
     </div>
 
-    <h1 class="about-title">支持我们</h1>
+    <h1 class="about-title" id="support-us">支持我们</h1>
 
     <div class="about-content">
       <p>无论是个人捐款，或企业与组织的赞助，您的支持都是非鱼剧社持续创作与成长的动力。诚邀您加入，共同推动戏剧艺术的发展！</p>
