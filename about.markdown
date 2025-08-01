@@ -88,21 +88,21 @@ photos:
 
     <!-- Support Buttons -->
     <div class="support-buttons">
-      <a href="#" class="support-button">
+      <a href="/assets/imgs/about_page/sponsor_package_temp.jpg" class="support-button">
         <div class="button-image">
           <img src="/assets/imgs/about_page/icon_sponsorship.png" alt="商业赞助">
         </div>
         <div class="button-caption">商业赞助</div>
       </a>
 
-      <a href="#" class="support-button">
+      <a href="https://www.zeffy.com/donation-form/donate-to-feiyu-theater" class="support-button">
         <div class="button-image">
           <img src="/assets/imgs/about_page/icon_individual_donation.png" alt="个人捐款">
         </div>
         <div class="button-caption">个人捐款</div>
       </a>
 
-      <a href="#" class="support-button">
+      <a href="mailto:feiyu.theater@outlook.com?subject=[合作意向] <请填写您的标题>" class="support-button">
         <div class="button-image">
           <img src="/assets/imgs/about_page/icon_collaboration.png" alt="志愿服务">
         </div>
