@@ -10,8 +10,17 @@
           <h2 class="hero-date">{{ include.hero.date }}</h2>
           <h2 class="hero-location">地点：{{ include.hero.location }}</h2>
         </div>
-        {% include components/countdown.html event_datetime=include.hero.event_datetime%}
-        <a href="/tickets" class="hero-cta-button">点击购票</a>
+        {% if include.hero.countdown_title and include.hero.countdown_datetime and include.hero.countdown_message %}
+          {% include components/countdown.html
+              countdown_title=include.hero.countdown_title
+              event_datetime=include.hero.countdown_datetime
+              countdown_message=include.hero.countdown_message %}
+        {% endif %}
+        {% if include.hero.button_status == 'active' %}
+          <a href="{{ include.hero.button_link }}" class="hero-cta-button">{{ include.hero.button_text }}</a>
+        {% else %}
+          <div class="hero-cta-button hero-cta-inactive">{{ include.hero.button_text }}</div>
+        {% endif %}
       </div>
     </div>
   </div>

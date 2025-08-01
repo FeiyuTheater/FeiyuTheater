@@ -3,9 +3,17 @@ layout: home
 title: "非鱼剧社"
 hero:
   title: "萨勒姆的女巫"
-  date: "2025年11月8日 2:00PM"
-  event_datetime: "2025-11-08T14:00:00-07:00" # ISO format with timezone
-  location: "SJSU Hammer Theatre, San Jose, CA"
+  date: "2025年11月1日 | 11月2日"
+  # if no count down is needed, then comment out these keys
+  # countdown_title: ""
+  # countdown_datetime: "2025-11-08T14:00:00-07:00" # ISO format with timezone
+  # countdown_message: ""
+  # Show as button or a info
+  # Status can be "active" or "inactive"
+  button_status: "inactive"
+  button_text: "敬请期待"
+  button_link: "#"
+  location: "Mountain View Center for the Performing Arts"
   background_image: "/assets/imgs/hero-banner.png"
 ---
 
