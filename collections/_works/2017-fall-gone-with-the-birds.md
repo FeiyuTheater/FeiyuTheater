@@ -12,7 +12,7 @@ work_details:
   poster_image: "/assets/imgs/works/gone-with-the-birds/poster.jpg"
   introduction: "快乐王子的雕像在城市的中心，因此他能看到城中一切的贫穷与痛苦。他要求一只燕子，把自己蓝宝石雕成的双眼送给一个贫病交加的陌生人。年轻的哲学家深感痛苦，因为他找不到一只红玫瑰，献给自己心爱的姑娘。夜莺听到了他的祈求，甘愿让玫瑰刺破自己的胸膛，用鲜血帮这个哲学家染红一朵玫瑰。<br><br>一个导演要用话剧呈现这两个王尔德的童话，然而演员们却不是童话中的理想人物。“快乐王子”忧郁到绝望，“燕子”野心勃勃想要挣脱命运；“年轻的哲学家”在生活中甚至感情上精打细算，“夜莺”则下决心，今生都要远离爱情的尖刺。这样一群演员，当然会把戏演得乌七八糟。但为什么导演仍然坚持，将这两出理想到荒诞的童话剧，一次次地排练下去？"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "陈静远"
@@ -33,7 +33,7 @@ work_details:
           person: "周思韵"
         - name: "参与演出"
           person: "董仕"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "董仕"

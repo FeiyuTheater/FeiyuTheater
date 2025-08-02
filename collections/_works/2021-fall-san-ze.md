@@ -1,7 +1,7 @@
 ---
 layout: work-detail
 title: "有客来访三则"
-sort_by_date: "2021-12-10" 
+sort_by_date: "2021-12-10"
 work_details:
   title: "有客来访三则"
   location: "Starbright Theater"
@@ -12,7 +12,7 @@ work_details:
   poster_image: "/assets/imgs/works/2021-fall-san-ze/poster.png"
   introduction: "《十二镑钱的神情》<br>编剧：[英]詹姆斯·马修·巴利 翻译：[中]丁西林<br>在英国，哈利·西摩斯的府邸一片喜气。意气风发的西摩斯先生，加封进爵，人生快意。可被派遣来记录的打字员，竟是和人私奔的前任西摩斯太太。此番造访，将给西摩斯一家带来多少波澜?<br><br>《瞎了一只眼》<br>编剧：[中]丁西林<br>在北平，一封惊慌之下夸大病情的书信， 带来了忧心忡忡前来探望的友人。过意不去的一对夫妻竟决定装病。破绽百出，荒诞不经，最后如何收场?<br><br>《熊》<br>编剧：[俄]安东·帕夫洛维奇·契诃夫 翻译：[中]汝龙<br>在俄国，硕大的庄园里住着一名守寡的贵妇人。哐哐哐，闯入庄园的是个熊一般野蛮的讨债鬼。他们相互争吵，彼此嫌弃。但这一切，仅仅是因为钱吗？"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "爵士"
           person: "宁达非"
@@ -44,7 +44,7 @@ work_details:
         - name: "路卡"
           person: "贾豫"
           role: "《熊》"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "陈思源"

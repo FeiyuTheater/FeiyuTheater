@@ -73,7 +73,7 @@ work_details:
           person: "李泽宇"
         - name: "导演"
           person: "李云琦"
-    - page_title: "后台团队"
+    - page_title: "后台"
       members:
         - name: "舞台监督"
           person: "孟毅"

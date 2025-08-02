@@ -11,7 +11,7 @@ work_details:
   poster_image: "/assets/imgs/works/2015-inside-no-9/poster.jpg"
   introduction: "一场因误会而引发的密闭车厢闹剧"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "贾韬"
