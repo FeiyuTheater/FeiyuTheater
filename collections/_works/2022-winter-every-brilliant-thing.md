@@ -11,7 +11,7 @@ work_details:
   poster_image: "/assets/imgs/works/2022-winter-every-brilliant-thing/poster.png"
   introduction: "香蕉、旺仔牛奶、善良的老奶奶、冰淇淋、体育课自由活动……七岁的你认真记录下这个世界上所有美好的事物，在妈妈第一次尝试自杀之后，放在妈妈的床头。你知道妈妈读了你的清单，因为她修改了你的错别字。<br><br>“自杀”、“抑郁”、“患者”似乎是残酷凛冽的主题，可《每一件美妙的小事》却用诙谐的语言和温情的互动，带领观众进入抑郁症患者家庭中的“幸存者”视角。它对所有深陷泥沼的人说，这是一百万件美妙的小事，在彻底绝望之前，先任这份清单自由生长吧。"
   production_team:
-    - page_title: "演员团队"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "靠靠"
@@ -49,7 +49,7 @@ work_details:
           person: "靠靠"
         - name: "舞台监督"
           person: "孙研"
-    - page_title: "后台团队"
+    - page_title: "后台"
       members:
         - name: "灯光"
           person: "胡雪莹"
