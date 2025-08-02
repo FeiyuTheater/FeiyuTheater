@@ -11,7 +11,7 @@ work_details:
   poster_image: "/assets/imgs/works/2017-spring-the-bus-stop/poster.png"
   introduction: "在郊外一个破败的车站，几个人百无聊赖地等车进城。有人想到城里下象棋，有人想去约会，还有人只是想喝一口城里的酸牛奶。这些人互不相识，进城后也将各奔东西。但此刻他们在同一个车站旁，寒暄，插队，争吵，也互相宽慰。一场偶遇，却最终成为了生命中最为冗长的段落。要等的车迟迟不来，驶来的车永远不停。他们到底在等待什么？而我们又在等待什么？"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "贾韬"
@@ -37,7 +37,7 @@ work_details:
         - name: "演员"
           person: "贾彤珺"
           role: "马主任"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "刘天泽"

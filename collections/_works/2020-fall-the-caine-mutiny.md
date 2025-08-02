@@ -1,7 +1,7 @@
 ---
 layout: work-detail
 title: "哗变"
-sort_by_date: "2021-01-23" 
+sort_by_date: "2021-01-23"
 work_details:
   title: "哗变"
   location: "Online"
@@ -11,7 +11,7 @@ work_details:
   poster_image: "/assets/imgs/works/2020-fall-the-caine-mutiny/poster.JPG"
   introduction: "第二次世界大战，太平洋战场。美国海军舰艇“凯恩号” 在执行任务期间，遭遇极端天气，与舰队失联。在暴风巨浪中，发生了一场震惊全军的哗变。“凯恩号” 执行官马瑞克引用海军军规184条，解除了舰长魁格的职务。<br><br>《美国海军军规》184条:如果出现极为不寻常的情况，下属可以解除指挥官的职务，可通过逮捕他或将他纳入病人名单，这种形式必须经过海军部门的同意，除非情况不允许有任何延迟;解除指挥官或者推荐此种行为的军官和其他认同的人一样，要求承担相同的责任，并要求作出合理的解释。<br><br>最终“凯恩号” 得以脱险，但马瑞克没有逃脱军事法庭的审判。一场哗变，暴露了船舰上被掩藏已久的矛盾，也揭开了冰冷制度所无法完全解答的人性复杂。这究竟是一场蓄谋已久的篡权夺位，还是一次至暗时刻的挺身而出? 黑幕已然落下，风暴正在来袭，真相即将大白......"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "演员"
           role: "玛瑞克"
@@ -46,7 +46,7 @@ work_details:
         - name: "演员"
           role: "伯迪"
           person: "李寅辰"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "贾小荣"

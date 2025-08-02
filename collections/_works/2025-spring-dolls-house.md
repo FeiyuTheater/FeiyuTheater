@@ -12,7 +12,7 @@ work_details:
   poster_image: "/assets/imgs/works/2025-spring-dolls-house/poster.png"
   introduction: "15年前，娜拉砰地一声关上家门，抛下丈夫和三个孩子，踏上寻找自我的旅程。要说离开的原因，或许是她意识到丈夫无法真正的看见她，又或许是'全职主妇'的角色令她感到窒息。她说不清，只知道心底有一个声音越来越大，这个声音要她离开。<br/><br/>15年后的今天，娜拉已然成为了一个完全不同的人：她富足自由，快乐潇洒，作为家庭主妇'提线玩偶'般的日子恍若隔世。这是一种19世纪的女人不敢想象的生活。可她突然回来了。这次回归，无疑意味着面对一个又一个没有处理完成的心结，与一场又一场艰难的对话：与丈夫，与女儿，与见证了所有过去的保姆。她没有理由回来，除非她身上的提线并没完全剪断......<br/><br/>这个故事描述了一个女性在追求自我独立15年后重新面对家庭的复杂情感故事。"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
       - name: "演员"
         person: "张特"
@@ -28,8 +28,6 @@ work_details:
         role: "艾米"
     - page_title: "制作团队"
       members:
-      - name: "原著"
-        person: "卢卡斯·纳斯"
       - name: "制作人"
         person: "李可人"
       - name: "制作人助理"
@@ -46,7 +44,7 @@ work_details:
         person: "北南"
       - name: "改编"
         person: "Angelo"
-    - page_title: "后台团队"
+    - page_title: "后台"
       members:
       - name: "灯光"
         person: "Jennifer"
@@ -97,12 +95,6 @@ work_details:
       - name: "摄影摄像"
         person: "Charlie"
       - name: "摄影摄像"
-        person: "Sophy"
-      - name: "场务"
-        person: "董仕"
-      - name: "场务"
-        person: "Tiger"
-      - name: "场务"
         person: "Sophy"
   photos:
     - image: "/assets/imgs/works/2025-spring-dolls-house/photo_1.jpg"

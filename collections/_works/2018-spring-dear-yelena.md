@@ -11,7 +11,7 @@ work_details:
   poster_image: "/assets/imgs/works/dear-yelena/poster.png"
   introduction: "一个飘雪的寒夜，四位学生敲开了数学老师家的门为她庆祝生日。在鲜花与香槟中，一个大胆而缜密的计划徐徐拉开帷幕。一次次善与恶的激烈碰撞，让这场“游戏”不可避免地走向失控。道德与人性的外皮逐渐褪去，究竟谁才是这场漫长而荒诞的游戏中最后的赢家？"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "沈学思"
@@ -28,7 +28,7 @@ work_details:
         - name: "演员"
           person: "陈思源"
           role: "巴沙"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "周思韵"

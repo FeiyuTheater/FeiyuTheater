@@ -9,12 +9,12 @@ work_details:
     - "2016-05-22"
   banner_image: "/assets/imgs/works/the-respectful-prostitute/banner.jpg"
   poster_image: "/assets/imgs/works/the-respectful-prostitute/poster.png"
-  brochure: 
+  brochure:
     - "/assets/files/works/the-respectful-prostitute/brochure_1.jpg"
     - "/assets/files/works/the-respectful-prostitute/brochure_2.jpg"
   introduction: "风尘女子丽瑟由于成为一桩杀人案的关键证人而不得不周旋于三个男人之间。她倾心于一位有钱的恩客——市长的儿子弗莱特，却发现弗莱特与她接触是另有图谋；出于良心，她想要替因为她打抱不平而面临牢狱之灾的流浪汉出面作证，却在市长父子的威逼利诱之下屈服。丽瑟对正义有着朴素的认识与追求，但面对权力与道德的双重夹击，她的软弱与单纯使她最终妥协，成为了上流社会伪善道德观的奴隶。"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "周思韵"
@@ -40,7 +40,7 @@ work_details:
         - name: "参与演出"
           person: "李周嘉"
           role: "平民乙"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "彭韬"

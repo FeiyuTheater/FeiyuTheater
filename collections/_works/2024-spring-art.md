@@ -12,7 +12,7 @@ work_details:
   poster_image: "/assets/imgs/works/2024-art/poster.png"
   introduction: "孙绍明最近很难受，因为他的⽼朋友赵仁杰花重⾦买了⼀幅了不得的油画。这其实也不关孙绍明什么事，⽤他们共同好友潘⽂的话来说，赵仁杰“喜欢就好”<br/><br/>可这购画行为似乎止这十多年的友谊突然起了一个疙瘩，被深深扰动的孙绍明决定找两位朋友好好聊聊此事。他们仨就这样聊着，聊着......咦！怎么吵起来了？<br/><br/>《艺术》是法国剧作家雅丝米娜·雷札（Yasmina Reza）的作品，于1994年首演于法国巴黎，并迅速轰动话剧界，被翻译成30种语言于全球50多个国家演出，获得了法国莫里哀戏剧奖最佳编剧奖、伦敦奥利弗戏剧奖最佳喜剧奖以及美国托尼奖最佳编剧奖。"
   production_team:
-    - page_title: "演员团队"
+    - page_title: "演员"
       members:
       - name: "演员"
         person: "李泽宇"
@@ -25,10 +25,6 @@ work_details:
         role: "潘文"
     - page_title: "制作团队"
       members:
-      - name: "编剧"
-        person: "雅丝米娜·雷札"
-      - name: "翻译"
-        person: "宫宝荣"
       - name: "制作人"
         person: "郭汀莹"
       - name: "制作人助理"
@@ -41,7 +37,7 @@ work_details:
         person: "董邑恒"
       - name: "改编"
         person: "徐琬乔"
-    - page_title: "后台团队"
+    - page_title: "后台"
       members:
       - name: "灯光"
         person: "Claire"
