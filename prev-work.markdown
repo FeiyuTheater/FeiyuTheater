@@ -1,6 +1,7 @@
 ---
 layout: prev-work
 title: 往期作品
+description: "探索非鱼剧社往期的戏剧演出和活动回顾，感受每一段舞台的独特魅力。"
 permalink: /prev-work
 ---
 

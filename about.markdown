@@ -2,6 +2,7 @@
 layout: about
 js: about.js
 title: 关于我们
+description: "了解非鱼剧社的历史传承，并探索我们的合作与赞助机会。"
 permalink: /about
 photos:
   - title: "演出照片：2019-灵魂拒葬"
