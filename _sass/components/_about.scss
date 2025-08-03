@@ -182,6 +182,35 @@
   .carousel-control-prev-icon {
     width: 15px;
     height: 15px;
+    filter: brightness(0) invert(1) brightness(1.4) drop-shadow(0 3px 6px rgba(0, 0, 0, 1)); // Much brighter icons with stronger shadow
+  }
+  
+  // Add smooth transition for button positioning
+  .carousel-control-prev,
+  .carousel-control-next {
+    transition: left 0.3s ease, right 0.3s ease;
+  }
+  
+  // Medium screens (769px - 1199px)
+  @media (min-width: 769px) and (max-width: 1199px) {
+    .carousel-control-prev {
+      left: -5px;
+    }
+    
+    .carousel-control-next {
+      right: -5px;
+    }
+  }
+  
+  // Large screens (1200px and above)
+  @media (min-width: 1200px) {
+    .carousel-control-prev {
+      left: -25px;
+    }
+    
+    .carousel-control-next {
+      right: -25px;
+    }
   }
   
   // Mobile responsive adjustments
@@ -198,27 +227,35 @@
     
     .carousel-control-prev,
     .carousel-control-next {
-      background-color: rgba(0, 0, 0, 0.3); // Add semi-transparent background
-      width: 40px; // Make controls narrower but more visible
+      background-color: rgba(0, 0, 0, 0.75); // Slightly more transparent circle
+      width: 36px; // Slightly smaller to fit on narrow screens
       border-radius: 50%; // Make them circular
-      height: 40px; // Fixed height
+      height: 36px; // Fixed height
       top: 50%; // Center vertically
       transform: translateY(-50%); // Center vertically
       bottom: auto; // Override Bootstrap's bottom: 0
+      border: none; // Remove border for cleaner look
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); // Stronger shadow for definition
+      
+      &:hover, &:focus {
+        background-color: rgba(0, 0, 0, 0.9); // Even darker on interaction
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5); // Enhanced shadow on hover
+      }
     }
     
     .carousel-control-prev {
-      left: 5px; // Position within the minimal padding area
+      left: 8px; // Position with clearance from image edge
     }
     
     .carousel-control-next {
-      right: 5px; // Position within the minimal padding area
+      right: 8px; // Position with clearance from image edge
     }
     
     .carousel-control-next-icon,
     .carousel-control-prev-icon {
-      width: 20px; // Make icons slightly larger on mobile
-      height: 20px;
+      width: 18px; // Proportional to smaller button size
+      height: 18px;
+      filter: brightness(0) invert(1) brightness(1.4) drop-shadow(0 3px 6px rgba(0, 0, 0, 1)); // Much brighter icons with stronger shadow
     }
   }
 }
