@@ -183,6 +183,44 @@
     width: 15px;
     height: 15px;
   }
+  
+  // Mobile responsive adjustments
+  @media (max-width: 768px) {
+    .carousel-item {
+      padding: 20px 5px; // Minimal horizontal padding on mobile
+    }
+    
+    // Remove Bootstrap row gutters on mobile to save space
+    .carousel-item .row {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+      background-color: rgba(0, 0, 0, 0.3); // Add semi-transparent background
+      width: 40px; // Make controls narrower but more visible
+      border-radius: 50%; // Make them circular
+      height: 40px; // Fixed height
+      top: 50%; // Center vertically
+      transform: translateY(-50%); // Center vertically
+      bottom: auto; // Override Bootstrap's bottom: 0
+    }
+    
+    .carousel-control-prev {
+      left: 5px; // Position within the minimal padding area
+    }
+    
+    .carousel-control-next {
+      right: 5px; // Position within the minimal padding area
+    }
+    
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+      width: 20px; // Make icons slightly larger on mobile
+      height: 20px;
+    }
+  }
 }
 
 .photo-card {
@@ -205,6 +243,16 @@
         // transform: scale(1.1);
         transform: translateY(-5px) scale(1.01);
         box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.35);
+      }
+    }
+    
+    // Mobile: reduce column padding and add space for shadows
+    @media (max-width: 768px) {
+      padding-left: 8px !important;  // Reduce from Bootstrap's default 15px
+      padding-right: 8px !important; // Reduce from Bootstrap's default 15px
+      
+      img {
+        margin: 0 2px 8px 2px; // Add margin for shadow space
       }
     }
 }
