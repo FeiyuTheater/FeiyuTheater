@@ -187,7 +187,7 @@
   // Mobile responsive adjustments
   @media (max-width: 768px) {
     .carousel-item {
-      padding: 20px 5px; // Minimal horizontal padding on mobile
+      padding: 15px 0; // Remove ALL horizontal padding, reduce vertical
     }
     
     // Remove Bootstrap row gutters on mobile to save space
@@ -237,10 +237,7 @@
     }
 
     &:hover {
-      // transform: scale(1.05);
-
       img {
-        // transform: scale(1.1);
         transform: translateY(-5px) scale(1.01);
         box-shadow: 2px 10px 20px rgba(0, 0, 0, 0.35);
       }
@@ -248,11 +245,16 @@
     
     // Mobile: reduce column padding and add space for shadows
     @media (max-width: 768px) {
-      padding-left: 8px !important;  // Reduce from Bootstrap's default 15px
-      padding-right: 8px !important; // Reduce from Bootstrap's default 15px
+      padding-left: 3px !important;  // Minimal padding just for shadows
+      padding-right: 3px !important; // Minimal padding just for shadows
       
       img {
-        margin: 0 2px 8px 2px; // Add margin for shadow space
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); // Very small shadow that fits in 3px space
+        
+        &:hover {
+          transform: none; // Disable hover transform on mobile
+          box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); // Keep same shadow on hover
+        }
       }
     }
 }
