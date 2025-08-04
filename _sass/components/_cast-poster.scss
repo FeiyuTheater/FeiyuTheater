@@ -1,0 +1,534 @@
+@use "sass:map";
+
+// Cast Poster Component Variables
+$cast-poster: (
+  primary-color: #837a6f,
+  primary-light: rgba(139, 125, 107, 0.1),
+  primary-shadow: rgba(139, 125, 107, 0.3),
+  text-primary: #333,
+  text-secondary: #666,
+  text-muted: #999,
+  text-light: #bbb,
+  bg-white: white,
+  bg-light: #f5f5f5,
+  bg-lighter: #f8f8f8,
+  border-light: #ddd,
+  shadow-light: rgba(0, 0, 0, 0.1),
+  shadow-medium: rgba(0, 0, 0, 0.15),
+  border-radius-sm: 12px,
+  border-radius-md: 15px,
+  border-radius-lg: 20px,
+  border-radius-xl: 25px,
+  transition-fast: 0.3s ease
+);
+
+@function cast-get($key) {
+  @return map.get($cast-poster, $key);
+}
+
+// Breakpoints
+$cast-breakpoints: (
+  mobile: 480px,
+  tablet: 768px,
+  medium: 1000px,  // 新增这一行
+  desktop: 1024px
+);
+
+@mixin cast-respond-to($breakpoint) {
+  @if map.has-key($cast-breakpoints, $breakpoint) {
+    @media (max-width: map.get($cast-breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin cast-respond-between($min, $max) {
+  @if map.has-key($cast-breakpoints, $min) and map.has-key($cast-breakpoints, $max) {
+    @media (min-width: #{map.get($cast-breakpoints, $min) + 1px}) and (max-width: map.get($cast-breakpoints, $max)) {
+      @content;
+    }
+  }
+}
+
+// Cast Poster Component Styles
+.cast-poster-container {
+  background: cast-get(bg-white);
+  border-radius: cast-get(border-radius-lg);
+  box-shadow: 0 20px 60px cast-get(shadow-light);
+  overflow: hidden;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 600px;
+
+  @include cast-respond-to(tablet) {
+    flex-direction: column;
+    margin: 10px auto;
+    padding: 0 15px;
+    border-radius: cast-get(border-radius-md);
+  }
+
+  @include cast-respond-to(mobile) {
+    margin: 5px auto;
+    padding: 0 10px;
+  }
+}
+
+.cast-poster-section {
+  flex: 0 0 auto;
+  position: relative;
+  background: cast-get(bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 30px;
+  height: 100%;
+
+  @include cast-respond-to(desktop) {
+    width: 50%;
+    max-width: 50%;
+    padding: 15px 25px;
+  }
+
+  @include cast-respond-to(tablet) {
+    display: none;
+  }
+}
+
+.cast-poster {
+  height: calc(100% - 40px);
+  aspect-ratio: 3/4;
+  border-radius: cast-get(border-radius-sm);
+  box-shadow: 0 15px 40px cast-get(shadow-medium);
+  position: relative;
+  overflow: hidden;
+  background: cast-get(bg-lighter);
+  // border: 2px dashed cast-get(border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: cast-get(text-muted);
+  font-size: 16px;
+  font-weight: 500;
+
+  &::before {
+    // content: '电影海报';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: cast-get(text-light);
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: cast-get(border-radius-sm);
+
+    &:not([src]) {
+      display: none;
+    }
+  }
+
+  @include cast-respond-to(desktop) {
+    width: 100%;
+    height: auto;
+    max-height: calc(100% - 30px);
+  }
+}
+
+.cast-section {
+  flex: 1;
+  padding: 20px 20px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: cast-get(bg-white);
+  position: relative;
+  overflow: visible;
+
+  @include cast-respond-to(tablet) {
+    padding: 30px 20px;
+  }
+
+  @include cast-respond-to(mobile) {
+    padding: 20px 10px;
+  }
+}
+
+.cast-section-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  @include cast-respond-to(tablet) {
+    gap: 6px;
+    margin-bottom: 30px;
+  }
+
+  @include cast-respond-to(mobile) {
+    gap: 4px;
+    margin-bottom: 40px;
+  }
+}
+
+.cast-tab-button {
+  background: cast-get(bg-light);
+  color: cast-get(text-secondary);
+  padding: 10px 20px;
+  border-radius: cast-get(border-radius-xl);
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all cast-get(transition-fast);
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  &.active {
+    background: cast-get(primary-color);
+    color: cast-get(bg-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px cast-get(primary-shadow);
+  }
+
+  &:hover:not(.active) {
+    background: #e8e8e8;
+    transform: translateY(-1px);
+  }
+
+  @include cast-respond-to(tablet) {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  @include cast-respond-to(mobile) {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+.cast-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px 15px;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 320px;
+  align-content: start;
+  opacity: 1;
+  transition: opacity cast-get(transition-fast);
+
+  &.loading {
+    opacity: 0;
+  }
+
+  // 中等屏幕 (769px-1000px) - 3列
+  @include cast-respond-between(tablet, medium) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 12px;
+    max-width: 450px;
+    min-height: 280px;
+  }
+
+  // 新增：中小屏幕 (769px-840px) - 2列2行
+  @media (min-width: 769px) and (max-width: 840px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);  // 强制限制为2行
+    gap: 25px 20px;
+    max-width: 350px;
+    height: 320px;                       // 固定高度确保2行
+  }
+
+  // 平板屏幕 (481px-768px) - 3列
+  @include cast-respond-to(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 12px;
+    max-width: 420px;
+    height: 280px;
+  }
+
+  // 手机屏幕 (≤480px) - 2列
+  @include cast-respond-to(mobile) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px 15px;
+    max-width: 320px;
+    height: 240px;
+  }
+}
+
+.cast-member {
+  text-align: center;
+  transition: transform cast-get(transition-fast);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.cast-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: cast-get(primary-color);
+  color: cast-get(bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 auto 12px;
+  box-shadow: 0 8px 25px cast-get(primary-shadow);
+  transition: all cast-get(transition-fast);
+
+  .cast-member:hover & {
+    background: #a59485;
+    transform: scale(1.05);
+  }
+
+  @include cast-respond-to(tablet) {
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  @include cast-respond-to(mobile) {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+.cast-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: cast-get(text-primary);
+  margin-bottom: 4px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @include cast-respond-to(tablet) {
+    height: 18px;
+    font-size: 14px;
+  }
+
+  @include cast-respond-to(mobile) {
+    font-size: 14px;
+    margin-bottom: 3px;
+    height: 17px;
+  }
+}
+
+.cast-character {
+  font-size: 12px;
+  color: cast-get(text-secondary);
+  font-weight: 400;
+  line-height: 1.3;
+  height: 52px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @include cast-respond-to(tablet) {
+    height: 48px;
+    font-size: 11px;
+    width: 70px;
+  }
+
+  @include cast-respond-to(mobile) {
+    font-size: 11px;
+    line-height: 1.2;
+    height: 42px;
+    width: 65px;
+  }
+}
+
+.cast-section-page-indicator {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: cast-get(text-muted);
+}
+
+.cast-page-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+
+  @include cast-respond-to(mobile) {
+    gap: 12px;        // 手机上增大间距
+    margin-top: 20px; // 增加上边距
+  }
+}
+
+.cast-page-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: cast-get(border-light);
+  transition: all cast-get(transition-fast);
+  cursor: pointer;
+
+  &.active {
+    background: cast-get(primary-color);
+    transform: scale(1.2);
+  }
+
+  @include cast-respond-to(mobile) {
+    width: 12px;      // 手机上放大分页点
+    height: 12px;
+
+    &.active {
+      transform: scale(1.3);
+    }
+  }
+}
+
+.cast-navigation {
+  position: absolute;
+  top: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all cast-get(transition-fast);
+  color: cast-get(primary-color);
+  z-index: 10;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  // 默认样式 (>1000px) - 大屏幕
+  width: 40px;
+  height: 40px;
+  background: cast-get(primary-light);
+  border-radius: 50%;
+  font-size: 18px;
+  transform: translateY(-50%);
+
+  &.cast-nav-left {
+    left: 5px;
+  }
+
+  &.cast-nav-right {
+    right: 5px;
+  }
+
+  &:hover {
+    background: rgba(139, 125, 107, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  // 中等屏幕 (769px-1000px)
+  @media (min-width: 769px) and (max-width: 1000px) {
+    width: 35px;
+    height: 35px;
+    background: cast-get(primary-light);
+    border-radius: 50%;
+    font-size: 16px;
+    transform: translateY(-50%);
+    
+    &.cast-nav-left {
+      left: 10px;
+    }
+    
+    &.cast-nav-right {
+      right: 10px;
+    }
+
+    &:hover {
+      background: rgba(139, 125, 107, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+  }
+
+  // 平板屏幕 (481px-768px)
+  @media (min-width: 481px) and (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+    background: cast-get(primary-light);
+    border-radius: 50%;
+    font-size: 14px;
+    transform: translateY(-50%);
+    
+    &.cast-nav-left {
+      left: 0px;
+    }
+    
+    &.cast-nav-right {
+      right: 0px;
+    }
+
+    &:hover {
+      background: rgba(139, 125, 107, 0.2);
+      transform: translateY(-50%) scale(1.1);
+    }
+  }
+
+  // 手机屏幕 (≤480px) - 纯箭头
+  @media (max-width: 480px) {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: 600;
+    transform: translateY(-50%);
+    
+    &.cast-nav-left {
+      left: 0px;
+    }
+    
+    &.cast-nav-right {
+      right: 0px;
+    }
+
+    &:hover {
+      background: transparent;
+      transform: translateY(-50%) scale(1.2);
+    }
+
+    &:disabled {
+      opacity: 0.2;
+    }
+  }
+}
+
+// Desktop height handling
+@media (min-width: 769px) {
+  .cast-poster-container {
+    height: 600px;
+
+    .cast-poster-section,
+    .cast-section {
+      height: 100%;
+    }
+  }
+}

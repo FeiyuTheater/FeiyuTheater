@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", () => {
     const trio = document.querySelector("#threeUpCarousel");
     new bootstrap.Carousel(trio, {
-      interval: 3800,  // auto‑advance every 3.8 s
-      pause: "hover",
-      wrap: true
+        interval: 15000,  // auto‑advance every 15 s
+        pause: "hover",
+        wrap: true
     });
-  });
+});
 
 /**
  * Initialize the photo slider functionality

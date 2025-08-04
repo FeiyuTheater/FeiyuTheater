@@ -127,12 +127,14 @@ $navigation-bar-height-sm: 76px;
     }
 
     &-link {
-        text-decoration: none;
+        text-decoration: none !important;
         color: #333;
         transition: all 0.3s ease;
 
         &:hover {
             color: #666;
+            text-decoration: none !important;
+
             background-color: #f8f9fa;
             padding: 8px 16px;
             border-radius: 4px;

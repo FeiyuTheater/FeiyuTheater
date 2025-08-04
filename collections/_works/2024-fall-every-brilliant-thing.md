@@ -4,13 +4,15 @@ title: "每一件美妙的小事"
 sort_by_date: "2024-10-19"
 work_details:
   title: "每一件美妙的小事"
-  location: "地球的某个地方"
-  date: "2024年10月19日 & 20日"
+  location: "Mountain View Center for the Performing Arts"
+  dates:
+    - "2024-10-19"
+    - "2024-10-20"
   banner_image: "/assets/imgs/works/2024-every-brilliant-thing/banner.jpeg"
   poster_image: "/assets/imgs/works/2024-every-brilliant-thing/poster.png"
-  introduction: "旺旺雪饼、善良的阿姨、草莓味的冰淇淋...在妈妈第一次尝试自杀之后，七岁的“我”认真记录下这个世界上所有美好的事物，放在妈妈的床头。从那时开始记录的每一件小事，便组成了舞台上的所有故事。<br/><br/>“自杀”、“抑郁”、“患者”似乎是残酷凛冽的主题，《每一件美妙的小事》将用诙谐的语言和温情的互动，带领观众进入抑郁症患者家庭中的“幸存者”视角。它对所有深陷泥沼的人说，这是十万件美妙的小事，在彻底绝望之前，先任这份清单自由生长吧"
+  introduction: "旺旺雪饼、善良的阿姨、草莓味的冰淇淋……在妈妈第一次尝试自杀之后，七岁的“我”认真记录下这个世界上所有美好的事物，放在妈妈的床头。从那时开始记录的每一件小事，便组成了舞台上的所有故事。<br/><br/>“自杀”、“抑郁”、“患者”似乎是残酷凛冽的主题，《每一件美妙的小事》将用诙谐的语言和温情的互动，带领观众进入抑郁症患者家庭中的“幸存者”视角。它对所有深陷泥沼的人说，这是十万件美妙的小事，在彻底绝望之前，先任这份清单自由生长吧。"
   production_team:
-    - page_title: "演员团队"
+    - page_title: "演员"
       members:
         - name: "演员"
           person: "靠靠"
@@ -26,8 +28,6 @@ work_details:
           role: "杉杉"
     - page_title: "制作团队"
       members:
-        - name: "原著"
-          person: "邓肯 马克米兰"
         - name: "制作人"
           person: "段天霖"
         - name: "制作人"
@@ -38,7 +38,7 @@ work_details:
           person: "Jocelyn Yan"
         - name: "舞台监督"
           person: "金文瀚"
-    - page_title: "后台团队"
+    - page_title: "后台"
       members:
         - name: "灯光"
           person: "李泽宇"

@@ -10,8 +10,36 @@ layout: default
         <div class="banner-content">
             <h1 class="work-title">{{ page.work_details.title }}</h1>
             <div class="work-meta">
+                <span class="work-date">
+                {% if page.work_details.dates %}
+                    {% assign first_date = page.work_details.dates | first %}
+                    {% assign first_year = first_date | date: "%Y" %}
+                    {% assign first_month = first_date | date: "%-m" %}
+                    {% assign first_day = first_date | date: "%-d" %}
+                    {% assign formatted_dates = first_year | append: '年' | append: first_month | append: '月' | append: first_day | append: '日' %}
+
+                    {% if page.work_details.dates.size > 1 %}
+                    {% for date_str in page.work_details.dates offset:1 %}
+                        {% assign current_year = date_str | date: "%Y" %}
+                        {% assign current_month = date_str | date: "%-m" %}
+                        {% assign current_day = date_str | date: "%-d" %}
+
+                        {% if current_year == first_year and current_month == first_month %}
+                        {% assign date_part = current_day | append: '日' %}
+                        {% else %}
+                        {% assign date_part = current_year | append: '年' | append: current_month | append: '月' | append: current_day | append: '日' %}
+                        {% endif %}
+
+                        {% assign formatted_dates = formatted_dates | append: ' | ' | append: date_part %}
+                    {% endfor %}
+                    {% endif %}
+
+                    {{ formatted_dates }}
+                {% else %}
+                    {{ page.work_details.date }}
+                {% endif %}
+                </span>
                 <span class="work-location">{{ page.work_details.location }}</span>
-                <span class="work-date">{{ page.work_details.date }}</span>
             </div>
         </div>
     </div>
@@ -21,88 +49,35 @@ layout: default
 <section class="detail-section introduction-section">
     <div class="container">
         <h2 class="section-title">
-            <span class="title-dash">——</span>
-            剧情简介
-            <span class="title-dash">——</span>
+            <!-- <span class="title-dash">——</span> -->
+            剧目简介
+            <!-- <span class="title-dash">——</span> -->
         </h2>
-        <div class="section-content">
-            <p class="introduction-text">{{ page.work_details.introduction }}</p>
-        </div>
-    </div>
-</section>
 
-<!-- Poster and Production Team Section -->
-<section class="detail-section poster-cast-section">
-    <div class="container">
-        <h2 class="section-title">
-            <span class="title-dash">——</span>
-            制作团队
-            <span class="title-dash">——</span>
-        </h2>
-        <div class="section-content">
-            <div class="poster-cast-grid">
-                <div class="poster-container">
-                    <img src="{{ page.work_details.poster_image }}" alt="{{ page.work_details.title }} 海报"
-                        class="work-poster">
-                </div>
-                <div class="cast-container">
-                    <!-- Production Team Carousel -->
-                    <div class="production-team-carousel">
-                        <!-- Navigation Arrows -->
-                        <button class="carousel-nav carousel-prev" aria-label="上一页">
-                            <span>‹</span>
-                        </button>
-                        <button class="carousel-nav carousel-next" aria-label="下一页">
-                            <span>›</span>
-                        </button>
-
-                        <!-- Carousel Container -->
-                        <div class="carousel-container">
-                            <div class="carousel-track">
-                                {% for team_page in page.work_details.production_team %}
-                                <div class="carousel-slide">
-                                    <h3 class="team-page-title">{{ team_page.page_title }}</h3>
-                                    <div class="team-grid">
-                                        {% for member in team_page.members %}
-                                        <div class="team-member">
-                                            <div class="member-info">
-                                                <div class="character-name">{{ member.name }}</div>
-                                                <div class="actor-name">{{ member.person }}</div>
-                                                <div class="role-description">{{ member.role }}</div>
-                                            </div>
-                                        </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-
-                        <!-- Page Indicators -->
-                        <div class="carousel-indicators">
-                            {% for team_page in page.work_details.production_team %}
-                            <button class="indicator{% if forloop.first %} active{% endif %}"
-                                data-slide="{{ forloop.index0 }}">
-                                {{ forloop.index }}
-                            </button>
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
+        <div class="description-container">
+            <div class="description-container">
+                <p class="introduction-text">{{ page.work_details.introduction }}</p>
             </div>
         </div>
+
+        <div class="poster-cast-section section-content">
+            {% include cast-poster.html production_team=page.work_details.production_team poster_image=page.work_details.poster_image %}
+        </div>
     </div>
 </section>
+
+
+<section class="detail-section highlight-section">
+    <div class="container">
+        <h2 class="section-title">
+            <!-- <span class="title-dash">——</span> -->
+            精彩回顾
+            <!-- <span class="title-dash">——</span> -->
+        </h2>
 
 <!-- Video Section -->
 {% if page.work_details.youtube_video %}
-<section class="detail-section video-section">
-    <div class="container">
-        <h2 class="section-title">
-            <span class="title-dash">——</span>
-            精彩片段
-            <span class="title-dash">——</span>
-        </h2>
+    <section class="video-section">
         <div class="section-content">
             <div class="video-container">
                 <iframe src="https://www.youtube.com/embed/{{ page.work_details.youtube_video }}" frameborder="0"
@@ -110,29 +85,24 @@ layout: default
                 </iframe>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endif %}
 
 <!-- Photos Section -->
-<section class="detail-section photos-section">
-    <div class="container">
-        <h2 class="section-title">
-            <span class="title-dash">——</span>
-            演出花絮
-            <span class="title-dash">——</span>
-        </h2>
-        <div class="section-content">
-            <div class="photo-wall" id="photo-wall">
-                {% for photo in page.work_details.photos %}
-                <div class="photo-item photo-{{ photo.size }}" data-lightbox-src="{{ photo.full_image | default: photo.image }}">
-                    <img src="{{ photo.image }}" alt="{{ photo.caption }}" class="photo-image">
-                    <div class="photo-caption">{{ photo.caption }}</div>
+    <section class="detail-section photos-section">
+        <div class="container">
+            <div class="section-content">
+                <div class="photo-wall" id="photo-wall">
+                    {% for photo in page.work_details.photos %}
+                    <div class="photo-item photo-{{ photo.size }}" data-lightbox-src="{{ photo.full_image | default: photo.image }}">
+                        <img src="{{ photo.image }}" alt="{{ photo.caption }}" class="photo-image">
+                        <div class="photo-caption">{{ photo.caption }}</div>
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
         </div>
-    </div>
+    </section>
 </section>
 
 <!-- Photo lightbox -->
