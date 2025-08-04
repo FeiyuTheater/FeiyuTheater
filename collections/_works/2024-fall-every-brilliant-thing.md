@@ -89,7 +89,7 @@ work_details:
       caption: "演出"
     - image: "/assets/imgs/works/2024-every-brilliant-thing/photo2.jpg"
       size: "medium"
-      caption: "演出"
+      caption: "彩排"
     - image: "/assets/imgs/works/2024-every-brilliant-thing/photo5.jpeg"
       caption: "谢幕"
       size: "large"
