@@ -41,6 +41,7 @@ html, body {
     }
 
     &-social {
+        display: block !important;
         flex: 1;
         min-width: 200px;
         h4 {
