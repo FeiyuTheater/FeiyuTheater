@@ -5,12 +5,13 @@ sort_by_date: "2019-02-17"
 work_details:
   title: "群猴+主角登场"
   location: "Standard Clubhouse"
-  date: "2019年02月17日"
+  dates:
+    - "2019-02-17"
   banner_image: "/assets/imgs/works/2019-winter-qun-hou-enter-the-hero/banner.png"
   poster_image: "/assets/imgs/works/2019-winter-qun-hou-enter-the-hero/poster.png"
   introduction: "主角登场<br>【美】戴丽莎海尔朋<br>不断受到热情洋溢的情书和赋予醉人的鲜花的安妮，俨然像一个沉浸于爱情的幸福之中的恋人。而当男主人公哈罗德一上场，却带来了意想不到的消息。随之而来的是一个更大的疑问：哈罗德爱的究竟是谁？安妮爱的究竟是谁？当安妮的母亲和妹妹满怀期待地回家来了，却即将面对怎样的尴尬窘境？安妮将如何面对这一切，面对她自己呢？<br><br>群猴<br>【中】宋之的<br>《群猴》是一出讽刺喜剧，反映了上个世纪40年代中后期，国民党在国统区某大城市搞选国民代表的活动，为争当伪国大议员，各种势力的代表人物粉墨登场、争吵叫骂甚至动刀动枪。"
   production_team:
-    - page_title: "主要演员"
+    - page_title: "演员"
       members:
         - name: "《主角登场》"
           person: "董仕"
@@ -42,7 +43,7 @@ work_details:
         - name: "《群猴》"
           person: "周梓桐"
           role: "钱小方"
-    - page_title: "导演制作团队"
+    - page_title: "制作团队"
       members:
         - name: "制作人"
           person: "刘天泽"
@@ -50,7 +51,7 @@ work_details:
           person: "李云琦"
         - name: "助理制作人"
           person: "贾豫"
-          
+
         - name: "《群猴》导演"
           person: "沈学思"
         - name: "《群猴》导演"
@@ -90,21 +91,16 @@ work_details:
         - name: "剧照摄影"
           person: "何性峰"
 
-        - name: "现场摄影摄像"
+        - name: "摄影"
           person: "陈思源"
-          role: "全天摄影"
-        - name: "现场摄影摄像"
+        - name: "摄影"
           person: "李君"
-          role: "全天摄影"
-        - name: "现场摄影摄像"
+        - name: "摄像"
           person: "杜一冰"
-          role: "晚上摄像"
-        - name: "现场摄影摄像"
+        - name: "摄像"
           person: "苑荣峰"
-          role: "晚上摄像"
-        - name: "现场摄影摄像"
+        - name: "摄影"
           person: "张若鹏"
-          role: "下午摄影"
 
         - name: "场监"
           person: "李云琦"
@@ -116,7 +112,6 @@ work_details:
           person: "谢瑨"
         - name: "场监"
           person: "卢樱丹"
-        
   youtube_video: "BMtKRN0zMgc"
   photos:
     - image: "/assets/imgs/works/2019-winter-qun-hou-enter-the-hero/photo1.jpg"
