@@ -50,7 +50,7 @@ work_details:
         - name: "舞台监督"
           person: "王吟之"
         - name: "舞台监督助理"
-          person: "徐婉乔"
+          person: "徐琬乔"
     - page_title: "后台"
       members:
       - name: "道具"

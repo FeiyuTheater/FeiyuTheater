@@ -4,7 +4,7 @@ title: "玩偶之家2:娜拉归来"
 sort_by_date: "2025-04-12"
 work_details:
   title: "玩偶之家2:娜拉归来"
-  location: "Mountain View Center for the Performing Art"
+  location: "Mountain View Center for the Performing Arts"
   dates:
     - "2025-04-12"
     - "2025-04-13"

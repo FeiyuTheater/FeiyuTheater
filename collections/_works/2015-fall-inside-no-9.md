@@ -9,7 +9,7 @@ work_details:
     - "2015-09-27"
   banner_image: "/assets/imgs/works/2015-inside-no-9/banner.jpg"
   poster_image: "/assets/imgs/works/2015-inside-no-9/poster.jpg"
-  introduction: "一场因误会而引发的密闭车厢闹剧"
+  introduction: "一场因误会而引发的密闭车厢闹剧。"
   production_team:
     - page_title: "演员"
       members:

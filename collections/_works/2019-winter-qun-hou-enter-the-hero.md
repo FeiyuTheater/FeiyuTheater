@@ -4,7 +4,7 @@ title: "群猴+主角登场"
 sort_by_date: "2019-02-17" 
 work_details:
   title: "群猴+主角登场"
-  location: "Standard Clubhouse"
+  location: "Stanford Clubhouse"
   dates:
     - "2019-02-17"
   banner_image: "/assets/imgs/works/2019-winter-qun-hou-enter-the-hero/banner.png"
