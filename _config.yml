@@ -21,7 +21,7 @@
 title: 非鱼剧社
 email: feiyu.theater@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
-  The official website of Feiyu Theater.
+  非鱼剧社于2015年春季成立于斯坦福大学，由一群热爱话剧的中国学生创建，是斯坦福校园内首个中文话剧社。目前，非鱼剧社已发展为湾区最有影响力的非营利性中文剧社和文化品牌之一。在纷繁复杂或平淡单一的生活外，非鱼剧社再造出一个世界来。生活烦琐，人性纠葛，哲思深渊，命运曲折，都被我们搬到了舞台上。在这里，你将体验不同的人生，分享精彩的故事，找到纷繁烟尘中埋藏的自我。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://feiyutheater.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb

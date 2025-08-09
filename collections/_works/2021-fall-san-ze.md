@@ -99,7 +99,7 @@ work_details:
   youtube_video: "QqMRVQ0w-mw"
   photos:
     - image: "/assets/imgs/works/2021-fall-san-ze/photo4.JPG"
-      size: "mediun"
+      size: "medium"
       caption: "剧组合照"
     - image: "/assets/imgs/works/2021-fall-san-ze/photo5.JPG"
       size: "small"

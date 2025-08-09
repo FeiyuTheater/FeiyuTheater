@@ -1,7 +1,7 @@
 ---
 layout: work-detail
 title: "金锁记"
-sort_by_date: "2022/07/16"
+sort_by_date: "2022-07-16"
 work_details:
   title: "金锁记"
   location: "Woodside High School - Performing Center, Woodside, CA"
