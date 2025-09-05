@@ -103,6 +103,7 @@ work_details:
         person: "曹翔"
       - name: "摄像"
         person: "乩罗"
+  youtube_video: "N_bBTlFnxD4"
   photos:
     - image: "/assets/imgs/works/2025-spring-the-man-from-earth/photo_1.jpg"
       size: "large"
