@@ -5,14 +5,14 @@ hero:
   title: "萨勒姆的女巫"
   date: "2025年11月1日 | 11月2日"
   # if no count down is needed, then comment out these keys
-  # countdown_title: ""
-  # countdown_datetime: "2025-11-08T14:00:00-07:00" # ISO format with timezone
-  # countdown_message: ""
+  countdown_title: "距离早鸟票结束还有："
+  countdown_datetime: "2025-09-28T12:00:00-07:00" # ISO format with timezone
+  countdown_message: "早鸟票已结束！"
   # Show as button or a info
   # Status can be "active" or "inactive"
-  button_status: "inactive"
-  button_text: "敬请期待"
-  button_link: "#"
+  button_status: "active"
+  button_text: "点击购票"
+  button_link: "https://tickets.mvcpa.com/eventperformances.asp?evt=711"
   location: "Mountain View Center for the Performing Arts"
   background_image: "/assets/imgs/hero-banner.png"
 ---
