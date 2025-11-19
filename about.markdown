@@ -14,14 +14,14 @@ photos:
   - title: "演出照片：2025-玩偶之家2"
     asset: "/assets/imgs/about_page/2025-dolls-house.JPG"
 
-  - title: "演出照片：2020-茶话会"
-    asset: "/assets/imgs/about_page/2020-tea-talk.jpg"
+  - title: "演出照片：2025-这个男人来自地球"
+    asset: "/assets/imgs/about_page/2025-the-man-from-earth.jpg"
 
-  - title: "排练花絮：2022-金锁记"
-    asset: "/assets/imgs/about_page/2022-the-golden-cangue.JPG"
+  - title: "演出照片：2025-萨勒姆的女巫"
+    asset: "/assets/imgs/about_page/2025-the-crucible.jpg"
 
-  - title: "剧组合影：2021-有客来访三则"
-    asset: "/assets/imgs/about_page/2021-san-ze.JPG"
+  - title: "演出照片：2023-金锁记"
+    asset: "/assets/imgs/about_page/2023-golden-cangue.JPG"
 ---
 
 <!-- Hero Banner Section -->
@@ -37,6 +37,14 @@ photos:
 
     <div class="about-content">
       <p>非鱼剧社于2015年春季成立于斯坦福大学，由一群热爱话剧的中国学生创建，是斯坦福校园内首个中文话剧社。目前，非鱼剧社已发展为湾区最有影响力的非营利性中文剧社和文化品牌之一。在纷繁复杂或平淡单一的生活外，非鱼剧社再造出一个世界来。生活烦琐，人性纠葛，哲思深渊，命运曲折，都被我们搬到了舞台上。在这里，你将体验不同的人生，分享精彩的故事，找到纷繁烟尘中埋藏的自我。</p>
+
+      <p>Feiyu Theater was founded in the spring of 2015 at Stanford University by a group of Chinese students passionate about dramatic arts. Originally launched as the first Chinese-language theater organization on the Stanford campus, Feiyu has since grown beyond its origins and is no longer a student organization.</p>
+
+      <p>Today, Feiyu Theater operates as an independent, nonprofit Chinese-language theater company, and has become one of the most influential cultural institutions of its kind in the San Francisco Bay Area.</p>
+
+      <p>At Feiyu, we believe in the power of theater to create another world beyond the routine and pressures of everyday life. We bring to the stage the complexities of human experience—life’s conflicts, moral dilemmas, philosophical depths, and the unpredictable turns of fate. Through our productions, audiences and artists alike are invited to explore diverse lives, share compelling stories, and rediscover the selves often hidden beneath the noise of daily living.</p>
+
+      <p>Our mission is to cultivate Chinese-language performing arts, foster cross-cultural dialogue, and provide a creative home for individuals who believe in the transformative force of storytelling.</p>
     </div>
 
     <div class="about-quote">
