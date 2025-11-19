@@ -14,14 +14,14 @@ photos:
   - title: "演出照片：2025-玩偶之家2"
     asset: "/assets/imgs/about_page/2025-dolls-house.JPG"
 
-  - title: "演出照片：2020-茶话会"
-    asset: "/assets/imgs/about_page/2020-tea-talk.jpg"
+  - title: "演出照片：2025-这个男人来自地球"
+    asset: "/assets/imgs/about_page/2025-the-man-from-earth.jpg"
 
-  - title: "排练花絮：2022-金锁记"
-    asset: "/assets/imgs/about_page/2022-the-golden-cangue.JPG"
+  - title: "演出照片：2025-萨勒姆的女巫"
+    asset: "/assets/imgs/about_page/2025-the-crucible.jpg"
 
-  - title: "剧组合影：2021-有客来访三则"
-    asset: "/assets/imgs/about_page/2021-san-ze.JPG"
+  - title: "演出照片：2023-金锁记"
+    asset: "/assets/imgs/about_page/2023-golden-cangue.JPG"
 ---
 
 <!-- Hero Banner Section -->
