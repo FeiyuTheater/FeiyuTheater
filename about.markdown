@@ -27,29 +27,38 @@ photos:
 <!-- Hero Banner Section -->
 {% include hero-banner.html
     background="/assets/imgs/about_page/banner.png"
-    content='<div class="hero-logo"><img src="/assets/imgs/logo.png" alt="Feiyu Theater Logo"></div>'
+    content='<div class="hero-logo">
+      <img src="/assets/imgs/logo.png" alt="Feiyu Theater Logo">
+      <div class="hero-lang-button-container">
+        <div class="lang-toggle-group">
+          <button class="lang-button active" data-language="zh">🇨🇳</button>
+          <button class="lang-button" data-language="en">🇺🇸</button>
+        </div>
+      </div>
+    </div>'
 %}
 
 <!-- Main Content -->
 <main class="about-main">
   <div class="container text-center">
-    <h1 class="about-title">关于我们</h1>
+    <h1 class="about-title" data-lang="zh">关于我们</h1>
+    <h1 class="about-title" data-lang="en" style="display: none;">About Us</h1>
 
     <div class="about-content">
-      <p>非鱼剧社于2015年春季成立于斯坦福大学，由一群热爱话剧的中国学生创建，是斯坦福校园内首个中文话剧社。目前，非鱼剧社已发展为湾区最有影响力的非营利性中文剧社和文化品牌之一。在纷繁复杂或平淡单一的生活外，非鱼剧社再造出一个世界来。生活烦琐，人性纠葛，哲思深渊，命运曲折，都被我们搬到了舞台上。在这里，你将体验不同的人生，分享精彩的故事，找到纷繁烟尘中埋藏的自我。</p>
+      <p data-lang="zh">非鱼剧社于2015年春季成立于斯坦福大学，由一群热爱话剧的中国学生创建，是斯坦福校园内首个中文话剧社。目前，非鱼剧社已发展为湾区最有影响力的非营利性中文剧社和文化品牌之一。在纷繁复杂或平淡单一的生活外，非鱼剧社再造出一个世界来。生活烦琐，人性纠葛，哲思深渊，命运曲折，都被我们搬到了舞台上。在这里，你将体验不同的人生，分享精彩的故事，找到纷繁烟尘中埋藏的自我。</p>
 
-      <p>Feiyu Theater was founded in the spring of 2015 at Stanford University by a group of Chinese students passionate about dramatic arts. Originally launched as the first Chinese-language theater organization on the Stanford campus, Feiyu has since grown beyond its origins and is no longer a student organization.</p>
+      <p data-lang="en" style="display: none;">Feiyu Theater was founded in the spring of 2015 at Stanford University by a group of Chinese students passionate about dramatic arts. Originally launched as the first Chinese-language theater organization on the Stanford campus, Feiyu has since grown beyond its origins and is no longer a student organization.</p>
 
-      <p>Today, Feiyu Theater operates as an independent, nonprofit Chinese-language theater company, and has become one of the most influential cultural institutions of its kind in the San Francisco Bay Area.</p>
+      <p data-lang="en" style="display: none;">Today, Feiyu Theater operates as an independent, nonprofit Chinese-language theater company, and has become one of the most influential cultural institutions of its kind in the San Francisco Bay Area.</p>
 
-      <p>At Feiyu, we believe in the power of theater to create another world beyond the routine and pressures of everyday life. We bring to the stage the complexities of human experience—life’s conflicts, moral dilemmas, philosophical depths, and the unpredictable turns of fate. Through our productions, audiences and artists alike are invited to explore diverse lives, share compelling stories, and rediscover the selves often hidden beneath the noise of daily living.</p>
+      <p data-lang="en" style="display: none;">At Feiyu, we believe in the power of theater to create another world beyond the routine and pressures of everyday life. We bring to the stage the complexities of human experience—life's conflicts, moral dilemmas, philosophical depths, and the unpredictable turns of fate. Through our productions, audiences and artists alike are invited to explore diverse lives, share compelling stories, and rediscover the selves often hidden beneath the noise of daily living.</p>
 
-      <p>Our mission is to cultivate Chinese-language performing arts, foster cross-cultural dialogue, and provide a creative home for individuals who believe in the transformative force of storytelling.</p>
+      <p data-lang="en" style="display: none;">Our mission is to cultivate Chinese-language performing arts, foster cross-cultural dialogue, and provide a creative home for individuals who believe in the transformative force of storytelling.</p>
     </div>
 
-    <div class="about-quote">
+    <div class="about-quote" data-lang="zh">
       <blockquote>
-        “以戏剧探索人性，用创作连接彼此”
+        "以戏剧探索人性，用创作连接彼此"
       </blockquote>
     </div>
 
@@ -89,14 +98,14 @@ photos:
     </div>
     </div>
 
-    <h1 class="about-title" id="support-us">支持我们</h1>
+    <h1 class="about-title" id="support-us" data-lang="zh">支持我们</h1>
 
-    <div class="about-content">
+    <div class="about-content" data-lang="zh">
       <p>无论是个人捐款，或企业与组织的赞助，您的支持都是非鱼剧社持续创作与成长的动力。诚邀您加入，共同推动戏剧艺术的发展！</p>
     </div>
 
     <!-- Support Buttons -->
-    <div class="support-buttons">
+    <div class="support-buttons" data-lang="zh">
       <a href="/assets/imgs/about_page/sponsor_package_temp.jpg" class="support-button">
         <div class="button-image">
           <img src="/assets/imgs/about_page/icon_sponsorship.png" alt="商业赞助">
