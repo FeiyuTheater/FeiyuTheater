@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize photo slider
     initPhotoSlider();
+
+    // Initialize language toggle
+    initLanguageToggle();
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -104,4 +107,39 @@ function initPhotoSlider() {
             prevArrow.click();
         }
     };
+}
+
+/**
+ * Initialize language toggle functionality
+ */
+function initLanguageToggle() {
+    const langButtons = document.querySelectorAll('.lang-button');
+
+    if (!langButtons || langButtons.length === 0) {
+        console.error('Language buttons not found');
+        return;
+    }
+
+    langButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const selectedLang = this.getAttribute('data-language');
+
+            // Update active state on buttons
+            langButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+
+            // Toggle content visibility (excluding buttons themselves)
+            const allLangElements = document.querySelectorAll('[data-lang]');
+            allLangElements.forEach(element => {
+                const elementLang = element.getAttribute('data-lang');
+                if (elementLang === selectedLang) {
+                    element.style.display = '';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+
+            console.log(`Switched to ${selectedLang === 'zh' ? 'Chinese' : 'English'}`);
+        });
+    });
 }
