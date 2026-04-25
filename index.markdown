@@ -1,20 +1,88 @@
 ---
+# =============================================================================
+# HERO BANNER CONFIGURATION
+# =============================================================================
+# All banner settings live under the `hero:` key below.
+#
+# FIELDS
+# ------
+# title             Display title of the show. Shown as the large heading.
+#
+# date              Performance date string (free-form). E.g. "2026年5月30日 | 5月31日"
+#
+# location          Venue name shown as "地点：<value>".
+#
+# background_image  Path to the banner image under /assets/imgs/.
+#
+# COUNTDOWN TIMER (optional)
+# --------------------------
+# Include all three fields to show a live countdown. Remove (or comment out)
+# any one of them to hide the countdown section entirely.
+#
+# countdown_title     Label above the timer. E.g. "距离早鸟票结束还有："
+# countdown_datetime  Deadline in ISO 8601 format with timezone offset.
+#                     E.g. "2025-09-28T12:00:00-07:00"
+#                     When this moment passes the entire countdown block
+#                     disappears automatically — no message is shown.
+#
+# BUTTON — single button
+# ----------------------
+# Use these three fields when you only need one call-to-action button.
+#
+# button_status   "active"   → renders a clickable <a> link.
+#                 "inactive" → renders a greyed-out non-clickable label.
+# button_text     Button label.
+# button_link     Destination URL (only used when status is "active").
+#
+# BUTTONS — multiple buttons
+# --------------------------
+# Replace the three `button_*` fields above with a `buttons:` list when you
+# need two (or more) buttons. Each entry supports:
+#
+#   - status: "active" | "inactive"
+#     text:   Button label
+#     link:   Destination URL (used when status is "active")
+#     style:  "primary"  → filled red button (default, can omit)
+#             "outline"  → transparent button with white border
+#
+# Example — two buttons:
+#   buttons:
+#     - status: "active"
+#       text: "点击购票"
+#       link: "https://..."
+#     - status: "active"
+#       text: "了解详情"
+#       link: "/about"
+#       style: "outline"
+#
+# Note: `buttons:` takes precedence over the flat `button_*` fields.
+#       Remove `buttons:` to fall back to the single-button fields.
+# =============================================================================
 layout: home
 title: "非鱼剧社"
 hero:
-  title: "萨勒姆的女巫"
-  date: "2025年11月1日 | 11月2日"
+  title: "杀戮之神"
+  date: "2026年5月30日 | 5月31日"
   # if no count down is needed, then comment out these keys
   countdown_title: "距离早鸟票结束还有："
-  countdown_datetime: "2025-09-28T12:00:00-07:00" # ISO format with timezone
-  countdown_message: "早鸟票已结束！"
+  countdown_datetime: "2026-05-03T22:00:00-08:00" # ISO format with timezone
+
   # Show as button or a info
   # Status can be "active" or "inactive"
-  button_status: "active"
-  button_text: "点击购票"
-  button_link: "https://tickets.mvcpa.com/eventperformances.asp?evt=711"
-  location: "Mountain View Center for the Performing Arts"
-  background_image: "/assets/imgs/hero-banner.png"
+  # button_status: "active"
+  # button_text: "点击购票"
+  # button_link: "https://event.hellotaro.com/e/2026_ca_feiyu_0530"
+
+  buttons:
+    - status: "active"
+      text: "周六场购票"
+      link: "https://event.hellotaro.com/e/2026_ca_feiyu_0530"
+    - status: "active"
+      text: "周日场购票"
+      link: "https://event.hellotaro.com/e/2026_ca_feiyu_0531"
+
+  location: "Starbright Theater, Campbell"
+  background_image: "/assets/imgs/goc-hero-banner.png"
 ---
 
 <!-- Hero Banner Section -->

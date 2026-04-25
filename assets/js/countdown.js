@@ -9,16 +9,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const hoursElement = document.getElementById('hours');
     const minutesElement = document.getElementById('minutes');
     const secondsElement = document.getElementById('seconds');
-    const countdownMessage = document.getElementById('countdown-message');
-
     function updateCountdown() {
         const now = new Date().getTime();
         const timeLeft = eventDate - now;
 
         if (timeLeft < 0) {
-            // Event has started or passed
-            countdownTimer.style.display = 'none';
-            countdownMessage.style.display = 'block';
+            const countdownSection = countdownTimer.closest('.countdown-section');
+            if (countdownSection) {
+                countdownSection.style.display = 'none';
+            }
             return;
         }
 

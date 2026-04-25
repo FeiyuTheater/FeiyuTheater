@@ -10,15 +10,26 @@
           <h2 class="hero-date">{{ include.hero.date }}</h2>
           <h2 class="hero-location">地点：{{ include.hero.location }}</h2>
         </div>
-        {% if include.hero.countdown_title and include.hero.countdown_datetime and include.hero.countdown_message %}
+        {% if include.hero.countdown_title and include.hero.countdown_datetime %}
           {% include components/countdown.html
               countdown_title=include.hero.countdown_title
-              event_datetime=include.hero.countdown_datetime
-              countdown_message=include.hero.countdown_message %}
+              event_datetime=include.hero.countdown_datetime %}
         {% endif %}
-        {% if include.hero.button_status == 'active' %}
+        {% if include.hero.buttons %}
+          <div class="hero-cta-buttons">
+            {% for button in include.hero.buttons %}
+              {% assign btn_extra = "" %}
+              {% if button.style == 'outline' %}{% assign btn_extra = " hero-cta-button--outline" %}{% endif %}
+              {% if button.status == 'active' %}
+                <a href="{{ button.link }}" class="hero-cta-button hero-cta-button--sm{{ btn_extra }}">{{ button.text }}</a>
+              {% else %}
+                <div class="hero-cta-button hero-cta-button--sm{{ btn_extra }} hero-cta-inactive">{{ button.text }}</div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif include.hero.button_status == 'active' %}
           <a href="{{ include.hero.button_link }}" class="hero-cta-button">{{ include.hero.button_text }}</a>
-        {% else %}
+        {% elsif include.hero.button_text %}
           <div class="hero-cta-button hero-cta-inactive">{{ include.hero.button_text }}</div>
         {% endif %}
       </div>
