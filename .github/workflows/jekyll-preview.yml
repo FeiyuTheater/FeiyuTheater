@@ -57,5 +57,5 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: prNumber,
-              body: `### 🔍 Jekyll Preview Built\n\nThe site artifact for this PR is ready.\n[Download preview artifact](${runUrl})\n\n_Expires in 3 days. Extract the zip and open \`index.html\` locally._`
+              body: `### 🔍 Jekyll Preview Built\n\nThe site artifact for this PR is ready.\n[Download preview artifact](${runUrl})\n\n_Expires in 3 days. Extract the zip and serve locally — CSS requires a web server, not direct file:// access:_\n\`\`\`\ncd site-preview-pr-${prNumber} && python3 -m http.server 4000\n\`\`\`\n_Then open http://localhost:4000 in your browser._`
             });
