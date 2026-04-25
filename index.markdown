@@ -25,7 +25,8 @@ hero:
   <div class="container">
     <h2 class="section-title">近期活动</h2>
     <div class="activities-list">
-      {% for activity in site.activities %}
+      {% assign sorted_activities = site.activities | sort: 'date_str' | reverse %}
+      {% for activity in sorted_activities %}
         {% include components/activity-item.html activity=activity%}
       {% endfor %}
     </div>
