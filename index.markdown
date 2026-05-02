@@ -65,7 +65,7 @@ hero:
   date: "2026年5月30日 | 5月31日"
   # if no count down is needed, then comment out these keys
   countdown_title: "距离早鸟票结束还有："
-  countdown_datetime: "2026-05-03T22:00:00-08:00" # ISO format with timezone
+  countdown_datetime: "2026-05-03T22:00:00-07:00" # ISO format with timezone
 
   # Show as button or a info
   # Status can be "active" or "inactive"
