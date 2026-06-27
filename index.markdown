@@ -13,8 +13,11 @@
 # performance_end_datetime
 #                   Last performance end time in ISO 8601 format with timezone.
 #                   E.g. "2026-05-31T15:30:00-07:00"
-#                   When this moment passes, ticket/info buttons are hidden
-#                   automatically.
+#                   When this moment passes, ticket/info buttons are replaced.
+#
+# review_link       Optional post-performance review link. If present after
+#                   performance_end_datetime, renders "已落幕 | 点此回顾".
+#                   If omitted, renders an inactive "演出已落幕" button.
 #
 # location          Venue name shown as "地点：<value>".
 #
@@ -71,6 +74,7 @@ hero:
   title: "杀戮之神"
   date: "2026年5月30日 | 5月31日"
   performance_end_datetime: "2026-05-31T15:30:00-07:00"
+  review_link: "/prev-work/2026-spring-god-of-carnage/"
   # if no count down is needed, then comment out these keys
   countdown_title: "距离早鸟票结束还有："
   countdown_datetime: "2026-05-03T22:00:00-07:00" # ISO format with timezone

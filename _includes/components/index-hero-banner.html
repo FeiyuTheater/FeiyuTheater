@@ -15,15 +15,21 @@
               countdown_title=include.hero.countdown_title
               event_datetime=include.hero.countdown_datetime %}
         {% endif %}
-        {% assign show_hero_cta = true %}
+        {% assign hero_performance_ended = false %}
         {% if include.hero.performance_end_datetime %}
           {% assign now_timestamp = site.time | date: "%s" | plus: 0 %}
           {% assign performance_end_timestamp = include.hero.performance_end_datetime | date: "%s" | plus: 0 %}
           {% if now_timestamp > performance_end_timestamp %}
-            {% assign show_hero_cta = false %}
+            {% assign hero_performance_ended = true %}
           {% endif %}
         {% endif %}
-        {% if show_hero_cta and include.hero.buttons %}
+        {% if hero_performance_ended %}
+          {% if include.hero.review_link %}
+            <a href="{{ include.hero.review_link | relative_url }}" class="hero-cta-button hero-cta-ended">已落幕 | 点此回顾</a>
+          {% else %}
+            <button type="button" class="hero-cta-button hero-cta-inactive hero-cta-ended" disabled>演出已落幕</button>
+          {% endif %}
+        {% elsif include.hero.buttons %}
           <div class="hero-cta-buttons">
             {% for button in include.hero.buttons %}
               {% assign btn_extra = "" %}
@@ -35,9 +41,9 @@
               {% endif %}
             {% endfor %}
           </div>
-        {% elsif show_hero_cta and include.hero.button_status == 'active' %}
+        {% elsif include.hero.button_status == 'active' %}
           <a href="{{ include.hero.button_link }}" class="hero-cta-button">{{ include.hero.button_text }}</a>
-        {% elsif show_hero_cta and include.hero.button_text %}
+        {% elsif include.hero.button_text %}
           <div class="hero-cta-button hero-cta-inactive">{{ include.hero.button_text }}</div>
         {% endif %}
       </div>
