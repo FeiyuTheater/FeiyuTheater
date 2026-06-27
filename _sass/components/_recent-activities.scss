@@ -174,6 +174,41 @@
     }
   }
 
+  .activity-item--hidden {
+    display: none !important;
+  }
+
+  .activities-load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+  .activities-load-more-button {
+    display: inline-block;
+    background: #c8102e;
+    color: white;
+    padding: 12px 48px;
+    border: 0;
+    border-radius: 24px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background: #a60e26;
+      color: white;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 2px solid rgba(200, 16, 46, 0.3);
+      outline-offset: 3px;
+    }
+  }
+
   @media (max-width: 992px) {
     .activities-list
     .activity-item {
@@ -192,4 +227,3 @@
     }
   }
 }
-

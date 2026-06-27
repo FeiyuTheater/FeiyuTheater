@@ -15,8 +15,8 @@
 - 多多利用浏览器的开发模式调试，可以可视化每个元素的位置，CSS等
 
 # 内容更新教程
-在话剧演出后，又制作人或宣传团队更新演出内容。只需要为新的演出建立一个新的文件，网站就会随之更新，详细步骤如下：
-1. 先基于`main`branch创建一个git branch，命名规则为`update/<author-name>/<project-name>`。比如:`update/boning/the-man-from-earth`。
+在话剧演出后，由制作人或宣传团队更新演出内容。只需要为新的演出建立一个新的文件，网站就会随之更新，详细步骤如下：
+1. 先基于`main` branch创建一个git branch，命名规则为`update/<author-name>/<project-name>`。比如：`update/boning/the-man-from-earth`。
 2. 在`collections/_works/`中建立一个新的`.md`文件，用年份+季节+剧的名字命名，e.g. `2025-spring-dolls-house.md`（可以参考其他文件）。
 3. 文件中需要更新的内容是一些key value pairs，建议复制一份其他文件基于现有的内容修改。注意文件中前后两个`---`是必须的，不能省略。这里解释其中一些key的使用方法：
   ```
@@ -24,14 +24,17 @@
   hidden: true                          <=== "(optional) 如果因为一些原因需要隐藏得加上这个"
   layout: work-detail                   <=== "这里必须是work-detail"
   title: "玩偶之家2:娜拉归来"              <=== "话剧名称，显示在网页中"
-  sort_by_date: "2025-07-25"            <=== "演出日期，用于给往期作品排序，请使用YYYY-MM-DD格式，必须要有“
+  sort_by_date: "2025-07-25"            <=== "演出首日，用于给往期作品排序，请使用YYYY-MM-DD格式，必须要有"
   work_details:                         <=== "影响'作品详情'页的内容"
     title: "玩偶之家2:娜拉归来"            <=== "话剧名称，显示在'作品详情'页中，一般与上边的title相同"
     location: "地球的某个地方"            <=== "(optional) 演出地点"
-    date: "某个时间"                     <=== "(optional) 演出时间"
+    dates:                              <=== "(recommended) 演出日期列表，请使用YYYY-MM-DD格式"
+      - "2025-07-25"
+      - "2025-07-26"
+    date: "某个时间"                     <=== "(optional) 旧格式，单场演出可用；如果有dates会优先显示dates"
     banner_image:                       <=== "横版图片链接，为了网站效果专业统一，必须要有"
-    poster_image:                       <=== "海报图片链接要求4/3比例，为了网站效果专业统一，必须要有"
-    brochure:                           <=== "(optional) 场刊信息"
+    poster_image:                       <=== "竖版海报图片链接，建议接近3:4比例，为了网站效果专业统一，必须要有"
+    brochure:                           <=== "(optional) 场刊文件链接，可以是PDF，也可以是图片链接列表"
     introduction: "了不起的玩偶之家故事"    <=== "剧目详细介绍"
     production_team:                     <=== "演职员团队信息"
       - page_title: "主要演员"            <=== "为了分类显示，每类演职员需要写好类"
@@ -63,8 +66,8 @@
         size: "large"
   ---
   ```
-4. 填写上述信息时会需要用到图片，场刊等assets。assets要存放到相应的目录下。存好后用相应的路径填写到上述`md`文件里：
-  - banner, poster和photos放路径`/assets/images/works/<project-name>/<img-name>`
+4. 填写上述信息时会需要用到图片、场刊等assets。assets要存放到相应的目录下。存好后用相应的路径填写到上述`md`文件里：
+  - banner, poster和photos放路径`/assets/imgs/works/<project-name>/<img-name>`
   - 其他文件（如场刊）存放路径`/assets/files/works/<project-name>/<file-name>`
 5. 一切就绪后，开一个新的PR，请求审核。PR被approve，merge后内容更新就完成了。
 

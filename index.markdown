@@ -10,6 +10,12 @@
 #
 # date              Performance date string (free-form). E.g. "2026年5月30日 | 5月31日"
 #
+# performance_end_datetime
+#                   Last performance end time in ISO 8601 format with timezone.
+#                   E.g. "2026-05-31T15:30:00-07:00"
+#                   When this moment passes, ticket/info buttons are hidden
+#                   automatically.
+#
 # location          Venue name shown as "地点：<value>".
 #
 # background_image  Path to the banner image under /assets/imgs/.
@@ -60,9 +66,11 @@
 # =============================================================================
 layout: home
 title: "非鱼剧社"
+js: home.js
 hero:
   title: "杀戮之神"
   date: "2026年5月30日 | 5月31日"
+  performance_end_datetime: "2026-05-31T15:30:00-07:00"
   # if no count down is needed, then comment out these keys
   countdown_title: "距离早鸟票结束还有："
   countdown_datetime: "2026-05-03T22:00:00-07:00" # ISO format with timezone
@@ -92,12 +100,22 @@ hero:
 <section class="recent-activities-section">
   <div class="container">
     <h2 class="section-title">近期活动</h2>
-    <div class="activities-list">
+    {% assign activity_batch_size = 3 %}
+    <div class="activities-list" data-activity-list data-batch-size="{{ activity_batch_size }}">
       {% assign sorted_activities = site.activities | sort: 'date_str' | reverse %}
       {% for activity in sorted_activities %}
-        {% include components/activity-item.html activity=activity%}
+        {% assign activity_extra_class = "" %}
+        {% if forloop.index > activity_batch_size %}
+          {% assign activity_extra_class = "activity-item--hidden" %}
+        {% endif %}
+        {% include components/activity-item.html activity=activity extra_class=activity_extra_class %}
       {% endfor %}
     </div>
+    {% if sorted_activities.size > activity_batch_size %}
+      <div class="activities-load-more">
+        <button type="button" class="activities-load-more-button" data-activity-load-more>查看更多</button>
+      </div>
+    {% endif %}
   </div>
 </section>
 
