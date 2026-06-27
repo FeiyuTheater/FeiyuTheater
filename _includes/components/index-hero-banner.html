@@ -15,7 +15,21 @@
               countdown_title=include.hero.countdown_title
               event_datetime=include.hero.countdown_datetime %}
         {% endif %}
-        {% if include.hero.buttons %}
+        {% assign hero_performance_ended = false %}
+        {% if include.hero.performance_end_datetime %}
+          {% assign now_timestamp = site.time | date: "%s" | plus: 0 %}
+          {% assign performance_end_timestamp = include.hero.performance_end_datetime | date: "%s" | plus: 0 %}
+          {% if now_timestamp > performance_end_timestamp %}
+            {% assign hero_performance_ended = true %}
+          {% endif %}
+        {% endif %}
+        {% if hero_performance_ended %}
+          {% if include.hero.review_link %}
+            <a href="{{ include.hero.review_link | relative_url }}" class="hero-cta-button hero-cta-ended">已落幕 | 点此回顾</a>
+          {% else %}
+            <button type="button" class="hero-cta-button hero-cta-inactive hero-cta-ended" disabled>演出已落幕</button>
+          {% endif %}
+        {% elsif include.hero.buttons %}
           <div class="hero-cta-buttons">
             {% for button in include.hero.buttons %}
               {% assign btn_extra = "" %}

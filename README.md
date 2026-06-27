@@ -6,7 +6,7 @@
 - 📝 计划与分工：[Notion页面](https://www.notion.so/bodong/21637fe020f38061ab33dfb9d4840dea?v=21637fe020f380b9ba8b000cf01fe1c6&source=copy_link)
 
 # 维护建议与标准
-- Branch命名规格：`dev/<name>/<feature-name>`
+- Branch命名规格：`update/<author-name>/<show-name>-<content-type>`，其中`content-type`视情况使用`banner`、`news-<number>`、`prev-work`等。
 - 每个PR尽量小，比如现在我要implement主页，可能一个change只改layout，一个change改CSS。或者一个PR中包含几个commits，每个commit对应一种change（比如layout，css）
 - 在一开始不太熟悉Jekyll，HTML和CSS的时候，可以尽量多做小的change，然后开PR，收集反馈
 - 逻辑相同的change需要在一个commit里，所以如果你反复做了不同的修改，则需要squash （`git rebase -i HEAD~4`）这个操作就会让你选择在最新的4个commits里哪个要squash
@@ -15,58 +15,137 @@
 - 多多利用浏览器的开发模式调试，可以可视化每个元素的位置，CSS等
 
 # 内容更新教程
-在话剧演出后，又制作人或宣传团队更新演出内容。只需要为新的演出建立一个新的文件，网站就会随之更新，详细步骤如下：
-1. 先基于`main`branch创建一个git branch，命名规则为`update/<author-name>/<project-name>`。比如:`update/boning/the-man-from-earth`。
-2. 在`collections/_works/`中建立一个新的`.md`文件，用年份+季节+剧的名字命名，e.g. `2025-spring-dolls-house.md`（可以参考其他文件）。
-3. 文件中需要更新的内容是一些key value pairs，建议复制一份其他文件基于现有的内容修改。注意文件中前后两个`---`是必须的，不能省略。这里解释其中一些key的使用方法：
-  ```
-  ---
-  hidden: true                          <=== "(optional) 如果因为一些原因需要隐藏得加上这个"
-  layout: work-detail                   <=== "这里必须是work-detail"
-  title: "玩偶之家2:娜拉归来"              <=== "话剧名称，显示在网页中"
-  sort_by_date: "2025-07-25"            <=== "演出日期，用于给往期作品排序，请使用YYYY-MM-DD格式，必须要有“
-  work_details:                         <=== "影响'作品详情'页的内容"
-    title: "玩偶之家2:娜拉归来"            <=== "话剧名称，显示在'作品详情'页中，一般与上边的title相同"
-    location: "地球的某个地方"            <=== "(optional) 演出地点"
-    date: "某个时间"                     <=== "(optional) 演出时间"
-    banner_image:                       <=== "横版图片链接，为了网站效果专业统一，必须要有"
-    poster_image:                       <=== "海报图片链接要求4/3比例，为了网站效果专业统一，必须要有"
-    brochure:                           <=== "(optional) 场刊信息"
-    introduction: "了不起的玩偶之家故事"    <=== "剧目详细介绍"
-    production_team:                     <=== "演职员团队信息"
-      - page_title: "主要演员"            <=== "为了分类显示，每类演职员需要写好类"
-        members:
-          - name: "主演1"
-            person: "演员姓名"
-            role: "角色名称"
-          - name: "主演2"
-            person: "演员姓名"
-            role: "角色名称"
-      - page_title: "制作团队"
-        members:
-          - name: "制作人"
-            person: "制作人姓名"
-          - name: "导演"
-            person: "导演姓名"
-      - page_title: "后台"
-        members:
-          - name: "灯光"
-            person: "了不起的灯光"
-            role: "灯光负责人"
-    youtube_video: "mee4gJM3kls"         <=== "(optional) Youtube视频，click share，选embed， 复制'https://www.youtube.com/embed/'之后'?'之前的字符串"
-    photos:                              <=== "照片array，为了效果推荐至少放6张照片，包括演出照片三种，合照，现场照片等"
-      - image: ""                        <=== "照片链接"
-        size: "large"                    <=== "照片尺寸可以是"large","medium","small"
-        caption: "演出"                   <=== "caption"
-      - image: ""
-        caption: "谢幕"
-        size: "large"
-  ---
-  ```
-4. 填写上述信息时会需要用到图片，场刊等assets。assets要存放到相应的目录下。存好后用相应的路径填写到上述`md`文件里：
-  - banner, poster和photos放路径`/assets/images/works/<project-name>/<img-name>`
-  - 其他文件（如场刊）存放路径`/assets/files/works/<project-name>/<file-name>`
-5. 一切就绪后，开一个新的PR，请求审核。PR被approve，merge后内容更新就完成了。
+内容更新主要分三类：页首横幅、近期活动、往期作品。开始前建议先基于`main` branch创建一个git branch，命名规则为`update/<author-name>/<show-name>-<content-type>`。
+
+Branch命名示例：
+- `update/boning/god-of-carnage-banner`
+- `update/boning/god-of-carnage-news-1`
+- `update/boning/god-of-carnage-news-2`
+- `update/boning/god-of-carnage-prev-work`
+
+## 页首横幅
+页首横幅对应网站首页第一屏的主推内容，配置在`index.markdown`的`hero:`字段下。这里的信息以页首横幅为准，不依赖其他页面自动反推。页首横幅一般用于显示每部戏的开票信息；只要填写一次，后续状态会自动变化，比如早鸟结束后倒计时自动消失，演出结束后购票链接自动消失，并根据配置显示落幕或回顾入口。
+
+需要更新的常用字段：
+
+```yaml
+hero:
+  title: "杀戮之神"
+  date: "2026年5月30日 | 5月31日"
+  performance_end_datetime: "2026-05-31T15:30:00-07:00"
+  review_link: "/prev-work/2026-spring-god-of-carnage/"
+  countdown_title: "距离早鸟票结束还有："
+  countdown_datetime: "2026-05-03T22:00:00-07:00"
+  buttons:
+    - status: "active"
+      text: "周六场购票"
+      link: "https://..."
+    - status: "active"
+      text: "周日场购票"
+      link: "https://..."
+  location: "Starbright Theater, Campbell"
+  background_image: "/assets/imgs/goc-hero-banner.png"
+```
+
+字段说明：
+- `title`、`date`、`location`、`background_image`控制横幅的主要展示内容。
+- `countdown_title`和`countdown_datetime`同时存在时会显示倒计时；超过`countdown_datetime`后倒计时会自动消失。不需要倒计时时可以注释掉这两个字段。
+- `buttons`控制购票或其他行动按钮。需要一个按钮时也可以使用旧格式`button_status`、`button_text`、`button_link`。
+- `performance_end_datetime`控制何时从购票状态切换到落幕状态，请填写最后一场演出结束时间，格式为ISO 8601并带时区。
+- 如果有`review_link`，超过`performance_end_datetime`后按钮显示`已落幕 | 点此回顾`并链接到对应往期作品；如果没有`review_link`，按钮显示不可点击的`演出已落幕`。
+- 横幅图片等素材建议放在`/assets/imgs/`或更具体的子目录中，再用绝对路径引用。
+
+## 近期活动
+近期活动显示在首页“近期活动”区域，数据来自`collections/_activities/`。这些内容一般和公众号推文同步发布，由制作人决定是否放到网站上；建议选择比较重要的动态放上来，让网站看起来活动更丰富、更可信。首页默认只显示最新3条，用户点击“查看更多”后每次再展开3条。
+
+1. 在`collections/_activities/`中建立一个新的`.md`文件，用日期、季节、活动主题命名，比如：`2026-spring-god-of-carnage-ticketing.md`。
+2. 将活动封面图放到`/assets/imgs/news/`或更具体的子目录中。
+3. 在新的`.md`文件中填写以下信息。
+
+```yaml
+---
+  title: "非鱼春季又一力作 | 《杀戮之神》开票！"
+  date_str: "2026-04-24"
+  location: "Starbright Theater, Campbell, CA"
+  image: "/assets/imgs/news/god-of-carnage.jpg"
+  description: "活动简介，会显示在首页活动卡片中。"
+  link: "https://mp.weixin.qq.com/..."
+---
+```
+
+字段说明：
+- `title`是活动标题。
+- `date_str`用于排序和展示，建议使用`YYYY-MM-DD`格式。
+- `location`是活动地点；如果是线上推文，也可以填写相关地点或活动名称。
+- `image`是首页活动卡片封面图。
+- `description`是活动摘要，首页会截断显示。
+- `link`是点击“点击查看”后的目标链接，通常是公众号文章、票务页面或站内页面。
+
+## 往期作品
+往期作品对应剧目回顾页。只需要为新的演出建立一个新的文件，网站就会自动把它加入“往期作品”页面和首页的往期作品预览。
+
+1. 在`collections/_works/`中建立一个新的`.md`文件，用年份、季节、剧名命名，比如：`2026-spring-god-of-carnage.md`。
+2. 将剧照、banner、海报放到`/assets/imgs/works/<project-name>/`。
+3. 将场刊等非图片文件放到`/assets/files/works/<project-name>/`。
+4. 在新的`.md`文件中填写以下信息。注意文件前后的`---`不能省略。
+
+```yaml
+---
+hidden: true
+layout: work-detail
+title: "玩偶之家2:娜拉归来"
+sort_by_date: "2025-07-25"
+work_details:
+  title: "玩偶之家2:娜拉归来"
+  location: "地球的某个地方"
+  dates:
+    - "2025-07-25"
+    - "2025-07-26"
+  date: "某个时间"
+  banner_image: "/assets/imgs/works/<project-name>/banner.jpg"
+  poster_image: "/assets/imgs/works/<project-name>/poster.png"
+  brochure: "/assets/files/works/<project-name>/brochure.pdf"
+  introduction: "剧目详细介绍"
+  production_team:
+    - page_title: "演员"
+      members:
+        - name: "演员"
+          person: "演员姓名"
+          role: "角色名称"
+    - page_title: "制作团队"
+      members:
+        - name: "制作人"
+          person: "制作人姓名"
+        - name: "导演"
+          person: "导演姓名"
+    - page_title: "后台"
+      members:
+        - name: "灯光"
+          person: "灯光负责人"
+  youtube_video: "mee4gJM3kls"
+  photos:
+    - image: "/assets/imgs/works/<project-name>/photo_1.jpg"
+      size: "large"
+      caption: "演出"
+    - image: "/assets/imgs/works/<project-name>/photo_2.jpg"
+      size: "medium"
+      caption: "谢幕"
+---
+```
+
+字段说明：
+- `hidden`是可选项。如果想先提交内容但暂时不展示，可以设为`true`。
+- `layout`必须是`work-detail`。
+- `title`和`work_details.title`是剧目名称，通常保持一致。
+- `sort_by_date`用于排序，请填写演出首日，格式为`YYYY-MM-DD`。
+- `dates`推荐使用日期列表，格式为`YYYY-MM-DD`；如果有`dates`，页面会优先显示`dates`。
+- `banner_image`是详情页顶部横版图片，建议必须提供。
+- `poster_image`是往期作品卡片和详情页海报，建议使用接近3:4比例的竖版海报。
+- `brochure`是可选场刊链接，可以是PDF，也可以是图片链接列表。
+- `photos`建议至少6张，`size`可以是`large`、`medium`、`small`。
+- `youtube_video`是可选项。填写YouTube embed链接中`/embed/`之后、`?`之前的ID。
+
+一切就绪后，开一个新的PR，请求审核。PR被approve并merge后，内容更新就完成了。
 
 # 维护教程
 ## 🧑🏻‍💻 环境配置

@@ -60,6 +60,21 @@ layout: default
             </div>
         </div>
 
+        {% assign brochures = page.work_details.brochure %}
+        {% if brochures %}
+        <div class="brochure-container">
+            {% if brochures.first %}
+                {% for brochure in brochures %}
+                <a href="{{ brochure | relative_url }}" class="brochure-link" target="_blank" rel="noopener">
+                    查看场刊{% if brochures.size > 1 %} {{ forloop.index }}{% endif %}
+                </a>
+                {% endfor %}
+            {% else %}
+                <a href="{{ brochures | relative_url }}" class="brochure-link" target="_blank" rel="noopener">查看场刊</a>
+            {% endif %}
+        </div>
+        {% endif %}
+
         <div class="poster-cast-section section-content">
             {% include cast-poster.html production_team=page.work_details.production_team poster_image=page.work_details.poster_image %}
         </div>

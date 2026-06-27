@@ -117,6 +117,7 @@ $unit-size-small: 0.8rem;
       background: #c8102e;
       color: white;
       padding: 12px 48px;
+      border: 0;
       border-radius: 24px;
       text-decoration: none;
       font-weight: 600;
@@ -126,6 +127,28 @@ $unit-size-small: 0.8rem;
         background: #a60e26;
         color: white;
         text-decoration: none;
+      }
+    }
+
+    .hero-cta-inactive {
+      background: #a60e26;
+      cursor: default;
+      pointer-events: none;
+
+      &:hover {
+        background: #a60e26;
+        color: white;
+      }
+    }
+
+    .hero-cta-ended {
+      background: #a60e26;
+      padding-left: 34px;
+      padding-right: 34px;
+      letter-spacing: 0.04em;
+
+      &:hover {
+        background: #8f0f24;
       }
     }
 

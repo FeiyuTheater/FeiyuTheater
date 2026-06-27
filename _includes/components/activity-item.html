@@ -1,4 +1,4 @@
-<article class="activity-item">
+<article class="activity-item{% if include.extra_class %} {{ include.extra_class }}{% endif %}">
   <div class="activity-image">
     <img src="{{ include.activity.image }}" alt="{{ include.activity.title }}">
   </div>
