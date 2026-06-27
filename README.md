@@ -17,6 +17,8 @@
 # 内容更新教程
 内容更新主要分三类：页首横幅、近期活动、往期作品。开始前建议先基于`main` branch创建一个git branch，命名规则为`update/<author-name>/<show-name>-<content-type>`。
 
+> 如果不熟悉代码库，可以把需要更新的素材和说明提供给AI，让AI参考`AGENTS.md`里的内容更新指引来完成素材检查、文件整理、内容编辑和构建验证。
+
 Branch命名示例：
 - `update/boning/god-of-carnage-banner`
 - `update/boning/god-of-carnage-news-1`
