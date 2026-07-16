@@ -8,8 +8,8 @@ work_details:
   dates:
     - "2026-04-18"
     - "2026-04-19"
-  banner_image: "/assets/files/works/2026-spring-doubt/banner.pdf"
-  poster_image: "/assets/files/works/2026-spring-doubt/poster.pdf"
+  banner_image: "/assets/imgs/works/2026-spring-doubt/banner.jpg"
+  poster_image: "/assets/imgs/works/2026-spring-doubt/poster.png"
   brochure: "/assets/files/works/2026-spring-doubt/brochure.pdf"
   introduction: "1964年秋天,纽约布朗克斯,一所天主教学校。一位年轻修女察觉到一些不对劲的事。她不确定自己看到了什么。校长很确定。神父否认一切。母亲说:让他毕业就好。四个人,四种真相。这个故事不会给你答案。它只会给你一个问题⸺然后让你带着这个问题离开。"
   production_team:
