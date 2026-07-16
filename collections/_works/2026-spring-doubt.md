@@ -100,10 +100,10 @@ work_details:
     - image: "/assets/imgs/works/2026-spring-doubt/photo_4.jpg"
       size: "medium"
       caption: "定妆照"
-    - image: "/assets/imgs/works/2026-spring-doubt/photo_5.jpeg"
+    - image: "/assets/imgs/works/2026-spring-doubt/photo_5.jpg"
       size: "medium"
       caption: "合照"
-    - image: "/assets/imgs/works/2026-spring-doubt/photo_6.jpeg"
+    - image: "/assets/imgs/works/2026-spring-doubt/photo_6.jpg"
       size: "medium"
       caption: "舞台照"
 ---
