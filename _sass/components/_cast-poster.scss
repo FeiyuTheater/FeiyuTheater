@@ -95,14 +95,18 @@ $cast-breakpoints: (
   }
 }
 
+// Posters are not all the same shape. This box used to be locked to a 3/4
+// aspect ratio and filled with `object-fit: cover`, which cropped anything
+// that did not match. A poster taller than 3/4 (The Ride Down Mt. Morgan is
+// 1920x2880) lost about 11% of its height, taking the top of the show title
+// and the whole theater logo with it.
+// The rounded corners and shadow now sit on the <img>, so the frame follows
+// whatever proportions the poster actually has and nothing is cut off.
 .cast-poster {
   height: calc(100% - 40px);
-  aspect-ratio: 3/4;
-  border-radius: cast-get(border-radius-sm);
-  box-shadow: 0 15px 40px cast-get(shadow-medium);
+  width: auto;
+  max-width: 100%;
   position: relative;
-  overflow: hidden;
-  background: cast-get(bg-lighter);
   // border: 2px dashed cast-get(border-light);
   display: flex;
   align-items: center;
@@ -110,6 +114,13 @@ $cast-breakpoints: (
   color: cast-get(text-muted);
   font-size: 16px;
   font-weight: 500;
+
+  // Keep the original placeholder box for a work with no poster image
+  &:not(:has(img)) {
+    aspect-ratio: 3/4;
+    border-radius: cast-get(border-radius-sm);
+    background: cast-get(bg-lighter);
+  }
 
   &::before {
     // content: '电影海报';
@@ -125,10 +136,13 @@ $cast-breakpoints: (
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: cast-get(border-radius-sm);
+    box-shadow: 0 15px 40px cast-get(shadow-medium);
 
     &:not([src]) {
       display: none;
@@ -136,9 +150,7 @@ $cast-breakpoints: (
   }
 
   @include cast-respond-to(desktop) {
-    width: 100%;
-    height: auto;
-    max-height: calc(100% - 30px);
+    height: calc(100% - 30px);
   }
 }
 
