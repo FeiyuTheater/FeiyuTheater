@@ -95,14 +95,14 @@ $cast-breakpoints: (
   }
 }
 
+// 海报不是全都同一个比例。以前这里把海报裁切成固定的 3/4，比 3/4 更瘦长的海报
+// （比如《车下莫根山》1920x2880）上下会被切掉约 11%，剧名和剧社 logo 都看不见了。
+// 现在圆角和阴影放在 img 上，外框跟着海报本身的比例走，任何比例都能完整显示。
 .cast-poster {
   height: calc(100% - 40px);
-  aspect-ratio: 3/4;
-  border-radius: cast-get(border-radius-sm);
-  box-shadow: 0 15px 40px cast-get(shadow-medium);
+  width: auto;
+  max-width: 100%;
   position: relative;
-  overflow: hidden;
-  background: cast-get(bg-lighter);
   // border: 2px dashed cast-get(border-light);
   display: flex;
   align-items: center;
@@ -110,6 +110,13 @@ $cast-breakpoints: (
   color: cast-get(text-muted);
   font-size: 16px;
   font-weight: 500;
+
+  // 没有海报图时保留原来的占位方框
+  &:not(:has(img)) {
+    aspect-ratio: 3/4;
+    border-radius: cast-get(border-radius-sm);
+    background: cast-get(bg-lighter);
+  }
 
   &::before {
     // content: '电影海报';
@@ -125,10 +132,13 @@ $cast-breakpoints: (
   }
 
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: cast-get(border-radius-sm);
+    box-shadow: 0 15px 40px cast-get(shadow-medium);
 
     &:not([src]) {
       display: none;
@@ -136,9 +146,7 @@ $cast-breakpoints: (
   }
 
   @include cast-respond-to(desktop) {
-    width: 100%;
-    height: auto;
-    max-height: calc(100% - 30px);
+    height: calc(100% - 30px);
   }
 }
 
