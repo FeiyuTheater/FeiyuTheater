@@ -95,9 +95,13 @@ $cast-breakpoints: (
   }
 }
 
-// 海报不是全都同一个比例。以前这里把海报裁切成固定的 3/4，比 3/4 更瘦长的海报
-// （比如《车下莫根山》1920x2880）上下会被切掉约 11%，剧名和剧社 logo 都看不见了。
-// 现在圆角和阴影放在 img 上，外框跟着海报本身的比例走，任何比例都能完整显示。
+// Posters are not all the same shape. This box used to be locked to a 3/4
+// aspect ratio and filled with `object-fit: cover`, which cropped anything
+// that did not match. A poster taller than 3/4 (The Ride Down Mt. Morgan is
+// 1920x2880) lost about 11% of its height, taking the top of the show title
+// and the whole theater logo with it.
+// The rounded corners and shadow now sit on the <img>, so the frame follows
+// whatever proportions the poster actually has and nothing is cut off.
 .cast-poster {
   height: calc(100% - 40px);
   width: auto;
@@ -111,7 +115,7 @@ $cast-breakpoints: (
   font-size: 16px;
   font-weight: 500;
 
-  // 没有海报图时保留原来的占位方框
+  // Keep the original placeholder box for a work with no poster image
   &:not(:has(img)) {
     aspect-ratio: 3/4;
     border-radius: cast-get(border-radius-sm);
