@@ -77,9 +77,11 @@ $cast-breakpoints: (
 .cast-poster-section {
   flex: 0 0 auto;
   position: relative;
+  z-index: 1;
   background: cast-get(bg-white);
   display: flex;
   align-items: center;
+  overflow: visible;                    // Need this to avoid the shadow clip
   justify-content: center;
   padding: 20px 30px;
   height: 100%;
