@@ -58,6 +58,7 @@ For 页首横幅, ask for:
 - 早鸟倒计时结束时间, if any
 - 最后一场演出结束时间 for `performance_end_datetime`
 - 往期作品链接 for `review_link`, if already available
+- 遮罩样式 for `overlay_style`, if the banner needs something other than the default
 
 For 近期活动, ask for:
 
@@ -75,8 +76,10 @@ Before using uploaded files, verify that they are suitable.
 Images:
 
 - Banner images should be horizontal. Use tools such as `sips -g pixelWidth -g pixelHeight <file>` on macOS.
+- Homepage hero banners belong in `assets/imgs/index_page/banners/` and use `<year>-<work-slug>.<extension>` names, for example `2026-god-of-carnage.png`; the extension must match the file's actual format.
 - Poster images should be vertical, ideally close to 3:4.
 - Activity/news images should be visually usable as card thumbnails, preferably square or easy to crop.
+- Keep only images referenced by `collections/_activities/` in `assets/imgs/news/`. Store work posters and performance photos under the corresponding `assets/imgs/works/<project-name>/` directory.
 - Performance photos should include a good mix: stage photos, curtain call, group photo, audience/site photos if available.
 - Keep file extensions honest. Do not copy JPEG content into a `.png` filename.
 
@@ -111,7 +114,8 @@ hero:
       text: "周六场购票"
       link: "https://..."
   location: "Starbright Theater, Campbell"
-  background_image: "/assets/imgs/goc-hero-banner.png"
+  background_image: "/assets/imgs/index_page/banners/2026-god-of-carnage.png"
+  overlay_style: "balanced-edge"
 ```
 
 Behavior:
@@ -121,6 +125,7 @@ Behavior:
 - After `performance_end_datetime`, ticket buttons disappear.
 - If `review_link` exists after the performance ends, the button becomes `已落幕 | 点此回顾`.
 - If `review_link` is missing after the performance ends, the button becomes inactive `演出已落幕`.
+- If `overlay_style` is omitted, the banner uses the backward-compatible `default` overlay. Use `balanced-edge` when white copy sits on the darker left side while a brighter central subject should remain visible; its mobile variant darkens the bottom more strongly for readability.
 
 ## 近期活动
 

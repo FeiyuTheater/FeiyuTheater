@@ -1,10 +1,10 @@
 <!-- Hero Banner Section -->
-<section class="hero-section">
+{% assign hero_overlay_style = include.hero.overlay_style | default: "default" %}
+<section class="hero-section hero-section--overlay-{{ hero_overlay_style }}">
+  <div class="hero-background-container" style="background-image: url('{{ include.hero.background_image }}');" aria-hidden="true"></div>
   <div class="hero-overlay"></div>
   <div class="container">
-    <div class="hero-background-container" style="background-image: url('{{ include.hero.background_image }}');">
-      <div class="hero-background-overlay"></div>
-      <div class="hero-content">
+    <div class="hero-content">
         <h1 class="hero-title">{{ include.hero.title }}</h1>
         <div class="hero-meta">
           <h2 class="hero-date">{{ include.hero.date }}</h2>
@@ -46,7 +46,6 @@
         {% elsif include.hero.button_text %}
           <div class="hero-cta-button hero-cta-inactive">{{ include.hero.button_text }}</div>
         {% endif %}
-      </div>
     </div>
   </div>
 </section>
