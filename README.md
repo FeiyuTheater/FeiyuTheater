@@ -46,7 +46,8 @@ hero:
       text: "周日场购票"
       link: "https://..."
   location: "Starbright Theater, Campbell"
-  background_image: "/assets/imgs/goc-hero-banner.png"
+  background_image: "/assets/imgs/index_page/banners/2026-god-of-carnage.png"
+  overlay_style: "balanced-edge"
 ```
 
 字段说明：
@@ -55,13 +56,14 @@ hero:
 - `buttons`控制购票或其他行动按钮。需要一个按钮时也可以使用旧格式`button_status`、`button_text`、`button_link`。
 - `performance_end_datetime`控制何时从购票状态切换到落幕状态，请填写最后一场演出结束时间，格式为ISO 8601并带时区。
 - 如果有`review_link`，超过`performance_end_datetime`后按钮显示`已落幕 | 点此回顾`并链接到对应往期作品；如果没有`review_link`，按钮显示不可点击的`演出已落幕`。
-- 横幅图片等素材建议放在`/assets/imgs/`或更具体的子目录中，再用绝对路径引用。
+- 主页横幅统一放在`/assets/imgs/index_page/banners/`，并按`<年份>-<作品英文-slug>.<扩展名>`命名，例如`2026-god-of-carnage.png`；扩展名必须与文件的实际格式一致。这个目录只保存实际用于主页的横幅；作品详情页自己的banner继续保存在对应的`/assets/imgs/works/<project-name>/`目录中。
+- `overlay_style`控制当前横幅的遮罩。省略时使用兼容既有横幅的`default`；当图片中央主体较亮、左侧需要承载白色文字时可使用`balanced-edge`，它会在桌面端保留较亮的中部，并在移动端改用底部较深的组合渐变。
 
 ## 近期活动
 近期活动显示在首页“近期活动”区域，数据来自`collections/_activities/`。这些内容一般和公众号推文同步发布，由制作人决定是否放到网站上；建议选择比较重要的动态放上来，让网站看起来活动更丰富、更可信。首页默认只显示最新3条，用户点击“查看更多”后每次再展开3条。
 
 1. 在`collections/_activities/`中建立一个新的`.md`文件，用日期、季节、活动主题命名，比如：`2026-spring-god-of-carnage-ticketing.md`。
-2. 将活动封面图放到`/assets/imgs/news/`或更具体的子目录中。
+2. 将活动封面图放到`/assets/imgs/news/`或更具体的子目录中。这里只保留`collections/_activities/`实际引用的活动图片；作品海报和剧照应放在对应的`/assets/imgs/works/<project-name>/`目录中。
 3. 在新的`.md`文件中填写以下信息。
 
 ```yaml

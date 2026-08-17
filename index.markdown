@@ -21,7 +21,11 @@
 #
 # location          Venue name shown as "地点：<value>".
 #
-# background_image  Path to the banner image under /assets/imgs/.
+# background_image  Path to the banner image under /assets/imgs/index_page/banners/.
+#
+# overlay_style     Optional overlay variant. Defaults to "default".
+#                   Use "balanced-edge" for a bright central subject with
+#                   readable white copy on the left.
 #
 # COUNTDOWN TIMER (optional)
 # --------------------------
@@ -71,30 +75,27 @@ layout: home
 title: "非鱼剧社"
 js: home.js
 hero:
-  title: "杀戮之神"
-  date: "2026年5月30日 | 5月31日"
-  performance_end_datetime: "2026-05-31T15:30:00-07:00"
-  review_link: "/prev-work/2026-spring-god-of-carnage/"
+  title: "杏仁豆腐心"
+  date: "2026年9月19日 | 9月20日"
+  performance_end_datetime: "2026-09-20T16:00:00-07:00"
   # if no count down is needed, then comment out these keys
   countdown_title: "距离早鸟票结束还有："
-  countdown_datetime: "2026-05-03T22:00:00-07:00" # ISO format with timezone
+  countdown_datetime: "2026-08-23T23:59:00-07:00" # ISO format with timezone
 
   # Show as button or a info
   # Status can be "active" or "inactive"
   # button_status: "active"
   # button_text: "点击购票"
-  # button_link: "https://event.hellotaro.com/e/2026_ca_feiyu_0530"
+  # button_link: "https://www.zeffy.com/en-US/ticketing/d4338965-20a1-4873-b5f9-31d10c5245a2"
 
   buttons:
     - status: "active"
-      text: "周六场购票"
-      link: "https://event.hellotaro.com/e/2026_ca_feiyu_0530"
-    - status: "active"
-      text: "周日场购票"
-      link: "https://event.hellotaro.com/e/2026_ca_feiyu_0531"
+      text: "立即购票"
+      link: "https://www.zeffy.com/en-US/ticketing/d4338965-20a1-4873-b5f9-31d10c5245a2"
 
   location: "Starbright Theater, Campbell"
-  background_image: "/assets/imgs/goc-hero-banner.png"
+  background_image: "/assets/imgs/index_page/banners/2026-almond-tofu.png"
+  overlay_style: "balanced-edge"
 ---
 
 <!-- Hero Banner Section -->
