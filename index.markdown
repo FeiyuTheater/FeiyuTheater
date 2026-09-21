@@ -75,26 +75,17 @@ layout: home
 title: "非鱼剧社"
 js: home.js
 hero:
-  title: "杏仁豆腐心"
-  date: "2026年9月19日 | 9月20日"
-  performance_end_datetime: "2026-09-20T16:00:00-07:00"
-  # if no count down is needed, then comment out these keys
+  title: "活着"
+  date: "2026年10月17日 | 10月18日"
+  performance_end_datetime: "2026-10-19T00:00:00-07:00"
   countdown_title: "距离早鸟票结束还有："
-  countdown_datetime: "2026-08-23T23:59:00-07:00" # ISO format with timezone
-
-  # Show as button or a info
-  # Status can be "active" or "inactive"
-  # button_status: "active"
-  # button_text: "点击购票"
-  # button_link: "https://www.zeffy.com/en-US/ticketing/d4338965-20a1-4873-b5f9-31d10c5245a2"
-
+  countdown_datetime: "2026-09-30T23:59:00-07:00"
   buttons:
     - status: "active"
       text: "立即购票"
-      link: "https://www.zeffy.com/en-US/ticketing/d4338965-20a1-4873-b5f9-31d10c5245a2"
-
-  location: "Starbright Theater, Campbell"
-  background_image: "/assets/imgs/index_page/banners/2026-almond-tofu.png"
+      link: "https://www.zeffy.com/en-US/ticketing/c4340b4b-1994-42b3-b8b1-ec5f10d6cd9d"
+  location: "Starbright Theater, 1770 W. Campbell Ave. Campbell"
+  background_image: "/assets/imgs/to_live_banner.png"
   overlay_style: "balanced-edge"
 ---
 
